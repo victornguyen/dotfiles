@@ -144,6 +144,7 @@ nnoremap <leader>as :AgFromSearch<Cr>
 " NERDTree
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>F :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen=1
 
 " Git fugitive
 nnoremap <leader>gs :Gstatus<CR>
