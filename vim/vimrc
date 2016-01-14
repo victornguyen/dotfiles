@@ -123,6 +123,9 @@ nnoremap <leader>bj :bp<CR>
 nnoremap <leader>j :bp<CR>
 nnoremap <leader>bd :bd<CR>
 
+" Search for visually highlighted text
+vnoremap // y/<C-R>"<CR>
+
 " Disable search highlighting until next search
 nnoremap <leader><space> :noh<CR>
 
