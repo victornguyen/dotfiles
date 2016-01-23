@@ -69,6 +69,7 @@ set hidden          " hide buffers rather than unloading then (so we don't
 set wildmenu        " show available commands when autocompleting with tab
 set wildmode=list:longest
 set visualbell      " no beeping
+set autoread        " reload file when changed on disk
 
 set listchars=tab:=»,trail:·
 set backspace=indent,eol,start   " make backspace behave in a sane manner
@@ -92,6 +93,9 @@ set ttyscroll=3
 " set lazyredraw
 
 set linespace=0
+
+" Trigger autoread when changing buffers or coming back to vim.
+au FocusGained,BufEnter * :silent! !
 
 " Key maps!!
 
