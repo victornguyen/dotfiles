@@ -108,6 +108,7 @@ inoremap kl <Esc>
 let mapleader = "\<Space>"
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>r :e!<CR>
 
 " Copy all lines to system clipboard
 nnoremap <leader>c :%y*<CR>
