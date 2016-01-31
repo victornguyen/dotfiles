@@ -212,3 +212,6 @@ nnoremap <tab> :b#<CR>
 
 " Make vim indent normal tags
 :let g:html_indent_inctags = "html,body,head,tbody"
+
+" Go to module
+nnoremap <leader>o :ImportJSGoTo<CR>
