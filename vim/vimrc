@@ -146,8 +146,8 @@ set hlsearch
 nnoremap <leader>w <C-w>v<C-w>l
 
 " Ag
-nnoremap <leader>ag :Ag<space>
-nnoremap <leader>as :AgFromSearch<Cr>
+nnoremap <leader>ag :Ag!<space>
+nnoremap <leader>as :AgFromSearch!<Cr>
 
 " NERDTree
 nnoremap <leader>f :NERDTreeToggle<CR>
