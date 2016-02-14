@@ -34,6 +34,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'trotzig/import-js'
 Plugin 'mattn/emmet-vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
