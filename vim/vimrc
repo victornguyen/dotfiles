@@ -209,6 +209,7 @@ let g:jsdoc_allow_input_prompt = 1
 
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 0
 
 " Make vim indent normal tags
 :let g:html_indent_inctags = "html,body,head,tbody"
