@@ -92,7 +92,7 @@ set backupdir=$HOME/.vim/tmp/backup//,/tmp//,.
 " Improve vim's scrolling speed
 set ttyfast
 set ttyscroll=3
-" set lazyredraw
+set lazyredraw
 
 set linespace=0
 
