@@ -79,6 +79,8 @@ set backspace=indent,eol,start   " make backspace behave in a sane manner
 set splitright      " open vertical splits on the right
 set splitbelow      " open the horizontal split below
 
+set completeopt-=preview
+
 " Make vim remember undos, even when the file is closed!
 set undofile                              " save undo's after file closes
 set undodir=~/.vim/tmp/undo//,/tmp//,.    " where to save undo histories
