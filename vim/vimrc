@@ -37,6 +37,7 @@ Plugin 'trotzig/import-js'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'karlbright/qfdo.vim'
+Plugin 'wellle/targets.vim'
 
 call vundle#end()
 filetype plugin indent on
