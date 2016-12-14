@@ -110,6 +110,9 @@ au FocusGained,BufEnter * :silent! !
 inoremap jk <Esc>
 inoremap kl <Esc>
 
+" Select pasted text
+nnoremap gp `[v`]
+
 " Leader maps
 let mapleader = "\<Space>"
 nnoremap <leader>s :w<CR>
