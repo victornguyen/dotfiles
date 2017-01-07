@@ -84,6 +84,10 @@ set splitbelow      " open the horizontal split below
 
 set completeopt-=preview
 
+" Fix issue with osx sierra clipboard + tmux
+" https://github.com/tmux/tmux/issues/543#issuecomment-248980734
+set clipboard=unnamed
+
 " Make vim remember undos, even when the file is closed!
 set undofile                              " save undo's after file closes
 set undodir=~/.vim/tmp/undo//,/tmp//,.    " where to save undo histories
