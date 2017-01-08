@@ -38,6 +38,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'karlbright/qfdo.vim'
 Plugin 'wellle/targets.vim'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 filetype plugin indent on
@@ -227,3 +228,11 @@ let g:vim_markdown_new_list_item_indent = 0
 
 " Go to module
 nnoremap <leader>o :ImportJSGoTo<CR>
+
+" vimwiki
+let wiki = {}
+let wiki.path = '$HOME/Dropbox/vimwiki'
+let wiki.path_html = '$HOME/Dropbox/vimwiki_html'
+let wiki.nested_syntaxes = {'js': 'javascript'}
+let g:vimwiki_list = [wiki]
+
