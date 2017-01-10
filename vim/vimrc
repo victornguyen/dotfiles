@@ -109,7 +109,6 @@ au FocusGained,BufEnter * :silent! !
 
 " Quick escaping
 inoremap jk <Esc>
-inoremap kl <Esc>
 
 " Select pasted text
 nnoremap gp `[v`]
