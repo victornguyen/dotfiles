@@ -105,6 +105,9 @@ set linespace=0
 " Trigger autoread when changing buffers or coming back to vim.
 au FocusGained,BufEnter * :silent! !
 
+" Enable word-wrapping for vimwiki files
+au FileType vimwiki set textwidth=80
+
 " Key maps!!
 
 " Quick escaping
