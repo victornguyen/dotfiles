@@ -39,6 +39,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'karlbright/qfdo.vim'
 Plugin 'wellle/targets.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'christoomey/vim-sort-motion'
 
 call vundle#end()
 filetype plugin indent on
