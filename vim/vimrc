@@ -200,6 +200,7 @@ if executable('ag')
 endif
 
 " Ignore source control dirs
+" NOTE: this only applies when ag isn't available
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 
