@@ -11,14 +11,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'pangloss/vim-javascript'
-Plugin 'othree/yajs.vim'
-Plugin 'othree/es.next.syntax.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'gavocanov/vim-js-indent'
-Plugin 'rking/ag.vim'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
@@ -26,7 +22,6 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
 Plugin 'cohama/lexima.vim'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -214,11 +209,11 @@ let g:togglecursor_default = 'block'
 let g:togglecursor_insert = 'line'
 let g:togglecursor_replace = 'underline' " TODO: why doesn't this work?
 
-" JSX
-let g:jsx_ext_required = 0
+" vim-javascript
+let g:javascript_plugin_flow = 1
 
-" JavaScript Libraries Syntax
-let g:used_javascript_libs = 'react,underscore'
+" vim-jsx
+let g:jsx_ext_required = 0
 
 " JsDoc
 let g:jsdoc_allow_input_prompt = 1
