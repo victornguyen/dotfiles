@@ -14,6 +14,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'w0rp/ale'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
@@ -217,6 +218,13 @@ let g:jsx_ext_required = 0
 
 " JsDoc
 let g:jsdoc_allow_input_prompt = 1
+
+" ALE (linting)
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
