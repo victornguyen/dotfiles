@@ -153,6 +153,9 @@ set hlsearch
 " Open new vertical split and switch to it
 nnoremap <leader>w <C-w>v<C-w>l
 
+" Search for visually selected text
+vnoremap // y/<C-R>"<CR>
+
 " Ag
 nnoremap <leader>ag :Ag!<space>
 nnoremap <leader>as :AgFromSearch!<Cr>
