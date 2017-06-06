@@ -3,43 +3,48 @@
 set nocompatible
 filetype off
 
-" Use Vundle to manage plugins
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'heavenshell/vim-jsdoc'
-Plugin 'w0rp/ale'
-Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-eunuch'
-Plugin 'cohama/lexima.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'jszakmeister/vim-togglecursor'
-Plugin 'trotzig/import-js'
-Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'karlbright/qfdo.vim'
-Plugin 'wellle/targets.vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'christoomey/vim-sort-motion'
 
-call vundle#end()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
 
+Plug 'VundleVim/Vundle.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'w0rp/ale'
+Plug 'rking/ag.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'cohama/lexima.vim'
+Plug 'majutsushi/tagbar'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'jszakmeister/vim-togglecursor'
+Plug 'trotzig/import-js'
+Plug 'mattn/emmet-vim'
+Plug 'karlbright/qfdo.vim'
+Plug 'wellle/targets.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'christoomey/vim-sort-motion'
+
+" TODO: move this somewhere else?
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+
+call plug#end()
 
 " Colours!
 syntax enable
