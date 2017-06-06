@@ -161,6 +161,9 @@ nnoremap <leader>ag :Ag!<space>
 nnoremap <leader>as :AgFromSearch!<Cr>
 nnoremap <leader>ab :AgBuffer!<Cr>
 
+" Ag for visually selected text
+vnoremap /s y/<C-R>"<CR>:AgFromSearch<CR>
+
 " NERDTree
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>F :NERDTreeFind<CR>
