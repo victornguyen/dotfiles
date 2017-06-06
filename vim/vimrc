@@ -8,7 +8,10 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
+" TODO: remove ctrlp when comfy with fzf
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-jsdoc'
@@ -121,6 +124,12 @@ let mapleader = "\<Space>"
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>r :e!<CR>
+
+" fzf bindings
+nnoremap <leader><tab> :GFiles<CR>
+nnoremap <leader>p :History<CR>
+" TODO: replace :History with and MRU implementation:
+" https://github.com/pbogut/fzf-mru.vim
 
 " Copy all lines to system clipboard
 nnoremap <leader>c :%y*<CR>
