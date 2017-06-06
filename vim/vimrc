@@ -1,8 +1,6 @@
 " VIC'S NOOB VIMRC!
 
 set nocompatible
-filetype off
-
 
 call plug#begin('~/.vim/plugged')
 
