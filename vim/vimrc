@@ -12,6 +12,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'pbogut/fzf-mru.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-jsdoc'
@@ -127,9 +128,7 @@ nnoremap <leader>r :e!<CR>
 
 " fzf bindings
 nnoremap <leader><tab> :GFiles<CR>
-nnoremap <leader>p :History<CR>
-" TODO: replace :History with and MRU implementation:
-" https://github.com/pbogut/fzf-mru.vim
+nnoremap <leader>p :FZFMru<CR>
 
 " Copy all lines to system clipboard
 nnoremap <leader>c :%y*<CR>
