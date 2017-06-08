@@ -134,6 +134,9 @@ nnoremap <leader>/ :History/<CR>
 " Copy all lines to system clipboard
 nnoremap <leader>c :%y*<CR>
 
+" Copy selected text to system clipboard
+vnoremap <leader>y "*y
+
 " vimrc
 nnoremap <leader>vv :e $MYVIMRC<CR>
 nnoremap <leader>vs :w<CR>:source $MYVIMRC<CR>
