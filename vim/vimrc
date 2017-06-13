@@ -191,6 +191,7 @@ let NERDTreeIgnore=['\.DS_Store$', '\~$', '\.sw[poq]$']
 nnoremap <leader>gs :Gstatus<CR>
 " nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <leader>gl :silent! Glog<CR>
+nnoremap <leader>gb :Gblame<CR>
 
 
 " Airline
