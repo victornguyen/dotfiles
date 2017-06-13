@@ -130,6 +130,7 @@ nnoremap <leader>r :e!<CR>
 nnoremap <leader><tab> :GFiles<CR>
 nnoremap <leader>p :FZFMru<CR>
 nnoremap <leader>/ :History/<CR>
+nnoremap <leader>: :History:<CR>
 
 " Copy all lines to system clipboard
 nnoremap <leader>c :%y*<CR>
