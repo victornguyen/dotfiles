@@ -1,0 +1,10 @@
+# Assumes zplug is installed with homebrew
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug 'mafredri/zsh-async'
+zplug 'sindresorhus/pure'
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug 'zsh-users/zsh-completions', defer:2
+
+zplug load
