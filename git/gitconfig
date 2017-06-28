@@ -11,6 +11,7 @@
 [alias]
   aa = add --all
   ap = add . -p
+  an = add . -N
   cm = commit -v
   cma = commit --amend
   copysha = !git rev-parse HEAD | pbcopy
