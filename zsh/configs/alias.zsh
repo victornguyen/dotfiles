@@ -31,3 +31,12 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+
+# Re-run previous command with sudo
+alias please='sudo $(fc -ln -1)'
+
+# Tmuxinator
+alias mux='tmuxinator'
+
+# Run ag with ignore file
+alias ag='ag --path-to-ignore=~/.agignore'
