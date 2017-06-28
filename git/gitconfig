@@ -1,8 +1,6 @@
 [user]
   name = Victor Nguyen
   email = vic.nguyen@gmail.com
-[oh-my-zsh]
-  hide-status = 1
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore_global
