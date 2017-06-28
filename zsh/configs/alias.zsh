@@ -10,9 +10,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # Directories
-alias l="ls -lah"
-alias lt="ls -laht" # sorted by modified time (most recent first)
-alias ltr="ls -lahtr" # most recent last
+alias l="ls -lahp"
+alias lt="ls -lahpt" # sorted by modified time (most recent first)
+alias ltr="ls -lahptr" # most recent last
 
 # Setup directory stacks
 # http://zsh.sourceforge.net/Intro/intro_6.html
