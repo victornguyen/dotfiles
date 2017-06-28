@@ -10,12 +10,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # Directories
-alias l="ls -lahp"
-alias lt="ls -lahpt" # sorted by modified time (most recent first)
-alias ltr="ls -lahptr" # most recent last
+alias l="ls -lahF"
+alias lt="ls -lahFt" # sorted by modified time (most recent first)
+alias ltr="ls -lahFtr" # most recent last
 alias md='mkdir -p' # -p to create intermediate dirs if necessary
 
-# Setup directory stacks
+# Directory stacks
 # http://zsh.sourceforge.net/Intro/intro_6.html
 DIRSTACKSIZE=10
 setopt auto_pushd
