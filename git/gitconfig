@@ -3,7 +3,7 @@
   email = vic.nguyen@gmail.com
 [core]
   editor = /usr/local/bin/vim
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
 [credential]
   helper = osxkeychain
 [push]
