@@ -9,9 +9,17 @@
 [push]
   default = simple
 [alias]
-  dsf = "!git diff --color $@ | diff-so-fancy"
+  aa = add --all
+  ap = add . -p
+  cm = commit -v
+  cma = commit --amend
+  df = diff
+  copysha = !git rev-parse HEAD | pbcopy
+  pl = pull
+  ps = push
+  uncommit = reset --soft HEAD^
 [pager]
-  diff = diff-so-fancy | less --tabs=1,5 -RFX
-  show = diff-so-fancy | less --tabs=1,5 -RFX
+  diff = diff-so-fancy | less --tabs=4 -RFX
+  show = diff-so-fancy | less --tabs=4 -RFX
 [color "diff"]
   meta = yellow bold
