@@ -13,8 +13,8 @@
   ap = add . -p
   cm = commit -v
   cma = commit --amend
-  df = diff
   copysha = !git rev-parse HEAD | pbcopy
+  df = diff
   pl = pull
   ps = push
   uncommit = reset --soft HEAD^
