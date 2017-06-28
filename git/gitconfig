@@ -9,13 +9,14 @@
 [push]
   default = simple
 [alias]
+  a = add
   aa = add --all
   ap = add . -p
   an = add . -N
-  cm = commit -v
-  cma = commit --amend
+  c = commit -v
+  ca = commit --amend
   copysha = !git rev-parse HEAD | pbcopy
-  df = diff
+  d = diff
   pl = pull
   ps = push
   uncommit = reset --soft HEAD^
