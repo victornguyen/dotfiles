@@ -13,3 +13,10 @@ zplug load
 for zsh_source in $HOME/.dotfiles/zsh/configs/*.zsh; do
   source $zsh_source
 done
+
+# Source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Source z
+zpath="/usr/local/etc/profile.d/z.sh"
+[ -f "$zpath" ] && source "$zpath"
