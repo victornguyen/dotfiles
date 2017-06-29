@@ -128,6 +128,7 @@ nnoremap <leader>r :e!<CR>
 " fzf bindings
 nnoremap <leader><tab> :GFiles<CR>
 nnoremap <leader>p :FZFMru<CR>
+nnoremap <leader>P :Files<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>: :History:<CR>
 
