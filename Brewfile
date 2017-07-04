@@ -5,15 +5,19 @@
 # To install from this file:
 #   $ brew tap homebrew/bundle
 #   $ brew bundle
-
+#
 # Make sure using latest Homebrew:
 #   $ brew update
-
+#
 # Update already-installed brews:
 #   $ brew upgrade
+#
+# Update already-installed casks:
+#   $ brew cu
 
-tap 'caskroom/cask'
 tap 'homebrew/versions'
+tap 'caskroom/cask'
+tap 'buo/cask-upgrade'
 
 brew 'coreutils'
 
