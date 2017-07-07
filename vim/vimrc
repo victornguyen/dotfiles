@@ -269,3 +269,7 @@ let wiki.path_html = '$HOME/Dropbox/vimwiki_html'
 let wiki.nested_syntaxes = {'js': 'javascript'}
 let g:vimwiki_list = [wiki]
 
+" emmet
+" smart tab expansion
+" https://coderwall.com/p/_uhrxw/using-tab-key-as-abbreviation-expander-on-emmet-vim
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
