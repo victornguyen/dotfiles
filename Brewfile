@@ -15,8 +15,12 @@
 # Update already-installed casks:
 #   $ brew cu
 
-tap 'homebrew/versions'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'homebrew/dupes'
+tap "homebrew/versions"
 tap 'caskroom/cask'
+tap 'caskroom/versions'
 tap 'buo/cask-upgrade'
 
 brew 'coreutils'
@@ -87,3 +91,14 @@ cask 'spotify'
 cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
+
+# Mac App Store Apps
+mas "1Password", id: 443987910
+mas "DaisyDisk", id: 411643860
+mas "Go2Shell", id: 445770608
+mas "Microsoft Remote Desktop", id: 715768417
+mas "Pocket", id: 568494494
+mas "Sip", id: 507257563
+mas "Slack", id: 803453959
+mas "Tweetbot", id: 557168941
+mas "Wunderlist", id: 410628904
