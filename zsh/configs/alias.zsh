@@ -1,7 +1,6 @@
 # Handy aliases
 
 # Vim
-export EDITOR="vim"
 alias v="$EDITOR"
 alias vi="$EDITOR"
 
