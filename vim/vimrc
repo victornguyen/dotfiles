@@ -1,51 +1,25 @@
-" VIC'S NOOB VIMRC!
+" Stolen wholesale from christoomey:
+" https://github.com/christoomey/dotfiles/blob/master/vim/vimrc
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/.vim/' . a:directory . '/*.vim'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
+endfunction
 
+" Disable Vi compatibility
 set nocompatible
 
+" Map leader before other keymaps
+let mapleader = "\<Space>"
+
+" Source plugins
 call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
-" TODO: remove ctrlp when comfy with fzf
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'pbogut/fzf-mru.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'w0rp/ale'
-Plug 'rking/ag.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'cohama/lexima.vim'
-Plug 'majutsushi/tagbar'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
-Plug 'jszakmeister/vim-togglecursor'
-Plug 'trotzig/import-js'
-Plug 'mattn/emmet-vim'
-Plug 'karlbright/qfdo.vim'
-Plug 'wellle/targets.vim'
-Plug 'vimwiki/vimwiki'
-Plug 'christoomey/vim-sort-motion'
-
-" TODO: move this somewhere else?
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.sh
-  endif
-endfunction
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-
+call s:SourceConfigFilesIn('plugins')
 call plug#end()
+
 
 " Colours!
 syntax enable
@@ -108,9 +82,6 @@ set linespace=0
 " Trigger autoread when changing buffers or coming back to vim.
 au FocusGained,BufEnter * :silent! !
 
-" Enable word-wrapping for vimwiki files
-au FileType vimwiki set textwidth=80
-
 " Key maps!!
 
 " Quick escaping
@@ -120,17 +91,9 @@ inoremap jk <Esc>
 nnoremap gp `[v`]
 
 " Leader maps
-let mapleader = "\<Space>"
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>r :e!<CR>
-
-" fzf bindings
-nnoremap <leader><tab> :GFiles<CR>
-nnoremap <leader>p :FZFMru<CR>
-nnoremap <leader>P :Files<CR>
-nnoremap <leader>/ :History/<CR>
-nnoremap <leader>: :History:<CR>
 
 " Copy all lines to system clipboard
 nnoremap <leader>c :%y*<CR>
@@ -172,104 +135,5 @@ nnoremap <leader>w <C-w>v<C-w>l
 " Search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
-" Ag
-nnoremap <leader>ag :Ag!<space>
-nnoremap <leader>as :AgFromSearch!<Cr>
-nnoremap <leader>ab :AgBuffer!<Cr>
-
-" Ag for visually selected text
-vnoremap /s y/<C-R>"<CR>:AgFromSearch<CR>
-
-" NERDTree
-nnoremap <leader>f :NERDTreeToggle<CR>
-nnoremap <leader>F :NERDTreeFind<CR>
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-let NERDTreeCaseSensitiveSort=1
-let NERDTreeIgnore=['\.DS_Store$', '\~$', '\.sw[poq]$']
-
-" Git fugitive
-nnoremap <leader>gs :Gstatus<CR>
-" nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <leader>gl :silent! Glog<CR>
-nnoremap <leader>gb :Gblame<CR>
-
-
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = "base16"
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
-" let g:airline_left_sep=''
-" let g:airline_right_sep=''
-
-" CtrlP
-" Use The Silver Searcher
-if executable('ag')
-  " Use ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects
-  " .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" Ignore source control dirs
-" NOTE: this only applies when ag isn't available
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
-
-" Change cursor appearance on insert/replace mode
-" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-" let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-" Toggle cursor
-let g:togglecursor_default = 'block'
-let g:togglecursor_insert = 'line'
-let g:togglecursor_replace = 'underline' " TODO: why doesn't this work?
-
-" vim-javascript
-let g:javascript_plugin_flow = 1
-" Highlight object keys
-" https://github.com/pangloss/vim-javascript/issues/138
-hi def link jsObjectKey Label
-
-" vim-jsx
-let g:jsx_ext_required = 0
-
-" JsDoc
-let g:jsdoc_allow_input_prompt = 1
-
-" ALE (linting)
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_linters = {
-\   'javascript': ['eslint', 'flow'],
-\}
-
-" vim-markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 0
-
 " Make vim indent normal tags
 :let g:html_indent_inctags = "html,body,head,tbody"
-
-" Go to module
-nnoremap <leader>o :ImportJSGoTo<CR>
-
-" vimwiki
-let wiki = {}
-let wiki.path = '$HOME/Dropbox/vimwiki'
-let wiki.path_html = '$HOME/Dropbox/vimwiki_html'
-let wiki.nested_syntaxes = {'js': 'javascript'}
-let g:vimwiki_list = [wiki]
-
-" emmet
-" smart tab expansion
-" https://coderwall.com/p/_uhrxw/using-tab-key-as-abbreviation-expander-on-emmet-vim
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
