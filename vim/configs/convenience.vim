@@ -24,3 +24,6 @@ nnoremap <leader>k :bn<CR>
 nnoremap <leader>j :bp<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>r :e!<CR>
+
+" Set `K` to open vim help to word under cursor
+set keywordprg=":help"
