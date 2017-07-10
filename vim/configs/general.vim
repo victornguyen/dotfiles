@@ -1,5 +1,8 @@
 " General config
 
+" Enable filetype-specific plugins/indentation
+filetype plugin indent on
+
 set cursorline      " highlight line cursor is on
 set autoindent      " copy the indentation from the previous line
 set scrolloff=3     " number of lines to always show at at the top & bottom
