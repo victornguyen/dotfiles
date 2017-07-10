@@ -3,6 +3,8 @@
 
 Plug 'mattn/emmet-vim'
 
-" smart tab expansion
-" https://coderwall.com/p/_uhrxw/using-tab-key-as-abbreviation-expander-on-emmet-vim
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" Smart tab expansion only for certain filetypes
+" https://github.com/mattn/emmet-vim/issues/232
+let g:user_emmet_install_global = 0
+autocmd FileType html,eruby,css,scss EmmetInstall
+autocmd FileType html,eruby,css,scss imap <buffer> <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
