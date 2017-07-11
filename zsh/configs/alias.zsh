@@ -1,8 +1,7 @@
 # Handy aliases
 
 # Vim
-alias v="$EDITOR"
-alias vi="$EDITOR"
+alias vi="v"
 
 # Moving around
 alias ..="cd .."
