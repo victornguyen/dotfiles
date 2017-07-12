@@ -12,7 +12,6 @@ alias ....="cd ../../.."
 alias l="ls -lahF"
 alias lt="ls -lahFt" # sorted by modified time (most recent first)
 alias ltr="ls -lahFtr" # most recent last
-alias md='mkdir -p' # -p to create intermediate dirs if necessary
 
 # Directory stacks
 # http://zsh.sourceforge.net/Intro/intro_6.html
