@@ -1,5 +1,11 @@
 # fzf config
 
+# Set ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# Apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # Colour scheme for fzf
 # base16-eighties
 # https://github.com/nicodebo/base16-fzf

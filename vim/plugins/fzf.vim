@@ -7,8 +7,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 
-nnoremap <leader><tab> :GFiles<CR>
+nnoremap <leader><tab> :FZF<CR>
+nnoremap <leader>t :FZF<CR>
 nnoremap <leader>p :FZFMru<CR>
-nnoremap <leader>P :Files<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>: :History:<CR>
