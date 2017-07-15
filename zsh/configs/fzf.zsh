@@ -6,26 +6,25 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 # Apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Colour scheme for fzf
-# base16-eighties
+# base16-oceanicnext fzf colour scheme
 # https://github.com/nicodebo/base16-fzf
 _gen_fzf_default_opts() {
-  local color00='#2d2d2d'
-  local color01='#393939'
-  local color02='#515151'
-  local color03='#747369'
-  local color04='#a09f93'
-  local color05='#d3d0c8'
-  local color06='#e8e6df'
-  local color07='#f2f0ec'
-  local color08='#f2777a'
-  local color09='#f99157'
-  local color0A='#ffcc66'
-  local color0B='#99cc99'
-  local color0C='#66cccc'
-  local color0D='#6699cc'
-  local color0E='#cc99cc'
-  local color0F='#d27b53'
+  local color00='#1B2B34'
+  local color01='#343D46'
+  local color02='#4F5B66'
+  local color03='#65737E'
+  local color04='#A7ADBA'
+  local color05='#C0C5CE'
+  local color06='#CDD3DE'
+  local color07='#D8DEE9'
+  local color08='#EC5f67'
+  local color09='#F99157'
+  local color0A='#FAC863'
+  local color0B='#99C794'
+  local color0C='#5FB3B3'
+  local color0D='#6699CC'
+  local color0E='#C594C5'
+  local color0F='#AB7967'
 
   export FZF_DEFAULT_OPTS="
     --height 40% --border
