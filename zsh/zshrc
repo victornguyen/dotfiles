@@ -11,9 +11,6 @@ zplug 'zsh-users/zsh-completions', defer:2
 
 zplug load
 
-# Source fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Source z
 zpath="/usr/local/etc/profile.d/z.sh"
 [ -f "$zpath" ] && source "$zpath"

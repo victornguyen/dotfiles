@@ -1,5 +1,8 @@
 # fzf config
 
+# Source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Set ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
