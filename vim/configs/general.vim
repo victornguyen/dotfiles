@@ -14,6 +14,7 @@ set autoread        " reload file when changed on disk
 set showcmd         " show command in status bar
 set laststatus=2    " always show a status bar
 set ruler           " always show cursor position
+set noshowmode      " hide --MODE-- in command bar
 
 " Display relative line numbers
 set number
