@@ -13,6 +13,27 @@
 # alias zz='fasd_cd -d -i' # cd with interactive selection
 
 # TODO: learn and doco inline word completion with f,<tab> etc
+# TODO: is there a way to display full $HOME path as `~/`?
+# TODO: hook fasd backend up with .viminfo
 
 # Source fasd
 eval "$(fasd --init auto)"
+
+# TODO: when you learn zsh scripting, make this functions more DRY
+# TODO: configure fzf to display a little nicer
+# fasd & fzf change directory
+# Jump if args, filter output of fasd using fzf if none
+j() {
+  [ $# -gt 0 ] && fasd_cd -d "$*" return
+  local dir
+  dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
+
+# fasd & fzf open with $EDITOR
+# Jump if args, filter if none
+unalias f
+f() {
+  [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
+  local file
+  file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+}
