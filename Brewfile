@@ -20,6 +20,7 @@ tap 'homebrew/core'
 tap 'homebrew/dupes'
 tap 'homebrew/versions'
 tap 'caskroom/cask'
+tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'buo/cask-upgrade'
 
@@ -93,6 +94,9 @@ cask 'spotify'
 cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
+
+# Fonts
+cask 'font-fira-code'
 
 # Mac App Store Apps
 mas '1Password', id: 443987910
