@@ -20,7 +20,8 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
-alias d='dirs -v | head -10'
+# TODO: do we still need these with fasd now?
+alias dd='dirs -v | head -10'
 alias 1='cd -'
 alias 2='cd -2'
 alias 3='cd -3'

@@ -28,13 +28,13 @@ brew 'coreutils'
 
 # Shell utilities
 brew 'cheat'
+brew 'fasd'
 brew 'fpp'
 brew 'fzf'
 brew 'the_silver_searcher'
 brew 'tldr'
 brew 'trash'
 brew 'tree'
-brew 'z'
 
 # Vim
 brew 'vim'
