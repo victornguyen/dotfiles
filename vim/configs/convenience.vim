@@ -4,6 +4,9 @@
 " Quick escaping
 inoremap jk <Esc>
 
+" Disable Ex mode because I don't know what it is yet
+nnoremap Q <Nop>
+
 " Switching between last buffer
 nnoremap <tab> :b#<CR>
 
