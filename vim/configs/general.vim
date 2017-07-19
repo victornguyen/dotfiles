@@ -23,10 +23,6 @@ set relativenumber
 " Display extra whitespace chars
 set list listchars=tab:»·,trail:·,nbsp:·
 
-" Open new splits to the right (vert) and bottom (hor)
-set splitright
-set splitbelow
-
 " Display available commands when autocompleting with <tab>
 set wildmenu
 set wildmode=longest:full,full
