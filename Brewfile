@@ -35,10 +35,10 @@ brew 'the_silver_searcher'
 brew 'tldr'
 brew 'trash'
 brew 'tree'
+brew 'zplug'
 
 # Vim
 brew 'vim'
-brew 'zplug'
 
 # Tmux
 brew 'reattach-to-user-namespace'
@@ -70,6 +70,7 @@ brew 'mysql'
 # cask 'doxie'
 # cask 'transmission'
 
+cask '1password'
 cask 'alfred'
 cask 'anki'
 cask 'atom'
@@ -88,7 +89,6 @@ cask 'karabiner-elements'
 cask 'keepingyouawake'
 cask 'licecap'
 cask 'marked'
-cask 'plug'
 cask 'sketch'
 cask 'spectacle'
 cask 'spotify'
@@ -100,12 +100,12 @@ cask 'vlc'
 cask 'font-fira-code'
 
 # Mac App Store Apps
-mas '1Password', id: 443987910
 mas 'DaisyDisk', id: 411643860
-mas 'Go2Shell', id: 445770608
+mas 'Icon Slate', id: 439697913
 mas 'Microsoft Remote Desktop', id: 715768417
+mas 'Noizio', id: 928871589
 mas 'Pocket', id: 568494494
 mas 'Sip', id: 507257563
 mas 'Slack', id: 803453959
 mas 'Tweetbot', id: 557168941
-mas 'Wunderlist', id: 410628904
+mas 'Xcode', id: 497799835
