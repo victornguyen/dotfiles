@@ -37,7 +37,7 @@ brew 'tree'
 brew 'zplug'
 
 # Vim
-brew 'vim'
+brew 'vim', args: ["HEAD"]
 
 # Tmux
 brew 'reattach-to-user-namespace'
