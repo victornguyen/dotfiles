@@ -38,8 +38,5 @@ alias path='echo -e ${PATH//:/\\n}'
 # Re-run previous command with sudo
 alias please='sudo $(fc -ln -1)'
 
-# Tmuxinator
-alias mux='tmuxinator'
-
 # Run ag with ignore file
 alias ag='ag --path-to-ignore=~/.agignore'
