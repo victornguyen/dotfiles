@@ -46,6 +46,7 @@ brew 'tmux'
 # Git
 brew 'diff-so-fancy'
 brew 'git'
+brew 'tig'
 
 # Node
 # TODO: setup script to install nvm and latest node
