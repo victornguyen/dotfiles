@@ -1,6 +1,5 @@
 #!/bin/bash
 
-DOTFILES_DIR="${HOME}/.dotfiles"
+dotfiles_bin="${HOME}/.dotfiles/bin"
 
-source "${DOTFILES_DIR}/bin/link"
-
+${dotfiles_bin}/symlink
