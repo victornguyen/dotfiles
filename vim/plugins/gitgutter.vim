@@ -11,6 +11,9 @@ let g:gitgutter_map_keys = 0
 nmap [c <Plug>GitGutterPrevHunk
 nmap ]c <Plug>GitGutterNextHunk
 
+" Update gutter on save
+autocmd BufWritePost * GitGutter
+
 " For more speed (enable if you keep seeing more lag)
 " let g:gitgutter_realtime = 0
 " let g:gitgutter_eager = 0
