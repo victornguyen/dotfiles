@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Create/replace symlink
+link() {
+  ln -sfn "${DOTFILES_DIR}/${1}" "${HOME}/${2}"
+}
+
+echo "Symlinking files..."
+
+link "zsh/zshrc" ".zshrc"
+link "zsh/zshenv" ".zshrenv"
+link "tmux/tmux.conf" ".tmux.conf"
+link "vim/vimrc" ".vimrc"
+link "vim/plugins" ".vim/plugins"
+link "vim/configs" ".vim/configs"
+link "ag/agignore" ".agignore"
+link "git/gitconfig" ".gitconfig"
+link "git/gitignore" ".gitignore"
+link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
