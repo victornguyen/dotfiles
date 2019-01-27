@@ -1,0 +1,31 @@
+#!/bin/bash
+
+dotfiles="${HOME}/.dotfiles"
+source "${dotfiles}/scripts/lib/utils"
+
+# Install Xcode Command Line Tools...
+if [[ $(command -v xcodebuild) == "" ]] ; then
+  e_header "Installing command-line tools..."
+  xcode-select --install
+fi
+
+# Install Homebrew
+if [[ $(command -v brew) == "" ]] ; then
+  e_header "Installing Homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  e_header "Installing brews..."
+  brew bundle --file=${dotfiles}/Brewfile
+
+# Update Homebrew
+else
+  e_header "Updating Homebrew..."
+  brew update
+
+  e_header "Checking for outdated brews..."
+  brew outdated
+  e_warning "Run \`brew upgrade\` to upgrade everything"
+  e_warning "Run \`brew upgrade <package_name>\` to upgrade specific packages"
+fi
+
+e_success "Done!"

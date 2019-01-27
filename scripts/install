@@ -2,4 +2,5 @@
 
 dotfiles_scripts="${HOME}/.dotfiles/scripts"
 
+${dotfiles_scripts}/homebrew
 ${dotfiles_scripts}/symlink
