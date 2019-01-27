@@ -1,5 +1,0 @@
-#!/bin/bash
-
-dotfiles_bin="${HOME}/.dotfiles/bin"
-
-${dotfiles_bin}/symlink

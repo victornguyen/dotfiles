@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "${HOME}/.dotfiles/lib/utils"
+source "${HOME}/.dotfiles/scripts/lib/utils"
 
 # Create/replace symlink
 link() {

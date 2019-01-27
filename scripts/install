@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dotfiles_scripts="${HOME}/.dotfiles/scripts"
+
+${dotfiles_scripts}/symlink
