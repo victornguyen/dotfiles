@@ -1,0 +1,23 @@
+#!/bin/bash
+
+source "${HOME}/.dotfiles/scripts/lib/utils"
+source "${HOME}/.nvm/nvm.sh"
+
+e_header "Setting up nvm, node and npm..."
+if [[ $(command -v nvm) == "" ]] ; then
+  e_error "nvm is not installed"
+  e_error "Finish setting up zsh with \`scripts/setup-zsh\` before running this script"
+else
+  # Install latest LTS
+  e_step "Installing latest LTS node"
+  nvm install --lts
+
+  # Set LTS as default
+  e_step "Setting LTS node as default"
+  nvm alias default "lts/*"
+
+  # Update npm
+  e_step "Installing latest npm"
+  npm i -g npm
+  e_success "Done!"
+fi
