@@ -19,5 +19,9 @@ else
   # Update npm
   e_step "Installing latest npm"
   npm i -g npm
+
+  # Set npm config
+  npm config set depth 0
+
   e_success "Done!"
 fi
