@@ -1,0 +1,7 @@
+# vim: syntax=ruby filetype=ruby
+
+# Apps for home
+cask 'air-video-server-hd'
+cask 'backblaze'
+cask 'doxie'
+cask 'transmission'

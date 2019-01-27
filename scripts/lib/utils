@@ -17,10 +17,24 @@ e_success() {
 
 # Warning logging
 e_warning() {
-    printf "$(tput setaf 136)! %s$(tput sgr0)\n" "$@"
+  printf "$(tput setaf 136)! %s$(tput sgr0)\n" "$@"
 }
 
 # Error logging
 e_error() {
   printf "$(tput setaf 1)x %s$(tput sgr0)\n" "$@"
+}
+
+# Ask for confirmation before proceeding
+ask() {
+  read -p $'\n\e[35m'"$@"$' (y/N)\e[0m: ' -n 1
+  printf "\n"
+}
+
+# Test whether the result of an 'ask' is a confirmation
+is_confirmed() {
+  if [[ "$REPLY" =~ ^[Yy]$ ]]; then
+    return 0
+  fi
+  return 1
 }

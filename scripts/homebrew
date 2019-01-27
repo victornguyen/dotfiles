@@ -3,6 +3,10 @@
 dotfiles="${HOME}/.dotfiles"
 source "${dotfiles}/scripts/lib/utils"
 
+brew_pls() {
+  brew bundle --file="${dotfiles}/homebrew/$1"
+}
+
 # Install Xcode Command Line Tools...
 if [[ $(command -v xcodebuild) == "" ]] ; then
   e_header "Installing command-line tools..."
@@ -15,7 +19,16 @@ if [[ $(command -v brew) == "" ]] ; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
   e_header "Installing brews..."
-  brew bundle --file=${dotfiles}/Brewfile
+  brew_pls "Brewfile"
+
+  ask "Install home (non-work) applications?"
+  if is_confirmed; then
+    e_header "Installing home applications..."
+    brew_pls "Brewfile.home"
+  else
+    printf "\n"
+    e_step "Skipping home applications"
+  fi
 
 # Update Homebrew
 else
