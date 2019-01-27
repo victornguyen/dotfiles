@@ -40,5 +40,5 @@ set lazyredraw
 au FocusGained,BufEnter * :silent! !
 
 " Keep backups and swap files in central location
-set directory=$HOME/.vim/tmp/swap//,/tmp//,.
-set backupdir=$HOME/.vim/tmp/backup//,/tmp//,.
+set directory=$HOME/.vim/swap
+set backupdir=$HOME/.vim/backup
