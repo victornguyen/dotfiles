@@ -11,9 +11,6 @@ else
   # Install latest LTS
   e_step "Installing latest LTS node"
   nvm install --lts
-
-  # Set LTS as default
-  e_step "Setting LTS node as default"
   nvm alias default "lts/*"
 
   # Update npm
@@ -21,7 +18,19 @@ else
   npm i -g npm
 
   # Set npm config
+  e_step "Tweaking npm config"
   npm config set depth 0
+
+  # Install global node packages
+  e_step "Installing global node packages"
+  packages=(
+    eslint
+    fx
+    grunt
+    gulp
+    http-server
+  )
+  npm i -g "${packages[@]}"
 
   e_success "Done!"
 fi
