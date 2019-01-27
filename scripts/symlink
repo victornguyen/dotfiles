@@ -16,6 +16,8 @@ link() {
 
 e_header "Symlinking files..."
 
+mkdir -p ${HOME}/.vim
+
 link "zsh/zshrc" ".zshrc"
 link "zsh/zshenv" ".zshrenv"
 link "tmux/tmux.conf" ".tmux.conf"
