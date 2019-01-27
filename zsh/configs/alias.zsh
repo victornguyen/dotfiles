@@ -40,3 +40,7 @@ alias please='sudo $(fc -ln -1)'
 
 # Run ag with ignore file
 alias ag='ag --path-to-ignore=~/.agignore'
+
+# npm
+alias ng="npm list -g --depth=0 2>/dev/null"
+alias nl="npm list --depth=0 2>/dev/null"
