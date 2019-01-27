@@ -7,7 +7,7 @@ e_header() {
 
 # Step logging
 e_step() {
-  printf "$(tput setaf 8)  %s$(tput sgr0)\n" "$@"
+  printf "$(tput setaf 8)› %s$(tput sgr0)\n" "$@"
 }
 
 # Success logging
