@@ -26,5 +26,6 @@ link "ag/agignore" ".agignore"
 link "git/gitconfig" ".gitconfig"
 link "git/gitignore" ".gitignore"
 link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
+link "spectacle/Shortcuts.json" "Library/Application Support/Spectacle"
 
 e_success "Done!"
