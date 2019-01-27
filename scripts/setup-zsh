@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+source $ZPLUG_HOME/init.zsh
+source "${HOME}/.dotfiles/scripts/lib/utils"
+
+e_header "Installing zsh plugins..."
+zplug install
+
+e_success "Done!"

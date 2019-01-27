@@ -5,3 +5,7 @@ dotfiles_scripts="${HOME}/.dotfiles/scripts"
 ${dotfiles_scripts}/homebrew
 ${dotfiles_scripts}/symlink
 ${dotfiles_scripts}/setup-vim
+${dotfiles_scripts}/setup-zsh
+
+# Should restart shell at this point then run:
+# scripts/setup-node
