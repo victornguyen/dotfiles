@@ -3,10 +3,13 @@
 # Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Set ag as the default source for fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# Set ripgrep as the default source for fzf
+# --files: print each file to be searched
+# --hidden: search hidden files and directories
+# --glob: ignore .git/ directories
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
 
-# Apply the command to CTRL-T as well
+# Apply the default fzf command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # base16-oceanicnext fzf colour scheme

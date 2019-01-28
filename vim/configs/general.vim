@@ -42,3 +42,6 @@ au FocusGained,BufEnter * :silent! !
 " Keep backups and swap files in central location
 set directory=$HOME/.vim/swap
 set backupdir=$HOME/.vim/backup
+
+" Set :grep and :lgrep to use rg
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
