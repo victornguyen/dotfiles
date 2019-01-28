@@ -27,6 +27,7 @@ tap 'buo/cask-upgrade'
 brew 'coreutils'
 
 # Shell utilities
+brew 'bat'
 brew 'cheat'
 brew 'fasd'
 brew 'fpp'
