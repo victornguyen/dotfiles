@@ -3,4 +3,4 @@ export EDITOR="vim"
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 
 # Add homebrew binaries
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH:${HOME}/.dotfiles/bin"
