@@ -19,7 +19,7 @@ if [[ $(grep /usr/local/bin/zsh /etc/shells) == "" ]]; then
   echo /usr/local/bin/zsh | sudo tee -a /etc/shells
   e_step "Added!"
 else
-  e_step "An entry already exists!..."
+  e_step "An entry already exists!"
 fi
 
 # Change shell to zsh
@@ -30,4 +30,4 @@ chsh -s /usr/local/bin/zsh
 e_header "Installing zsh plugins..."
 zplug install
 
-e_success "Done!"
+e_success "zsh setup complete!"

@@ -43,4 +43,4 @@ else
   e_warning "Run \`brew upgrade <package_name>\` to upgrade specific packages"
 fi
 
-e_success "Done!"
+e_success "Homebrew setup complete!"

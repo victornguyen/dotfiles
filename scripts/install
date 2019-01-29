@@ -1,11 +1,16 @@
 #!/bin/bash
 
 dotfiles_scripts="${HOME}/.dotfiles/scripts"
+source "${dotfiles_scripts}/lib/utils"
 
 ${dotfiles_scripts}/homebrew
 ${dotfiles_scripts}/symlink
 ${dotfiles_scripts}/setup-vim
 ${dotfiles_scripts}/setup-zsh
+
+printf "\n"
+e_success "Initial setup complete!"
+e_warning "Please restart your shell and run scripts/setup-node"
 
 # Should restart shell at this point then run:
 # scripts/setup-node

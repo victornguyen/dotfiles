@@ -14,4 +14,4 @@ fi
 e_header "Installing Vim plugins..."
 vim +PlugInstall +qall
 
-e_success "Done!"
+e_success "Vim setup complete!"

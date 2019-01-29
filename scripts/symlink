@@ -30,4 +30,4 @@ link "ripgrep/ripgreprc" ".ripgreprc"
 link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
 link "spectacle/Shortcuts.json" "Library/Application Support/Spectacle"
 
-e_success "Done!"
+e_success "Symlinking complete!"

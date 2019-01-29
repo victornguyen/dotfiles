@@ -33,5 +33,5 @@ else
   )
   npm i -g "${packages[@]}"
 
-  e_success "Done!"
+  e_success "Node setup complete!"
 fi
