@@ -3,6 +3,30 @@
 source $ZPLUG_HOME/init.zsh
 source "${HOME}/.dotfiles/scripts/lib/utils"
 
+# Exit if Homebrew isn't installed yet
+if [[ $(command -v brew) == "" ]] ; then
+  e_error "Homebrew isn't installed. Please run scripts/homebrew first!"
+  exit 1
+fi
+
+# Install latest zsh
+e_header "Installing latest zsh..."
+brew install zsh
+
+# Add homebrew zsh to whitelist
+e_header "Adding homebrew zsh to /etc/shells whitelist..."
+if [[ $(grep /usr/local/bin/zsh /etc/shells) == "" ]]; then
+  echo /usr/local/bin/zsh | sudo tee -a /etc/shells
+  e_step "Added!"
+else
+  e_step "An entry already exists!..."
+fi
+
+# Change shell to zsh
+e_header "Changing default shell to zsh..."
+chsh -s /usr/local/bin/zsh
+
+# Install zsh plugins
 e_header "Installing zsh plugins..."
 zplug install
 
