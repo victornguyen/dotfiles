@@ -10,20 +10,20 @@ if [[ $(command -v nvm) == "" ]] ; then
   # zsh setup needs to happen because nvm is installed as a zsh plugin
 else
   # Install latest LTS
-  e_step "Installing latest LTS node"
+  e_header "Installing latest LTS node..."
   nvm install --lts
   nvm alias default "lts/*"
 
   # Update npm
-  e_step "Installing latest npm"
+  e_header "Installing latest npm..."
   npm i -g npm
 
   # Set npm config
-  e_step "Tweaking npm config"
+  e_header "Tweaking npm config..."
   npm config set depth 0
 
   # Install global node packages
-  e_step "Installing global node packages"
+  e_header "Installing global node packages..."
   packages=(
     eslint
     fx
