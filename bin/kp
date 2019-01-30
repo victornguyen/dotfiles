@@ -7,9 +7,10 @@
 # <tab> to select one or multiple entries
 # <enter> to kill selected processes and go back to the process list.
 
-# TODO: use the header line from `ps -o` as the --header in fzf!
+# TODO: DRY this out once you properly learn shell scripting
 
-pid=$(ps -eo pcpu,pid,user,args -r | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --reverse --header='kill process(es): <tab> to toggle selection, <enter> to kill'" | awk '{print $2}')
+local kp_header=$(ps -eo pcpu,pid,user,args -r | sed 1q)
+local pid=$(ps -eo pcpu,pid,user,args -r | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --reverse --header='$kp_header'" | awk '{print $2}')
 
 if [ "x$pid" != "x" ]
 then
