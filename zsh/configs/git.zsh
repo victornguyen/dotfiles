@@ -4,7 +4,7 @@ g() {
   if [[ $# > 0 ]]; then
     git $@
   else
-    git status
+    git status -s
   fi
 }
 
