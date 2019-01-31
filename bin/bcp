@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# [B]rew [C]lean [P]lugins
+# Displays output of `brew leaves` into a multiselect fzf to uninstall.
+# <tab> to select one or multiple entries
+# <enter> to uninstall brew(s)
+# Stolen and tweaked from:
+# https://github.com/SidOfc/dotfiles/blob/d07fa3862ed065c2a5a7f1160ae98416bfe2e1ee/zsh/bcp
+
+local uninst=$(brew leaves | eval "fzf ${FZF_DEFAULT_OPTS} -m --reverse --header='brew uninstall'")
+
+if [[ $uninst ]]; then
+  for prog in $(echo $uninst)
+  do brew uninstall $prog
+  done
+fi
+

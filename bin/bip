@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# [B]rew [I]nstall [P]lugins
+# Displays output of `brew search` into a multiselect fzf to install.
+# <tab> to select one or multiple entries
+# <enter> to install brew(s)
+# Stolen and tweaked from:
+# https://github.com/SidOfc/dotfiles/blob/d07fa3862ed065c2a5a7f1160ae98416bfe2e1ee/zsh/bip
+
+local inst=$(brew search | eval "fzf ${FZF_DEFAULT_OPTS} -m --reverse --header='brew install'")
+
+if [[ $inst ]]; then
+  for prog in $(echo $inst)
+  do brew install $prog
+  done
+fi
+
