@@ -26,6 +26,7 @@ else
   e_header "Installing global node packages..."
   packages=(
     eslint
+    eslint-plugin-react
     fx
     grunt
     gulp
