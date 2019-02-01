@@ -1,5 +1,6 @@
 " ALE
 " Asynchronous Lint Engine
+" [l and ]l to navigate to previous and next lint warning/error
 
 Plug 'w0rp/ale'
 
