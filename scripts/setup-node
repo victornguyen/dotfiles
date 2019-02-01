@@ -27,7 +27,6 @@ else
   packages=(
     eslint
     eslint-plugin-react
-    fx
     grunt
     gulp
     http-server
