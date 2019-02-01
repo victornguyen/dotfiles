@@ -14,6 +14,7 @@ bindkey "^w" backward-kill-word
 bindkey "^u" backward-kill-line
 
 # Open current command in Vim
+# CTRL+x,CTRL+e
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
