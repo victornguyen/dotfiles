@@ -19,3 +19,6 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
 
+# Accept zsh-autosuggestion suggestion
+# CTRL+<Space>
+bindkey "^ " autosuggest-accept
