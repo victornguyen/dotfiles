@@ -9,7 +9,6 @@ zplug "lukechilds/zsh-nvm"
 zplug "chriskempson/base16-shell"
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-zplug "supercrabtree/k"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions", defer:2
 
