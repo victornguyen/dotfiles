@@ -1,31 +1,67 @@
 [user]
   name = Victor Nguyen
   email = vic.nguyen@gmail.com
+
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
+
 [credential]
   helper = osxkeychain
+
 [push]
   default = simple
+
 [alias]
+  # Adding
   a = add
   aa = add --all
   ap = add . -p
   an = add . -N
-  bselect = !git branch | grep -v '^*' | fzf-tmux --reverse | xargs git checkout
+
+  # Committing
   c = commit -v
   ca = commit --amend
-  copysha = !git rev-parse HEAD | pbcopy
-  d = diff
+  uncommit = reset --soft HEAD^
+
   pl = pull
   ps = push
-  uncommit = reset --soft HEAD^
+
+  # Branching
+  b = branch
+  bd = branch -d
+  co = checkout
+  cob = checkout -b
+
+  # Select brach from fzf
+  bs = !git branch | grep -v '^*' | fzf --reverse | xargs git checkout
+
+  # View abbreviated SHA, description, and history graph of the latest 20 commits
+  l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+  # Show diff via diff-so-fancy
+  d = diff
+
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+
+  # Copy current SHA to system clipboard
+  copysha = !git rev-parse HEAD | pbcopy
+
+  # Find out who is currently active on the repository
+  # Displays committers in descending order of number of commits
+  who = shortlog --numbered --summary --email --no-merges
+
+
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFX
   show = diff-so-fancy | less --tabs=4 -RFX
+
 [color]
   ui = true
+
 [color "diff"]
   meta = yellow
   frag = magenta bold
@@ -33,11 +69,13 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+
 [tig]
   ignore-case = "smart-case"
   main-view-date = "relative"
