@@ -66,6 +66,9 @@ brew 'python'
 # MySQL
 brew 'mysql'
 
+# CLI for Mac App Store
+brew 'mas'
+
 # Apps
 cask '1password'
 cask 'alfred'
