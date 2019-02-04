@@ -51,7 +51,7 @@ brew 'git'
 brew 'tig'
 
 # Node
-brew 'yarn', args: [ "without-node" ]
+brew 'yarn', args: ["ignore-dependencies"]
 
 # Ruby
 brew 'chruby'
