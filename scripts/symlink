@@ -19,7 +19,7 @@ e_header "Symlinking files..."
 mkdir -p ${HOME}/.vim
 
 link "zsh/zshrc" ".zshrc"
-link "zsh/zshenv" ".zshrenv"
+link "zsh/zshenv" ".zshenv"
 link "tmux/tmux.conf" ".tmux.conf"
 link "vim/vimrc" ".vimrc"
 link "vim/plugins" ".vim/plugins"
