@@ -91,6 +91,7 @@ cask 'licecap'
 cask 'marked'
 cask 'rocket'
 cask 'sketch'
+cask 'slack'
 cask 'spectacle'
 cask 'spotify'
 cask 'virtualbox'
@@ -107,6 +108,5 @@ mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Noizio', id: 928871589
 mas 'Pocket', id: 568494494
 mas 'Sip', id: 507257563
-mas 'Slack', id: 803453959
 mas 'Tweetbot', id: 557168941
 mas 'Xcode', id: 497799835
