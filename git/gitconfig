@@ -26,6 +26,7 @@
 
   pl = pull
   ps = push
+  sp = push
 
   # Branching
   b = branch
