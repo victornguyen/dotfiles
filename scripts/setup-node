@@ -25,6 +25,8 @@ else
   # Install global node packages
   e_header "Installing global node packages..."
   packages=(
+    alfred-emoj
+    emoj
     eslint
     eslint-plugin-react
     grunt
