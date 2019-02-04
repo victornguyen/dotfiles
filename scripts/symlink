@@ -28,6 +28,6 @@ link "git/gitconfig" ".gitconfig"
 link "git/gitignore" ".gitignore"
 link "ripgrep/ripgreprc" ".ripgreprc"
 link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
-link "spectacle/Shortcuts.json" "Library/Application Support/Spectacle"
+link "spectacle/Shortcuts.json" "Library/Application Support/Spectacle/Shortcuts.json"
 
 e_success "Symlinking complete!"
