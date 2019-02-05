@@ -30,3 +30,12 @@ nnoremap <leader>r :e!<CR>
 
 " Set `K` to open vim help to word under cursor
 set keywordprg=":help"
+
+" Copy relative path (src/foo.txt)
+nnoremap <leader>cf :let @+=expand("%")<CR>
+
+" Copy absolute path (/something/src/foo.txt)
+nnoremap <leader>cF :let @+=expand("%:p")<CR>
+
+" Copy filename (foo.txt)
+nnoremap <leader>ct :let @+=expand("%:t")<CR>
