@@ -21,8 +21,11 @@ nnoremap <leader>p :ProjectMru<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
 
-" Invoke ripgrep search
+" Enter ripgrep :Rg command for input
 " Don't use :Rg<CR> because that will pull up a fzf list of every indexed
 " line, effectively becoming a content _and_ filename search, which I
-" do not want...
+" do not want (most of the time)...
 nnoremap <leader>rg :Rg<Space>
+
+" Pass current word under cursor to :Rg and invoke
+nnoremap <silent> <leader>rf :Rg <C-R><C-W><CR>
