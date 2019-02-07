@@ -1,9 +1,87 @@
-snippet ir "import React"
-import React from 'react'
+snippet ir "React: import"
+import React${1:, { Component }} from 'react'
 $0
 endsnippet
 
-snippet irc "import React with { Component }"
-import React, { Component } from 'react'
+snippet is "React: import styled"
+import styled from 'react-emotion'
 $0
+endsnippet
+
+# React component (class)
+snippet rcc "React: Component (Class)"
+type $1Props = {
+}
+
+class ${1:ReactClassName} extends Component<$1Props> {
+  constructor(props) {
+    super(props)${2:
+    this.state = {
+      $3
+    }}
+  }
+
+  $0
+
+  render() {
+  }
+}
+
+export default $1
+endsnippet
+
+# React component (stateless)
+snippet rcs "React: Component (Stateless)"
+type $1Props = {
+}
+
+const ${1:ReactClassName} = (${2:props${3:: $1Props}}) => {
+  return (
+    $0
+  )
+}
+
+export default $1
+endsnippet
+
+snippet cdm "React: componentDidMount()"
+componentDidMount() {
+  $0
+}
+endsnippet
+
+snippet cwm "React: componentWillMount()"
+componentWillMount() {
+  $0
+}
+endsnippet
+
+snippet cwun "React: componentWillUnmount()"
+componentWillUnmount() {
+  $0
+}
+endsnippet
+
+snippet cdu "React: componentDidUpdate()"
+componentDidUpdate(${1:prevProps${2:, prevState}}) {
+  $0
+}
+endsnippet
+
+snippet cwu "React: componentWillUpdate()"
+componentWillUpdate() {
+  $0
+}
+endsnippet
+
+snippet cwrp "React: componentWillReceiveProps()"
+componentWillReceiveProps() {
+  $0
+}
+endsnippet
+
+snippet scu "React: shouldComponentUpdate()"
+shouldComponentUpdate(${1:nextProps${2:, nextState}}) {
+  $0
+}
 endsnippet
