@@ -21,7 +21,7 @@ nnoremap <leader>p :ProjectMru<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
 
-" Enter ripgrep :Rg command for input
+" Enter ripgrep command
 " Don't use :Rg<CR> because that will pull up a fzf list of every indexed
 " line, effectively becoming a content _and_ filename search, which I
 " do not want (most of the time)...
@@ -29,3 +29,7 @@ nnoremap <leader>rg :Rg<Space>
 
 " Pass current word under cursor to :Rg and invoke
 nnoremap <silent> <leader>rf :Rg <C-R><C-W><CR>
+
+" Make :Snippets search for snippet description
+" https://www.reddit.com/r/vim/comments/ajbs68/fzf_snippets_ultisnips_match_word_in_description/eewip71
+command! -bar -bang Snippets call fzf#vim#snippets({'options': '-n ..'}, <bang>0)
