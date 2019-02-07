@@ -28,4 +28,4 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/UltiSnips']
 nnoremap <leader>us :UltiSnipsEdit<CR>
 
 " Open snippet edit pane in split
-let g:UltiSnipsEditSplit = 'horizontal'
+let g:UltiSnipsEditSplit = 'vertical'
