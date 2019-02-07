@@ -1,6 +1,5 @@
 # Load nvm
 # https://github.com/creationix/nvm
-# TODO: script install steps in setup gist
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
