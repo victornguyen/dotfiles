@@ -20,6 +20,7 @@ nnoremap <leader>t :Files<CR>
 nnoremap <silent> <leader>p :ProjectMru<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
+nnoremap <leader>' :Buffers<CR>
 
 " Enter ripgrep command
 " Don't use :Rg<CR> because that will pull up a fzf list of every indexed
