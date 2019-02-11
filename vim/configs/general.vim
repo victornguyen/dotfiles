@@ -44,3 +44,6 @@ set backupdir=$HOME/.local/share/nvim/backup
 
 " Set :grep and :lgrep to use rg
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+
+" Set cursor depending on active mode
+:set guicursor=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
