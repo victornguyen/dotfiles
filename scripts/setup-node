@@ -32,6 +32,7 @@ else
     grunt
     gulp
     http-server
+    neovim
     prettier
   )
   npm i -g "${packages[@]}"

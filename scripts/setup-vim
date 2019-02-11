@@ -11,6 +11,17 @@ if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+e_header "Installing Python prodivers..."
+sudo pip2 install --upgrade pynvim
+sudo pip3 install --upgrade pynvim
+
+e_header "Installing Node provider..."
+npm i -g neovim
+
+# TODO: ensure ruby is properly installed by this point
+e_header "Installing Ruby provider..."
+gem install neovim
+
 e_header "Installing Neovim plugins..."
 nvim +PlugInstall +qall
 
