@@ -39,7 +39,7 @@ set lazyredraw
 au FocusGained,BufEnter * :silent! !
 
 " Keep backups and swap files in central location
-set directory=$HOME/.local/share/nvim/swap
+set directory=$HOME/.local/share/nvim/swap//
 set backupdir=$HOME/.local/share/nvim/backup
 
 " Set :grep and :lgrep to use rg
