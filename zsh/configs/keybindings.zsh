@@ -13,7 +13,7 @@ bindkey "^y" accept-and-hold
 bindkey "^w" backward-kill-word
 bindkey "^u" backward-kill-line
 
-# Open current command in Vim
+# Open current command in editor
 # CTRL+x,CTRL+e
 autoload -z edit-command-line
 zle -N edit-command-line

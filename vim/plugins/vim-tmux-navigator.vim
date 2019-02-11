@@ -6,8 +6,8 @@ Plug 'christoomey/vim-tmux-navigator'
 let g:tmux_navigator_no_mappings = 1
 
 " Map <alt+hjklp> for split/pane navigation
-nnoremap <silent> <Esc>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <Esc>j :TmuxNavigateDown<cr>
-nnoremap <silent> <Esc>k :TmuxNavigateUp<cr>
-nnoremap <silent> <Esc>l :TmuxNavigateRight<cr>
-nnoremap <silent> <Esc>p :TmuxNavigatePrevious<cr>
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <M-p> :TmuxNavigatePrevious<cr>

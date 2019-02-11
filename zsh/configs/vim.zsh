@@ -1,12 +1,12 @@
-# Easily open vim to current directory
-# No arguments: `vim .`
-# With arguments: acts like `vim`
+# Easily open neovim to current directory
+# No arguments: `nvim .`
+# With arguments: acts like `nvim`
 v() {
   if [[ $# > 0 ]]; then
-    vim $@
+    nvim $@
   else
-    vim .
+    nvim .
   fi
 }
 
-compdef v=vim
+compdef v=nvim

@@ -16,14 +16,14 @@ link() {
 
 e_header "Symlinking files..."
 
-mkdir -p ${HOME}/.vim
+mkdir -p ${HOME}/.config/nvim
 
 link "zsh/zshrc" ".zshrc"
 link "zsh/zshenv" ".zshenv"
 link "tmux/tmux.conf" ".tmux.conf"
-link "vim/vimrc" ".vimrc"
-link "vim/plugins" ".vim/plugins"
-link "vim/configs" ".vim/configs"
+link "vim/vimrc" ".config/init.vim"
+link "vim/plugins" ".config/nvim/plugins"
+link "vim/configs" ".config/nvim/configs"
 link "git/gitconfig" ".gitconfig"
 link "git/gitignore" ".gitignore"
 link "ripgrep/ripgreprc" ".ripgreprc"

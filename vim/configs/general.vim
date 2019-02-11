@@ -33,15 +33,14 @@ set backspace=indent,eol,start
 
 " Improve vim's scrolling speed
 set ttyfast
-set ttyscroll=3
 set lazyredraw
 
 " Trigger autoread when changing buffers or coming back to vim.
 au FocusGained,BufEnter * :silent! !
 
 " Keep backups and swap files in central location
-set directory=$HOME/.vim/swap
-set backupdir=$HOME/.vim/backup
+set directory=$HOME/.local/share/nvim/swap
+set backupdir=$HOME/.local/share/nvim/backup
 
 " Set :grep and :lgrep to use rg
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case

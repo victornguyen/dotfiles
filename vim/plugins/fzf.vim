@@ -17,7 +17,7 @@ let g:fzf_filemru_colors = {}
 
 nnoremap <leader><tab> :Files<CR>
 nnoremap <leader>t :Files<CR>
-nnoremap <leader>p :ProjectMru<CR>
+nnoremap <silent> <leader>p :ProjectMru<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
 
@@ -33,3 +33,9 @@ nnoremap <silent> <leader>rf :Rg <C-R><C-W><CR>
 " Make :Snippets search for snippet description
 " https://www.reddit.com/r/vim/comments/ajbs68/fzf_snippets_ultisnips_match_word_in_description/eewip71
 command! -bar -bang Snippets call fzf#vim#snippets({'options': '-n ..'}, <bang>0)
+
+" Hide statusline and line numbers when fzf is invoked in terminal buffer
+" https://github.com/junegunn/fzf/blob/master/README-VIM.md#hide-statusline
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler nonumber norelativenumber
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler number relativenumber
