@@ -15,12 +15,12 @@ Plug 'tweekmonster/fzf-filemru'
 " Disable colours because they don't work for me for some reason
 let g:fzf_filemru_colors = {}
 
-nnoremap <leader><tab> :Files<CR>
-nnoremap <leader>t :Files<CR>
+nnoremap <leader>f :Files<CR>
 nnoremap <silent> <leader>p :ProjectMru<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
-nnoremap <leader>' :Buffers<CR>
+nnoremap <leader>a :Buffers<CR>
+nnoremap <leader>l :BLines<CR>
 
 " Enter ripgrep command
 " Don't use :Rg<CR> because that will pull up a fzf list of every indexed

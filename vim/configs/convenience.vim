@@ -22,9 +22,7 @@ nnoremap <leader>vv :e $MYVIMRC<CR>
 nnoremap <leader>vs :w<CR>:source $MYVIMRC<CR>
 nnoremap <leader>vr :source $MYVIMRC<CR>
 
-" Buffers (navigation, delete, reload)
-nnoremap <leader>h :bp<CR>
-nnoremap <leader>l :bn<CR>
+" Buffers (delete, reload)
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>r :e!<CR>
 
