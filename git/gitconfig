@@ -31,6 +31,7 @@
   # Branching
   b = branch
   bd = branch -d
+  bm = branch -m
   co = checkout
   cob = checkout -b
 
@@ -50,6 +51,12 @@
 
   # Copy current SHA to system clipboard
   copysha = !git rev-parse HEAD | pbcopy
+
+  # Stashing
+  st = stash
+  sts = stash save
+  stp = stash pop
+  stl = stash list
 
   # Find out who is currently active on the repository
   # Displays committers in descending order of number of commits
