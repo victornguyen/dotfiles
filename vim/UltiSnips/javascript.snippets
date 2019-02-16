@@ -5,3 +5,16 @@ endsnippet
 snippet flow "// @flow annotation"
 // @flow
 endsnippet
+
+# const = arrow fn
+snippet c> "const = arrow fn"
+const ${1:fn_name} = (${2:arg}) => {
+  $0
+}
+endsnippet
+
+snippet met "class method"
+${1:methodName}($2) {
+  $0
+}
+endsnippet
