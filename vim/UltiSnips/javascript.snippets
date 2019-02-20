@@ -6,8 +6,15 @@ snippet flow "// @flow annotation"
 // @flow
 endsnippet
 
+# arrow fn
+snippet afn "const = arrow fn"
+${1:fn_name} = (${2:arg}) => {
+  $0
+}
+endsnippet
+
 # const = arrow fn
-snippet c> "const = arrow fn"
+snippet cafn "const = arrow fn"
 const ${1:fn_name} = (${2:arg}) => {
   $0
 }
@@ -17,4 +24,8 @@ snippet met "class method"
 ${1:methodName}($2) {
   $0
 }
+endsnippet
+
+snippet todo "TODO"
+// TODO: $0
 endsnippet
