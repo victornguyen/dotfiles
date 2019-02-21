@@ -10,17 +10,16 @@
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 
 Plug 'junegunn/fzf.vim'
-Plug 'tweekmonster/fzf-filemru'
 
 " Disable colours because they don't work for me for some reason
 let g:fzf_filemru_colors = {}
 
 nnoremap <leader>f :Files<CR>
-nnoremap <silent> <leader>p :ProjectMru<CR>
+nnoremap <leader>p :Buffers<CR>
+nnoremap <leader>l :BLines<CR>
+nnoremap <leader>a :Lines<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
-nnoremap <leader>a :Buffers<CR>
-nnoremap <leader>l :BLines<CR>
 
 " Enter ripgrep command
 " Don't use :Rg<CR> because that will pull up a fzf list of every indexed
