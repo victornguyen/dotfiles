@@ -54,6 +54,7 @@
 
   # Stashing
   st = stash
+  stk = stash -k
   sts = stash save
   stp = stash pop
   stl = stash list
