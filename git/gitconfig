@@ -1,3 +1,5 @@
+# vim:ft=gitconfig
+
 [user]
   name = Victor Nguyen
   email = vic.nguyen@gmail.com
