@@ -29,3 +29,15 @@ endsnippet
 snippet todo "TODO"
 // TODO: $0
 endsnippet
+
+snippet desc "describe() test block"
+describe('${1:test group to describe}', () => {
+  $0
+})
+endsnippet
+
+snippet it "it() test block"
+it('${1:should do something}', () => {
+  $0
+})
+endsnippet
