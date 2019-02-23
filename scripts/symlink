@@ -16,7 +16,8 @@ link() {
 
 e_header "Symlinking files..."
 
-mkdir -p ${HOME}/.config/nvim
+# Create dest dirs in case they don't exist
+mkdir -p ${HOME}/.config/{nvim,kitty}
 
 link "zsh/zshrc" ".zshrc"
 link "zsh/zshenv" ".zshenv"
@@ -29,5 +30,7 @@ link "git/gitignore" ".gitignore"
 link "ripgrep/ripgreprc" ".ripgreprc"
 link "karabiner/karabiner.json" ".config/karabiner/karabiner.json"
 link "spectacle/Shortcuts.json" "Library/Application Support/Spectacle/Shortcuts.json"
+link "kitty/kitty.conf" ".config/kitty/kitty.conf"
+link "kitty/macos-launch-services-cmdline" ".config/kitty/macos-launch-services-cmdline"
 
 e_success "Symlinking complete!"
