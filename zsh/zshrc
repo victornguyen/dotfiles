@@ -2,9 +2,6 @@
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# Lazy load nvm to speed up shell startup time
-export NVM_LAZY_LOAD=true
-
 zplug "lukechilds/zsh-nvm"
 zplug "chriskempson/base16-shell"
 zplug "mafredri/zsh-async", from:github
