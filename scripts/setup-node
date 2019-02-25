@@ -26,6 +26,7 @@ else
   e_header "Installing global node packages..."
   packages=(
     alfred-emoj
+    asciicast2gif
     emoj
     eslint
     eslint-plugin-react
