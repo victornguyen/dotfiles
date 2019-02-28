@@ -22,9 +22,8 @@ nnoremap <leader>vv :e $MYVIMRC<CR>
 nnoremap <leader>vs :w<CR>:source $MYVIMRC<CR>
 nnoremap <leader>vr :source $MYVIMRC<CR>
 
-" Buffers (delete, reload)
+" Delete buffer
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>r :e!<CR>
 
 " Set `K` to open vim help to word under cursor
 set keywordprg=":help"
