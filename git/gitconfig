@@ -23,7 +23,7 @@
 
   # Committing
   c = commit -v
-  ca = commit --amend
+  amend = commit --amend
   uncommit = reset --soft HEAD^
 
   pl = pull
