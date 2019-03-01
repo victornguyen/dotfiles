@@ -13,6 +13,12 @@ nnoremap <tab> :b#<CR>
 " Select pasted text
 nnoremap gp `[v`]
 
+" Go to start/end of line
+nnoremap <C-h> ^
+vnoremap <C-h> ^
+nnoremap <C-l> $
+vnoremap <C-l> $
+
 " Save and quit
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :q<CR>
