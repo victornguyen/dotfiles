@@ -21,11 +21,11 @@ nnoremap <leader>a :Lines<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
 
-" Enter ripgrep command
-" Don't use :Rg<CR> because that will pull up a fzf list of every indexed
-" line, effectively becoming a content _and_ filename search, which I
-" do not want (most of the time)...
-nnoremap <leader>rg :Rg<Space>
+" Enter ripgrep :Rg command
+nnoremap <leader>rt :Rg<Space>
+
+" :Rg all lines in pwd
+nnoremap <leader>rg :Rg<CR>
 
 " Pass current word under cursor to :Rg and invoke
 nnoremap <silent> <leader>rf :Rg <C-R><C-W><CR>
