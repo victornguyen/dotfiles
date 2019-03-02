@@ -24,6 +24,7 @@
   # Committing
   c = commit -v
   amend = commit --amend
+  undo = reset --soft HEAD^
   uncommit = reset --soft HEAD^
 
   pl = pull
