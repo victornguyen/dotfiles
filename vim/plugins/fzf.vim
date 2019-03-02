@@ -39,3 +39,6 @@ command! -bar -bang Snippets call fzf#vim#snippets({'options': '-n ..'}, <bang>0
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler nonumber norelativenumber
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler number relativenumber
+
+" Customise :[B]Commits git log options
+let g:fzf_commits_log_options = '--color=always --format="%C(auto)%h%d %s %C(blue)%cr %C(black)- %an"'
