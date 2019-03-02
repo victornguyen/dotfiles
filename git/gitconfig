@@ -42,7 +42,7 @@
   bs = !gb | xargs git checkout
 
   # Select branch(es) to delete with fzf
-  delete = !git branch --merged | grep -v '^*' | fzf -m --reverse --header 'Delete branches: <tab> to select, <enter> to delete' | xargs git branch -d
+  delete = !gb | xargs git branch -d
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit

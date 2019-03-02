@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+# [g]it [b]ranch [m]erged
+# Displays all branches that have been merged into the current branch.
+# Selected branches are output into terminal.
+# Available here as a custom binary so we can alias and pipe its output from gitconfig.
+# Stolen and tweaked from:
+# https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236
+
+# fzf settings
+_fzf-down() {
+  fzf --height 50% "$@" --border
+}
+
+# Return if not a git repo
+git rev-parse HEAD > /dev/null 2>&1 || return
+
+# Do the thing!
+git branch --merged | grep -v '^*' | sort |
+_fzf-down --ansi --multi --tac --preview-window right:70% \
+--header 'Select merged branches to delete' \
+--preview 'git log --oneline --graph --date=short --color=always --pretty="format:%C(yellow)%cr%C(auto)%d %s %C(240)%an" $(sed s/^..// <<< {} | cut -d" " -f1) | head -'$LINES |
+sed 's/^..//' | cut -d' ' -f1 |
+sed 's#^remotes/##'
