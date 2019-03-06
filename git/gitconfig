@@ -45,7 +45,7 @@
   delete = !gb | xargs git branch -d
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
-  l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  l = log -n 20 --graph --abbrev-commit --pretty='format:%C(auto)%h%d %s %C(240)- %cr (%an)'
 
   # Show diff via diff-so-fancy
   d = diff
