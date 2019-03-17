@@ -10,4 +10,4 @@ nnoremap <leader>gd :Gdiff<cr>
 
 " fzf-vim commands
 nnoremap <leader>gs :GFiles?<cr>
-nnoremap <leader>gl :BCommits<cr>
+nnoremap <leader>gl :BCommits!<cr>
