@@ -19,18 +19,14 @@
   a = add
   aa = add --all
   ap = add . -p
+  af = add -p
   an = add . -N
 
   # Committing
   c = commit -v
   amend = commit --amend
   undo = reset --soft HEAD^
-  uncommit = reset --soft HEAD^
-
-  pl = pull
-  ps = push
-  sp = push
-  force = push --force-with-lease
+  uncommit = !git undo
 
   # Branching
   b = branch
@@ -39,11 +35,31 @@
   co = checkout
   cob = checkout -b
 
-  # Select branch from fzf
+  # Switch to branch with fzf
   bs = !gb | xargs git checkout
 
-  # Select branch(es) to delete with fzf
-  delete = !gb | xargs git branch -d
+  # Delete branch(es) with fzf
+  bdelete = !gb | xargs git branch -d
+
+  # Get current branch name
+  branch-name = !git rev-parse --abbrev-ref HEAD
+
+  # Pushing and pulling
+  pl = pull
+  ps = push
+  sp = push
+  force = push --force-with-lease
+  publish = !git push -u origin $(git branch-name)
+
+  # Hard reset to remote version of branch
+  reset-to-remote = !git fetch && git reset --hard origin/$(git branch-name)
+
+  # Stashing
+  st = stash
+  stk = stash -k
+  sts = stash save
+  stp = stash pop
+  stl = stash list
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log -n 20 --graph --abbrev-commit --pretty='format:%C(auto)%h%d %s %C(240)- %cr (%an)'
@@ -59,17 +75,9 @@
   # Copy current SHA to system clipboard
   copysha = !git rev-parse HEAD | pbcopy
 
-  # Stashing
-  st = stash
-  stk = stash -k
-  sts = stash save
-  stp = stash pop
-  stl = stash list
-
   # Find out who is currently active on the repository
   # Displays committers in descending order of number of commits
   who = shortlog --numbered --summary --email --no-merges
-
 
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFX
