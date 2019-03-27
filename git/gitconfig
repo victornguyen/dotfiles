@@ -59,7 +59,8 @@
   stk = stash -k
   sts = stash save
   stp = stash pop
-  stl = stash list
+  stl = stash list --stat --pretty='format:%C(5)%gD %C(auto)%s%n%C(11) %cr'
+  st-show = stash show -p
 
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log -n 20 --graph --abbrev-commit --pretty='format:%C(auto)%h%d %s %C(240)- %cr (%an)'
