@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# [g]it [f]iles
+# Displays all files from git status. Selected files are output into terminal.
+# Available here as a custom binary so we can alias and pipe its output from
+# gitconfig to perform different actions.
+# Stolen and tweaked from:
+# https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236
+
+# fzf settings
+_fzf-down() {
+  fzf --height 50% "$@" --border
+}
+
+# Return if not a git repo
+git rev-parse HEAD > /dev/null 2>&1 || return
+
+# Do the thing!
+git -c color.status=always status --short |
+_fzf-down -m --ansi --nth 2..,.. \
+  --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' |
+cut -c4- | sed 's/.* -> //'
