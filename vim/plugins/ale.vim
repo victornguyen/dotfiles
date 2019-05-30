@@ -7,6 +7,10 @@
 
 Plug 'w0rp/ale'
 
+" Replace arg navigation with ale navigation
+nmap <silent> [a <Plug>(ale_previous_wrap)
+nmap <silent> ]a <Plug>(ale_next_wrap)
+
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
