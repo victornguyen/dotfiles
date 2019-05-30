@@ -15,6 +15,6 @@ let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
 \}
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
+\   'javascript': ['eslint'],
 \   'css': ['prettier'],
 \}
