@@ -2,7 +2,6 @@
 " Asynchronous Lint Engine
 " [l and ]l to navigate to previous and next lint warning/error
 " TODO: bind :ALEFix to something convenient
-" TODO: decide if eslint should be "fixer"
 " TODO: decide if you want to use g: here or b: in ftplugins
 
 Plug 'w0rp/ale'
