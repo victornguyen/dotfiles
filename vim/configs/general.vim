@@ -20,6 +20,9 @@ set noshowmode      " hide --MODE-- in command bar
 set number
 set relativenumber
 
+" Always show signcolumns
+set signcolumn=yes
+
 " Display extra whitespace chars
 set list listchars=tab:»·,trail:·,nbsp:·
 
