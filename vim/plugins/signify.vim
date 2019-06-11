@@ -10,4 +10,5 @@ let g:signify_vcs_list = ['git']
 " Set changed symbol
 let g:signify_sign_change = '~'
 
-" TODO: set g:signify_realtime to enable checks on BufEnter?
+" Be more aggressive in keeping the signs up-to-date
+let g:signify_realtime = 1
