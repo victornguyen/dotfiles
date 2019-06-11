@@ -10,6 +10,9 @@
 
 Plug 'SirVer/ultisnips'
 
+" Re-map snippet expansion key to reserve <tab> for coc
+let g:UltiSnipsExpandTrigger="<C-space>"
+
 " Add UltiSnips to runtimepath
 set runtimepath+=${HOME}/.local/share/nvim/plugged/ultisnips
 
