@@ -27,6 +27,8 @@ let g:lightline = {
     \       [ 'lineinfo' ],
     \       [  ],
     \       [ 'filetype' ],
+    \       [  ],
+    \       [ 'cocstatus' ],
     \     ],
     \   },
     \   'inactive': {
@@ -44,5 +46,6 @@ let g:lightline = {
     \   'component_function': {
     \     'branch': 'fugitive#head',
     \     'filename': 'LightlineFilename',
+    \     'cocstatus': 'coc#status',
     \   },
     \ }

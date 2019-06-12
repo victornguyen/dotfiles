@@ -15,10 +15,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Make <cr> select the first completion item and confirm the completion when
-" no item has been selected:
-" TODO: make this work, see help for coc#_select_confirm command
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<cr>"
-
 " Close the preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Jump to definition
+nmap <silent> gd <Plug>(coc-definition)
