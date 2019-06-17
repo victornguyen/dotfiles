@@ -1,10 +1,14 @@
 " Emmet
 " Expand abbreviations
-" <C-y>, to expand
-" TODO: change leader key to <tab>? See if that conflicts with new
-" autocomplete solution.
+" <C-e> to expand in insert mode
 
 Plug 'mattn/emmet-vim'
+
+" Enable emmet only in insert mode
+let g:user_emmet_mode='i'
+
+" Bind insert mode key for emmet expansion
+imap <C-e> <plug>(emmet-expand-abbr)
 
 " Thread about jsx expansion in js files:
 " https://github.com/mattn/emmet-vim/issues/350
