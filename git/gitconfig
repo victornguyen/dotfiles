@@ -34,6 +34,7 @@
   bm = branch -m
   co = checkout
   cob = checkout -b
+  cb = cob
 
   # Switch to branch with fzf
   bs = !gb | xargs git checkout
