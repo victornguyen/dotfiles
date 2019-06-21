@@ -38,5 +38,14 @@ else
   )
   npm i -g "${packages[@]}"
 
+  # (Re)install Neovim plugins
+  # Make it install coc.nvim now that node is available
+  e_header "Installing Neovim plugins..."
+  nvim +PlugInstall +qall
+
+  # Install coc.nvim extensions
+  e_header "Installing coc.nvim extensions"
+  nvim +"CocInstall -sync coc-tsserver coc-json coc-css" +qall
+
   e_success "Node setup complete!"
 fi

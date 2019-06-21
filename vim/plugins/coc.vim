@@ -1,7 +1,9 @@
 " Conquer of Completion
 " https://github.com/neoclide/coc.nvim
 
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+if executable("node")
+  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <Tab>
