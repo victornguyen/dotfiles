@@ -20,7 +20,8 @@ endfunction
 " Close the preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Jump to definition
+" Binds
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD <Plug>(coc-declaration)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>R <Plug>(coc-rename)
