@@ -45,7 +45,7 @@ else
 
   # Install coc.nvim extensions
   e_header "Installing coc.nvim extensions"
-  nvim +"CocInstall -sync coc-tsserver coc-json coc-css" +qall
+  nvim +"CocInstall -sync coc-tsserver coc-json coc-css coc-emoji" +qall
 
   e_success "Node setup complete!"
 fi
