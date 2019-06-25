@@ -24,4 +24,6 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD <Plug>(coc-declaration)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <leader>R <Plug>(coc-rename)
