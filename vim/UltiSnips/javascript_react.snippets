@@ -20,6 +20,9 @@ endsnippet
 
 # React component (class)
 snippet rcc "React: Component (Class)"
+import React from 'react'
+import PropTypes from 'prop-types'
+
 type $1Props = {
 }
 
@@ -42,6 +45,9 @@ endsnippet
 
 # React component (stateless)
 snippet rcs "React: Component (Stateless)"
+import React from 'react'
+import PropTypes from 'prop-types'
+
 type $1Props = {
 }
 
@@ -49,6 +55,9 @@ const ${1:ReactClassName} = (${2:props${3:: $1Props}}) => {
   return (
     $0
   )
+}
+
+$1.propTypes = {
 }
 
 export default $1
