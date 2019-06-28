@@ -9,6 +9,3 @@ let g:signify_vcs_list = ['git']
 
 " Set changed symbol
 let g:signify_sign_change = '~'
-
-" Be more aggressive in keeping the signs up-to-date
-let g:signify_realtime = 1
