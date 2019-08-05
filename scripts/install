@@ -4,6 +4,7 @@ dotfiles_scripts="${HOME}/.dotfiles/scripts"
 source "${dotfiles_scripts}/lib/utils"
 
 ${dotfiles_scripts}/homebrew
+${dotfiles_scripts}/setup-macos
 ${dotfiles_scripts}/symlink
 ${dotfiles_scripts}/setup-vim
 ${dotfiles_scripts}/setup-zsh
