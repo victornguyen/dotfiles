@@ -2,7 +2,7 @@
 " https://github.com/neoclide/coc.nvim
 
 if executable("node")
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
