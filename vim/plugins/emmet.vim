@@ -13,6 +13,9 @@ imap <C-e> <plug>(emmet-expand-abbr)
 " Thread about jsx expansion in js files:
 " https://github.com/mattn/emmet-vim/issues/350
 let g:user_emmet_settings = {
+  \  'typescript' : {
+  \      'extends' : 'jsx',
+  \  },
   \  'javascript' : {
   \      'extends' : 'jsx',
   \  },
