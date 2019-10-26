@@ -16,8 +16,8 @@ nnoremap gp `[v`]
 " Go to start/end of line
 nnoremap <C-h> ^
 vnoremap <C-h> ^
-nnoremap <C-l> $
-vnoremap <C-l> $
+nnoremap <C-l> g_
+vnoremap <C-l> g_
 
 " Save and quit
 nnoremap <leader>s :w<CR>
