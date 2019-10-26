@@ -3,9 +3,11 @@
 
 Plug 'scrooloose/nerdtree'
 
-nnoremap <leader>F :NERDTreeFind<CR>
-let NERDTreeQuitOnOpen=1
+nnoremap <silent> <leader>F :NERDTreeFind<CR> <C-w>=
+nnoremap <silent> <leader>n :NERDTreeToggle<CR> <C-w>=
+
+let NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 let NERDTreeCaseSensitiveSort=1
-let NERDTreeWinSize=40
+let NERDTreeWinSize=36
 let NERDTreeIgnore=['\.DS_Store$', '\~$', '\.sw[poq]$', '.git']
