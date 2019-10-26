@@ -4,6 +4,9 @@
 " Quick escaping
 inoremap jk <Esc>
 
+" Fast access to command-line
+nnoremap ; :
+
 " Disable Ex mode because I don't know what it is yet
 nnoremap Q <Nop>
 
