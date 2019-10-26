@@ -11,3 +11,12 @@ let NERDTreeShowHidden=1
 let NERDTreeCaseSensitiveSort=1
 let NERDTreeWinSize=36
 let NERDTreeIgnore=['\.DS_Store$', '\~$', '\.sw[poq]$', '.git']
+
+" Refresh tree when entering NERDTree window
+function! NERDTreeRefresh()
+  if &filetype == "nerdtree"
+    silent exe substitute(mapcheck("R"), "<CR>", "", "")
+  endif
+endfunction
+
+autocmd BufEnter * call NERDTreeRefresh()
