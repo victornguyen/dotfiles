@@ -34,3 +34,6 @@ defaults write NSGlobalDomain AppleLanguages -array "en"
 defaults write NSGlobalDomain AppleLocale -string "en_AU@currency=AUD"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
+
+# Disable mouse acceleration
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
