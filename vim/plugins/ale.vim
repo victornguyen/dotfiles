@@ -22,9 +22,10 @@ let g:ale_sign_style_warning = ''
 
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
-\   'typescript': ['tslint'],
+\   'typescript': ['eslint'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'css': ['prettier'],
+\   'typescript': ['prettier', 'eslint'],
 \}
