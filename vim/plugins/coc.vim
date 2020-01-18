@@ -1,5 +1,8 @@
 " Conquer of Completion
 " https://github.com/neoclide/coc.nvim
+" :CocInstall coc-tsserver coc-json coc-css
+" TODO: automate this somehow
+" TODO: try this: https://github.com/neoclide/coc.nvim/issues/118
 
 if executable("node")
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
