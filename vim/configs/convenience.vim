@@ -16,6 +16,9 @@ nnoremap <tab> :b#<CR>
 " Select pasted text
 nnoremap gp `[v`]
 
+" Paste from system clipboard
+nnoremap gP "+p
+
 " Go to start/end of line
 nnoremap <C-h> ^
 vnoremap <C-h> ^
