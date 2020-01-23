@@ -4,7 +4,7 @@
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
+Plug 'peitalin/vim-jsx-typescript'
 
 " vim-javascript
 let g:javascript_plugin_flow = 1
