@@ -1,8 +1,8 @@
 # Enable vi-mode
 bindkey -v
 
-# Kill the lag
-export KEYTIMEOUT=1
+# Minimise the lag
+export KEYTIMEOUT=20
 
 # Tweak prompt appearance in vi-mode
 export PURE_PROMPT_VICMD_SYMBOL='%F{yellow}❮%f'
