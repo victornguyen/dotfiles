@@ -25,6 +25,9 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Binds
 nmap <silent> gd <Plug>(coc-definition)
+" TODO: want to bind gs here, but it's bound to vim-sort-motion... figure out
+" if we need it?
+nmap <silent> ge :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gD <Plug>(coc-declaration)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gi <Plug>(coc-implementation)
