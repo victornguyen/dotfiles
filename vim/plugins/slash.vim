@@ -3,4 +3,5 @@
 " - Automatically clears search highlight when cursor is moved
 " - Highlighting without moving
 
-Plug 'junegunn/vim-slash'
+" TODO: disable this for now as it rebinds the coc-definition gd bind
+" Plug 'junegunn/vim-slash'
