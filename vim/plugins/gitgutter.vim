@@ -10,7 +10,7 @@ nmap [c <Plug>(GitGutterPrevHunk)
 nmap ]c <Plug>(GitGutterNextHunk)
 
 " Load hunks in quickfix list
-nmap <leader>hq :GitGutterQuickFix<CR>
+nmap <leader>hq :GitGutterQuickFix<CR>:copen<CR>
 
 " Update gutter on save
 autocmd BufWritePost * GitGutter
