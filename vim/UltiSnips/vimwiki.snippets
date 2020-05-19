@@ -1,9 +1,27 @@
 # Big title
-snippet = ""
+snippet = "Vimwiki title"
 === $0 ===
 endsnippet
 
 # Todo list item
-snippet - "todo list item"
+snippet - "Checkbox"
 - [ ] $0
 endsnippet
+
+snippet ds "Diary template" w
+# ${1:Title}
+
+${2:One-liner.}
+
+# `date +%A`, `date +%d/%m/%y`
+
+## Goals
+- [ ] $0
+
+## Log
+- [ ]
+
+## Notes for tomorrow
+
+endsnippet
+
