@@ -8,6 +8,10 @@ au FileType vimwiki set textwidth=80
 " Disable <tab> in insert mode so UltiSnips works in vimwiki
 let g:vimwiki_table_mappings = 0
 
+" Prevent vimwiki will only set set the filetype of markdown files in a wiki
+" directory, not globally.
+let g:vimwiki_global_ext = 0
+
 " Main wiki
 let wiki = {}
 let wiki.path = '$HOME/Dropbox/vimwiki'
