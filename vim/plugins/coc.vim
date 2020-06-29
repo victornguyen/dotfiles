@@ -28,15 +28,27 @@ endfunction
 " Close the preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Binds
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Code navigation
 nmap <silent> gd <Plug>(coc-definition)
-" TODO: want to bind gs here, but it's bound to vim-sort-motion... figure out
-" if we need it?
-nmap <silent> ge :call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <silent> gD <Plug>(coc-declaration)
+nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gt <Plug>(coc-type-definition)
-nmap <leader>R <Plug>(coc-rename)
+nmap <silent> gy <Plug>(coc-type-definition)
+
+" Navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gl :CocDiagnostics<CR>
+
+" Rename
+nmap <leader>rn <Plug>(coc-rename)
