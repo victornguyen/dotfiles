@@ -61,6 +61,9 @@ brew 'tig'
 # Node
 brew 'yarn', args: ["ignore-dependencies"]
 
+# Go
+brew 'go'
+
 # Ruby
 brew 'chruby'
 brew 'ruby-install'
@@ -80,8 +83,6 @@ cask '1password'
 cask 'aerial'
 cask 'alfred'
 cask 'anki'
-cask 'atom'
-cask 'bartender'
 cask 'charles'
 cask 'dash'
 cask 'dropbox'
@@ -96,6 +97,7 @@ cask 'keepingyouawake'
 cask 'kitty'
 cask 'licecap'
 cask 'marked'
+cask 'notion'
 cask 'postman'
 cask 'quicklook-json'
 cask 'rectangle'
@@ -103,6 +105,7 @@ cask 'rocket'
 cask 'sketch'
 cask 'slack'
 cask 'spotify'
+cask 'vanilla'
 cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
@@ -112,10 +115,12 @@ cask 'font-fira-code'
 
 # Mac App Store Apps
 mas 'DaisyDisk', id: 411643860
+mas 'Day One', id: 1055511498
+mas 'GIF Keyboard', id: 1043270657
+mas 'Gifski', id: 1351639930
 mas 'Icon Slate', id: 439697913
-mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Noizio', id: 928871589
-mas 'Pocket', id: 568494494
 mas 'Sip', id: 507257563
-mas 'Tweetbot', id: 1384080005
+mas 'Twitter', id: 1482454543
+mas 'WhatsApp', id: 1147396723
 mas 'Xcode', id: 497799835
