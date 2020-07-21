@@ -51,4 +51,5 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gl :CocDiagnostics<CR>
 
 " Rename
+nmap <leader>R <Plug>(coc-rename)
 nmap <leader>rn <Plug>(coc-rename)
