@@ -9,7 +9,7 @@
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod"],
+      "rootPatterns": ["go.mod", ".vim", ".git/"],
       "disableWorkspaceFolders": true,
       "filetypes": ["go"]
     }
