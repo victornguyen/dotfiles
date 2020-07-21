@@ -53,8 +53,9 @@ brew 'reattach-to-user-namespace'
 brew 'tmux'
 
 # Git
-brew 'diff-so-fancy'
 brew 'git'
+# TODO: learn how to tweak colours so they're less ugly
+brew 'git-delta'
 brew 'tig'
 
 # Node

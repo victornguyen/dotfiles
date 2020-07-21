@@ -85,8 +85,11 @@
   who = shortlog --numbered --summary --email --no-merges
 
 [pager]
-  diff = diff-so-fancy | less --tabs=4 -RFX
-  show = diff-so-fancy | less --tabs=4 -RFX
+  diff = delta --theme='base16'
+  show = delta --theme='base16'
+
+[interactive]
+  diffFilter = delta --color-only --theme='base16'
 
 [color]
   ui = true
