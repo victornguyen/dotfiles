@@ -28,7 +28,7 @@ let dev.path = '$HOME/Dropbox/vimwiki/dev'
 let dev.path_html = '$HOME/Dropbox/vimwiki/dev/_html'
 let dev.syntax = 'markdown'
 let dev.ext = '.md'
-let dev.nested_syntaxes = {'js': 'javascript', 'go': 'go'}
+let dev.nested_syntaxes = {'js': 'javascript', 'go': 'go', 'sh': 'sh'}
 
 " Work/Factor5
 let factor5 = {}
