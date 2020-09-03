@@ -8,5 +8,3 @@ v() {
     nvim .
   fi
 }
-
-compdef v=nvim

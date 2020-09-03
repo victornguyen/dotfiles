@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-source $ZPLUG_HOME/init.zsh
+# TODO: replace with zinit installation
+# source $ZPLUG_HOME/init.zsh
 source "${HOME}/.dotfiles/scripts/lib/utils"
 
 # Exit if Homebrew isn't installed yet
@@ -27,7 +28,8 @@ e_header "Changing default shell to zsh..."
 chsh -s /usr/local/bin/zsh
 
 # Install zsh plugins
-e_header "Installing zsh plugins..."
-zplug install
+# TODO: replace with zinit plugin installation
+# e_header "Installing zsh plugins..."
+# zplug install
 
 e_success "zsh setup complete!"

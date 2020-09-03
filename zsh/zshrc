@@ -1,19 +1,44 @@
-# Assumes zplug is installed with homebrew
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-zplug "lukechilds/zsh-nvm"
-zplug "chriskempson/base16-shell"
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-zplug "laurenkt/zsh-vimto"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-completions", defer:2
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-zplug load
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+  zinit-zsh/z-a-rust \
+  zinit-zsh/z-a-as-monitor \
+  zinit-zsh/z-a-patch-dl \
+  zinit-zsh/z-a-bin-gem-node
 
-# Source all zsh config files
+### End of Zinit's installer chunk
+
+### Install zsh plugins
+zinit ice pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
+
+zinit wait lucid light-mode for \
+  chriskempson/base16-shell \
+  lukechilds/zsh-nvm \
+  mafredri/zsh-async \
+  atinit"zicompinit; zicdreplay" \
+    zdharma/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+  blockf atpull"zinit creinstall -q ." atload"!bindkey '^ ' autosuggest-accept" \
+    zsh-users/zsh-completions
+
+# TODO: find a nicer way to bind autosuggest-accept
+
+### Source all zsh config files
 for zsh_source in $HOME/.dotfiles/zsh/configs/*.zsh; do
   source $zsh_source
 done

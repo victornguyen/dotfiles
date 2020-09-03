@@ -42,7 +42,6 @@ brew 'ripgrep'
 brew 'tldr'
 brew 'trash'
 brew 'tree'
-brew 'zplug'
 
 # Vim
 brew 'neovim'

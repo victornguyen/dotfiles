@@ -7,5 +7,3 @@ g() {
     git status -sb
   fi
 }
-
-compdef g=git
