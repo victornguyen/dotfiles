@@ -31,12 +31,10 @@ zinit wait lucid light-mode for \
   mafredri/zsh-async \
   atinit"zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" \
+  atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-accept" \
     zsh-users/zsh-autosuggestions \
-  blockf atpull"zinit creinstall -q ." atload"!bindkey '^ ' autosuggest-accept" \
+  blockf atpull"zinit creinstall -q ." \
     zsh-users/zsh-completions
-
-# TODO: find a nicer way to bind autosuggest-accept
 
 ### Source all zsh config files
 for zsh_source in $HOME/.dotfiles/zsh/configs/*.zsh; do
