@@ -21,8 +21,8 @@ nnoremap <leader>a :Lines<CR>
 nnoremap <leader>/ :History/<CR>
 nnoremap <leader>; :History:<CR>
 
-" Enter ripgrep :Rg command
-nnoremap <leader>rt :Rg<Space>
+" Make the :Rg easier to type
+cnoremap rg Rg
 
 " :Rg all lines in pwd
 nnoremap <leader>rg :Rg<CR>
