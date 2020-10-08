@@ -2,3 +2,4 @@
 *.sw[nop]
 tmp/**/*
 node_modules
+.envrc
