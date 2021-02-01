@@ -39,5 +39,14 @@ let factor5.syntax = 'markdown'
 let factor5.ext = '.md'
 let factor5.nested_syntaxes = {'js': 'javascript', 'go': 'go'}
 
+" Work/Marketplacer
+let marketplacer = {}
+let marketplacer.name = 'Marketplacer'
+let marketplacer.path = '$HOME/Dropbox/vimwiki/work/marketplacer'
+let marketplacer.path_html = '$HOME/Dropbox/vimwiki/work/marketplacer/_html'
+let marketplacer.syntax = 'markdown'
+let marketplacer.ext = '.md'
+let marketplacer.nested_syntaxes = {'js': 'javascript', 'rb': 'ruby'}
+
 " Setup wikis
-let g:vimwiki_list = [wiki, dev, factor5]
+let g:vimwiki_list = [wiki, dev, factor5, marketplacer]
