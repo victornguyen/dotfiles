@@ -11,6 +11,9 @@
 [credential]
   helper = osxkeychain
 
+[pull]
+  ff = only
+
 [push]
   default = simple
 
