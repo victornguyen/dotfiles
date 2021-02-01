@@ -17,6 +17,9 @@
 [push]
   default = simple
 
+[rebase]
+  autosquash = true
+
 [alias]
   # Adding
   a = add
