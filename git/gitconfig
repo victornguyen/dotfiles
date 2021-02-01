@@ -33,6 +33,7 @@
   amend = commit --amend
   undo = reset --soft HEAD^
   uncommit = !git undo
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 
   # Branching
   b = branch
