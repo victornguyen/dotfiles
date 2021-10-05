@@ -7,3 +7,11 @@ g() {
     git status -sb
   fi
 }
+
+# fbrd - Fuzzy Branch Delete
+fbrd() {
+  local branches branch
+  branches=$(git branch --merged) &&
+  branch=$(echo "$branches" | fzf +m) &&
+    git branch -d $(echo "$branch" | sed "s/.* //") && fbrd
+}
