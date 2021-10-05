@@ -10,6 +10,18 @@ nnoremap ; :
 " Disable Ex mode because I don't know what it is yet
 nnoremap Q <Nop>
 
+" Make yank behave like everything else
+nnoremap Y y$
+
+" Keep everything centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Add relative movement > 5 lines to jumplist
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
 " Switching between last buffer
 nnoremap <tab> :b#<CR>
 
