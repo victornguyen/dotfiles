@@ -80,6 +80,9 @@ brew 'python'
 # MySQL
 brew 'mysql'
 
+# OSX
+brew 'switchaudio-osx'
+
 # CLI for Mac App Store
 brew 'mas'
 
@@ -90,6 +93,7 @@ cask 'alfred'
 cask 'anki'
 cask 'charles'
 cask 'dash'
+cask 'discord'
 cask 'dropbox'
 cask 'evernote'
 cask 'firefox'
@@ -102,6 +106,7 @@ cask 'keepingyouawake'
 cask 'kitty'
 cask 'licecap'
 cask 'marked'
+cask 'mos'
 cask 'notion'
 cask 'postman'
 cask 'quicklook-json'
@@ -124,6 +129,7 @@ mas 'Day One', id: 1055511498
 mas 'GIF Keyboard', id: 1043270657
 mas 'Gifski', id: 1351639930
 mas 'Icon Slate', id: 439697913
+mas 'Messenger', id: 1480068668
 mas 'Noizio', id: 928871589
 mas 'Sip', id: 507257563
 mas 'Twitter', id: 1482454543

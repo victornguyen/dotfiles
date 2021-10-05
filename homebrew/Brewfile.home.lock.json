@@ -1,0 +1,42 @@
+{
+  "entries": {
+    "cask": {
+      "air-video-server-hd": {
+        "version": "2.3.0-beta1u1",
+        "options": {
+          "full_name": "air-video-server-hd"
+        }
+      },
+      "backblaze": {
+        "version": "7.0.2.470",
+        "options": {
+          "full_name": "backblaze"
+        }
+      },
+      "doxie": {
+        "version": "2.12.2",
+        "options": {
+          "full_name": "doxie"
+        }
+      },
+      "transmission": {
+        "version": "3.00",
+        "options": {
+          "full_name": "transmission"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "big_sur": {
+        "HOMEBREW_VERSION": "2.5.11",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "7b00ff1a4e8b899a517493eac228a5a71589f3f1",
+        "CLT": "12.2.0.0.1.1604076827",
+        "Xcode": "12.0",
+        "macOS": "11.0.1"
+      }
+    }
+  }
+}
