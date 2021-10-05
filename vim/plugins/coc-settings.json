@@ -1,6 +1,6 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["go"],
-  "eslint.filetypes": [
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",

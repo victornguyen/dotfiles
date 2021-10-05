@@ -10,7 +10,8 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-prettier',
-  \ 'coc-css'
+  \ 'coc-css',
+  \ 'coc-styled-components'
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -53,3 +54,7 @@ nmap <silent> gl :CocDiagnostics<CR>
 " Rename
 nmap <leader>R <Plug>(coc-rename)
 nmap <leader>rn <Plug>(coc-rename)
+
+" TODO: what does this do again?
+nnoremap <nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
+nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
