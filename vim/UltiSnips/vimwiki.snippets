@@ -1,24 +1,20 @@
-# Big title
-snippet = "Vimwiki title"
-=== $0 ===
-endsnippet
-
 # Todo list item
 snippet - "Checkbox"
 - [ ] $0
 endsnippet
 
-snippet ds "Diary template"
+# Daily log template
+snippet ds "Daily log template"
 # ${1:Title}
 
 ${2:One-liner.}
 
 # `date +%A`, `date +%d/%m/%y`
 
-## Yesterday
+## Last time
 * ${3:What happened?}
 
-## Today
+## Today's Goals
 - [ ] $0
 
 ## Log

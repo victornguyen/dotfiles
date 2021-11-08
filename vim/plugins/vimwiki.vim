@@ -30,23 +30,14 @@ let dev.syntax = 'markdown'
 let dev.ext = '.md'
 let dev.nested_syntaxes = {'js': 'javascript', 'go': 'go', 'sh': 'sh'}
 
-" Work/Factor5
-let factor5 = {}
-let factor5.name = 'Factor5'
-let factor5.path = '$HOME/Dropbox/vimwiki/work/factor5'
-let factor5.path_html = '$HOME/Dropbox/vimwiki/work/factor5/_html'
-let factor5.syntax = 'markdown'
-let factor5.ext = '.md'
-let factor5.nested_syntaxes = {'js': 'javascript', 'go': 'go'}
-
-" Work/Marketplacer
-let marketplacer = {}
-let marketplacer.name = 'Marketplacer'
-let marketplacer.path = '$HOME/Dropbox/vimwiki/work/marketplacer'
-let marketplacer.path_html = '$HOME/Dropbox/vimwiki/work/marketplacer/_html'
-let marketplacer.syntax = 'markdown'
-let marketplacer.ext = '.md'
-let marketplacer.nested_syntaxes = {'js': 'javascript', 'rb': 'ruby'}
+" Work
+let work = {}
+let work.name = 'Work'
+let work.path = '$HOME/Dropbox/vimwiki/work/work'
+let work.path_html = '$HOME/Dropbox/vimwiki/work/work/_html'
+let work.syntax = 'markdown'
+let work.ext = '.md'
+let work.nested_syntaxes = {'js': 'javascript', 'go': 'go'}
 
 " Setup wikis
-let g:vimwiki_list = [wiki, dev, factor5, marketplacer]
+let g:vimwiki_list = [wiki, dev, work]
