@@ -118,3 +118,7 @@
 [tig]
   ignore-case = "smart-case"
   main-view-date = "relative"
+
+# Include work gitconfig for repos in ~/work
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-work
