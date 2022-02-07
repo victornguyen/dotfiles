@@ -14,6 +14,10 @@ let g:coc_global_extensions = [
   \ 'coc-styled-components'
   \ ]
 
+" Fix disappearing cursor
+" https://github.com/neoclide/coc.nvim/issues/1775
+let g:coc_disable_transparent_cursor = 1
+
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
