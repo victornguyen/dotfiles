@@ -37,7 +37,7 @@ let work.path = '$HOME/Dropbox/vimwiki/work/work'
 let work.path_html = '$HOME/Dropbox/vimwiki/work/work/_html'
 let work.syntax = 'markdown'
 let work.ext = '.md'
-let work.nested_syntaxes = {'js': 'javascript', 'go': 'go'}
+let work.nested_syntaxes = {'js': 'javascript', 'json': 'json', 'go': 'go', 'graphql': 'graphql'}
 
 " Setup wikis
 let g:vimwiki_list = [wiki, dev, work]
