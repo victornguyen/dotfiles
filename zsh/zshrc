@@ -26,7 +26,6 @@ zinit ice pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
 zinit wait lucid light-mode for \
-  chriskempson/base16-shell \
   lukechilds/zsh-nvm \
   mafredri/zsh-async \
   atinit"zicompinit; zicdreplay" \

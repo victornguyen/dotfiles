@@ -1,4 +1,6 @@
 " Colour schemes
 
-" Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/base16-vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
+let g:tokyonight_style = "storm"
+let g:lightline = {'colorscheme': 'tokyonight'}

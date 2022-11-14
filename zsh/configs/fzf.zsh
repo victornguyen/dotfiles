@@ -32,31 +32,10 @@ bind-git-helper() {
 bind-git-helper f b
 unset -f bind-git-helper
 
-# base16-oceanicnext fzf colour scheme
-# https://github.com/nicodebo/base16-fzf
-_gen_fzf_default_opts() {
-  local color00='#1B2B34'
-  local color01='#343D46'
-  local color02='#4F5B66'
-  local color03='#65737E'
-  local color04='#A7ADBA'
-  local color05='#C0C5CE'
-  local color06='#CDD3DE'
-  local color07='#D8DEE9'
-  local color08='#EC5f67'
-  local color09='#F99157'
-  local color0A='#FAC863'
-  local color0B='#99C794'
-  local color0C='#5FB3B3'
-  local color0D='#6699CC'
-  local color0E='#C594C5'
-  local color0F='#AB7967'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#c0caf5,bg:#24283b,hl:#f7768e --color=fg+:#73daca,bg+:#33467c,hl+:#f7768e --color=info:#73daca,prompt:#bb9af7,pointer:#73daca --color=marker:#c0caf5,spinner:#73daca,header:#7aa2f7'
 
-  export FZF_DEFAULT_OPTS="--height=40% --border \
-  --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D \
-  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C \
-  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D \
-  --bind ctrl-a:select-all,ctrl-d:deselect-all"
-}
-
-_gen_fzf_default_opts
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+# --color=fg:#c0caf5,bg:#1a1b26,hl:#bb9af7
+# --color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
+# --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
+# --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'

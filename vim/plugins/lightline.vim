@@ -16,7 +16,7 @@ function! LightlineFilename()
 endfunction
 
 let g:lightline = {
-    \   'colorscheme': 'one',
+    \   'colorscheme': 'tokyonight',
     \   'active': {
     \     'left': [
     \       [ 'mode', 'paste' ],
@@ -44,7 +44,7 @@ let g:lightline = {
     \     ],
     \   },
     \   'component_function': {
-    \     'branch': 'fugitive#head',
+    \     'branch': 'FugitiveHead',
     \     'filename': 'LightlineFilename',
     \     'cocstatus': 'coc#status',
     \   },

@@ -91,16 +91,18 @@
   # Displays committers in descending order of number of commits
   who = shortlog --numbered --summary --email --no-merges
 
+# TODO: update delta theme
 [pager]
-  diff = delta --theme='base16'
-  show = delta --theme='base16'
+  diff = delta -- --theme='base16'
+  show = delta -- --theme='base16'
 
 [interactive]
-  diffFilter = delta --color-only --theme='base16'
+  diffFilter = delta --color-only -- --theme='base16'
 
 [color]
   ui = true
 
+; TODO: tweak colours so they match theme
 [color "diff"]
   meta = yellow
   frag = magenta bold
