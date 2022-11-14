@@ -9,16 +9,15 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
-" Disable Vi compatibility
-set nocompatible
-
-" Map leader before other keymaps
-let mapleader = "\<Space>"
+" Map leader early on
+lua vim.g.mapleader = ' '
 
 " Source plugins
 call plug#begin('~/.local/share/nvim/plugged')
 call s:SourceConfigFilesIn('plugins')
 call plug#end()
 
-" Source configs
-call s:SourceConfigFilesIn('configs')
+" Source config and keymaps
+lua require('options')
+lua require('keymaps')
+lua require('themes')
