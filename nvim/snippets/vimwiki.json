@@ -1,0 +1,9 @@
+{
+  "today": {
+    "prefix": "-",
+    "body": [
+      "- [ ] ${1}"
+    ],
+    "description": "Todo checkbox"
+  }
+}

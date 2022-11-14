@@ -122,6 +122,9 @@ cask 'vlc'
 
 # Fonts
 cask 'font-fira-code'
+cask 'font-fira-code-nerd-font'
+cask 'font-hack-nerd-font'
+cask 'font-jetbrains-mono-nerd-font'
 
 # Mac App Store Apps
 mas 'DaisyDisk', id: 411643860

@@ -23,6 +23,6 @@ e_header "Installing Ruby provider..."
 gem install neovim
 
 e_header "Installing Neovim plugins..."
-nvim +PlugInstall +qall
+nvim +PackerSync +qall
 
 e_success "Neovim setup complete!"
