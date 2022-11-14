@@ -90,7 +90,7 @@ brew 'mas'
 cask '1password'
 cask 'aerial'
 cask 'alfred'
-cask 'anki'
+cask 'amethyst'
 cask 'charles'
 cask 'dash'
 cask 'discord'
@@ -101,6 +101,7 @@ cask 'flux'
 cask 'google-chrome'
 cask 'google-chrome-canary'
 cask 'hazel'
+cask 'hammerspoon'
 cask 'istat-menus'
 cask 'karabiner-elements'
 cask 'keepingyouawake'
@@ -116,8 +117,6 @@ cask 'rocket'
 cask 'sketch'
 cask 'slack'
 cask 'spotify'
-cask 'vanilla'
-cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
 
@@ -131,7 +130,6 @@ mas 'GIF Keyboard', id: 1043270657
 mas 'Gifski', id: 1351639930
 mas 'Icon Slate', id: 439697913
 mas 'Messenger', id: 1480068668
-mas 'Noizio', id: 928871589
 mas 'Sip', id: 507257563
 mas 'Twitter', id: 1482454543
 mas 'WhatsApp', id: 1147396723
