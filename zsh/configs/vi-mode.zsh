@@ -1,11 +1,16 @@
 # Enable vi-mode
 bindkey -v
 
-# Minimise the lag
-export KEYTIMEOUT=20
+# Fix zsh cursor shape when inside tmux
+# https://github.com/kovidgoyal/kitty/issues/715#issuecomment-403993100
+function zle-keymap-select zle-line-init zle-line-finish
+{
+  case $KEYMAP in
+      vicmd)      print -n '\033[1 q';; # block cursor
+      viins|main) print -n '\033[5 q';; # line cursor
+  esac
+}
 
-# Tweak prompt appearance in vi-mode
-export PURE_PROMPT_VICMD_SYMBOL='%F{yellow}❮%f'
-
-# laurenkt/zsh-vimto config
-export VIMTO_COLOR_NORMAL_BACKGROUND=yellow
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
