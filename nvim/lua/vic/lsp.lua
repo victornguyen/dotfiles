@@ -1,13 +1,13 @@
 local status, lspconfig = pcall(require, 'lspconfig')
 if (not status) then return end
 
-local map = require('vic.utils.keymap')
+local m = require('vic.utils')
 
 local opts = { silent = true }
-map('n', '<space>e', vim.diagnostic.open_float, opts)
-map('n', '[d', vim.diagnostic.goto_prev, opts)
-map('n', ']d', vim.diagnostic.goto_next, opts)
-map('n', '<space>q', vim.diagnostic.setloclist, opts)
+m.map('n', '<space>e', vim.diagnostic.open_float, opts)
+m.map('n', '[d', vim.diagnostic.goto_prev, opts)
+m.map('n', ']d', vim.diagnostic.goto_next, opts)
+m.map('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
   -- Format on save
@@ -22,17 +22,17 @@ local on_attach = function(client, bufnr)
   -- Keymaps
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { silent = true, buffer = bufnr }
-  map('n', 'gd', vim.lsp.buf.definition, bufopts)
-  map('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  map('n', 'gy', vim.lsp.buf.type_definition, bufopts)
-  map('n', 'gr', vim.lsp.buf.references, bufopts)
-  map('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  map('n', 'K', vim.lsp.buf.hover, bufopts)
-  map('n', '<Space>rn', vim.lsp.buf.rename, bufopts)
+  m.map('n', 'gd', vim.lsp.buf.definition, bufopts)
+  m.map('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  m.map('n', 'gy', vim.lsp.buf.type_definition, bufopts)
+  m.map('n', 'gr', vim.lsp.buf.references, bufopts)
+  m.map('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  m.map('n', 'K', vim.lsp.buf.hover, bufopts)
+  m.map('n', '<Space>rn', vim.lsp.buf.rename, bufopts)
 
   -- TODO: try the functions from:
   -- https://github.com/neovim/nvim-lspconfig#suggested-configuration
-  map('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  m.map('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 end
 
 -- local protocol = require('vim.lsp.protocol')

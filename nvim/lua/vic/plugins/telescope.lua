@@ -1,24 +1,24 @@
 local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
-local map = require('vic.utils.keymap')
+local m = require('vic.utils')
 
-map('n', '<leader>ff', builtin.find_files)
-map('n', '<leader>fp', builtin.buffers)
+m.map('n', '<leader>ff', builtin.find_files)
+m.map('n', '<leader>fp', builtin.buffers)
 
-map('n', '<leader>rg', builtin.live_grep)
-map('n', '<leader>rf', builtin.grep_string)
+m.map('n', '<leader>rg', builtin.live_grep)
+m.map('n', '<leader>rf', builtin.grep_string)
 
 -- TODO: not working atm -> https://github.com/nvim-telescope/telescope.nvim/issues/2192
-map('n', '<leader>fl', builtin.current_buffer_fuzzy_find)
+m.map('n', '<leader>fl', builtin.current_buffer_fuzzy_find)
 
-map('n', '<leader>fs', builtin.git_status)
-map('n', '<leader>fc', builtin.git_bcommits)
+m.map('n', '<leader>fs', builtin.git_status)
+m.map('n', '<leader>fc', builtin.git_bcommits)
 
-map('n', '<leader>fh', builtin.help_tags)
-map('n', '<leader>fk', builtin.keymaps)
-map('n', '<leader>;', builtin.command_history)
-map('n', '<leader>/', builtin.search_history)
+m.map('n', '<leader>fh', builtin.help_tags)
+m.map('n', '<leader>fk', builtin.keymaps)
+m.map('n', '<leader>;', builtin.command_history)
+m.map('n', '<leader>/', builtin.search_history)
 
 -- TODO: learn how to send selections to quickfix list
 
