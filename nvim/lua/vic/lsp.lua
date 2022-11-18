@@ -43,6 +43,7 @@ require('mason-lspconfig').setup({
     'sumneko_lua',
     'tsserver',
     'jsonls',
+    'astro',
   },
   automatic_installation = true
 })
@@ -101,3 +102,6 @@ lspconfig.tsserver.setup {
 
 -- JSON
 lspconfig.jsonls.setup {}
+
+-- Astro
+lspconfig.astro.setup {}
