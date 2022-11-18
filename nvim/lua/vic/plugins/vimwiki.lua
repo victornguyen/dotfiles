@@ -4,6 +4,7 @@ g.vimwiki_table_mappings = 0 -- to prevent <Tab> mapping conflicts
 g.vimwiki_global_ext = 0 -- what is this again>?
 g.vimwiki_markdown_link_ext = 1 -- ensure .'md' is appended to internal links
 g.vimwiki_listsyms = ' ○◐●'
+g.vimwiki_hl_headers = 1
 
 -- Wikis
 g.vimwiki_list = {
