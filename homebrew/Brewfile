@@ -42,7 +42,6 @@ brew 'ranger'
 brew 'ripgrep'
 brew 'tldr'
 brew 'trash'
-brew 'tree'
 
 # Vim
 brew 'neovim'

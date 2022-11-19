@@ -15,7 +15,7 @@ if [[ -x "$(command -v exa)" ]]; then
   alias lg="exa -la --git"      # include git status
   alias lt="exa -la -s=mod"     # most recent last
   alias ltr="exa -lar -s=mod"   # most recent first
-  alias ltree="exa -a -T -L=2"  # tree view
+  alias tree="exa -a -T -L=2"  # tree view
 else
   alias l="ls -lahF"            # long list
   alias lt="ls -lahFtr"         # most recent last
