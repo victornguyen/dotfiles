@@ -1,5 +1,7 @@
 local status, lspconfig = pcall(require, 'lspconfig')
-if (not status) then return end
+if not status then
+  return
+end
 
 local m = require('vic.utils')
 
@@ -10,14 +12,7 @@ m.map('n', ']d', vim.diagnostic.goto_next, opts)
 m.map('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
-  -- Format on save
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      group = vim.api.nvim_create_augroup('Format', { clear = true }),
-      buffer = bufnr,
-      callback = function() vim.lsp.buf.format() end
-    })
-  end
+  -- Format on save now solely handled by by null-ls
 
   -- Keymaps
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -45,11 +40,11 @@ require('mason-lspconfig').setup({
     'jsonls',
     'astro',
   },
-  automatic_installation = true
+  automatic_installation = true,
 })
 
 -- Lua
-lspconfig.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup({
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -58,7 +53,7 @@ lspconfig.sumneko_lua.setup {
         version = 'LuaJIT',
       },
       diagnostics = {
-        -- Get the language server to recognize the `vim` global
+        -- Accepted globals
         globals = { 'vim', 'hs' },
       },
       workspace = {
@@ -69,25 +64,12 @@ lspconfig.sumneko_lua.setup {
       telemetry = {
         enable = false,
       },
-      -- Use the language server's code formatter
-      -- Options: https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/docs/format_config_EN.md
-      format = {
-        enable = true,
-        defaultConfig = {
-          quote_style = 'single',
-          indent_style = 'space',
-          indent_size = '2',
-          continuous_assign_statement_align_to_equal_sign = 'false',
-          continuous_assign_table_field_align_to_equal_sign = 'false',
-          align_table_field_to_first_field = 'false'
-        }
-      }
     },
   },
-}
+})
 
 -- TypeScript
-lspconfig.tsserver.setup {
+lspconfig.tsserver.setup({
   on_attach = on_attach,
   filetypes = {
     'javascript',
@@ -95,13 +77,17 @@ lspconfig.tsserver.setup {
     'javascript.jsx',
     'typescript',
     'typescriptreact',
-    'typescript.tsx'
+    'typescript.tsx',
   },
-  cmd = { 'typescript-language-server', '--stdio' }
-}
+  cmd = { 'typescript-language-server', '--stdio' },
+})
 
 -- JSON
-lspconfig.jsonls.setup {}
+lspconfig.jsonls.setup({
+  on_attach = on_attach,
+})
 
 -- Astro
-lspconfig.astro.setup {}
+lspconfig.astro.setup({
+  on_attach = on_attach,
+})
