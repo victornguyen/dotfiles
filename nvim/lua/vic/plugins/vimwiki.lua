@@ -1,9 +1,10 @@
 local g = vim.g
 
-g.vimwiki_table_mappings = 0 -- to prevent <Tab> mapping conflicts
-g.vimwiki_global_ext = 0 -- what is this again>?
+g.vimwiki_table_mappings = 0 -- prevent <Tab> mapping conflicts
+g.vimwiki_global_ext = 0 -- ignore non-wiki md files
 g.vimwiki_markdown_link_ext = 1 -- ensure .'md' is appended to internal links
-g.vimwiki_listsyms = ' ○◐●'
+-- g.vimwiki_listsyms = ' ○◐●' -- cannot match with lua patterns sadness
+g.vimwiki_listsyms = ' .oox'
 g.vimwiki_hl_headers = 1
 
 -- Wikis

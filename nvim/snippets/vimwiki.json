@@ -1,9 +1,23 @@
 {
-  "today": {
+  "todo": {
     "prefix": "-",
     "body": [
       "- [ ] ${1}"
     ],
-    "description": "Todo checkbox"
+    "description": "todo checkbox"
+  },
+  "link: nvim": {
+    "prefix": "ln",
+    "body": [
+      "[nvim](./vim.md): ${1}"
+    ],
+    "description": "[nvim] link"
+  },
+  "link: wiki": {
+    "prefix": "lw",
+    "body": [
+      "[wiki](./wiki.md): ${1}"
+    ],
+    "description": "[wiki] link"
   }
 }

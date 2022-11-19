@@ -166,6 +166,13 @@ return packer.startup(function(use)
   -- Theme
   use 'folke/tokyonight.nvim'
 
+  -- Paint
+  use {
+    'folke/paint.nvim',
+    config = function() require('vic.plugins.paint') end
+  }
+
+
   -- VimWiki
   use {
     'vimwiki/vimwiki',
