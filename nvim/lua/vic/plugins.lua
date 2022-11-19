@@ -169,6 +169,7 @@ return packer.startup(function(use)
   -- VimWiki
   use {
     'vimwiki/vimwiki',
+    branch = 'dev',
     config = function() require('vic.plugins.vimwiki') end
   }
 
