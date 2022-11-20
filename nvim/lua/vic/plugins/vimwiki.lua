@@ -1,4 +1,5 @@
 local g = vim.g
+local m = require('vic.utils')
 
 g.vimwiki_table_mappings = 0 -- prevent <Tab> mapping conflicts
 g.vimwiki_global_ext = 0 -- ignore non-wiki md files
@@ -22,3 +23,7 @@ g.vimwiki_list = {
     ext = '.md',
   },
 }
+
+-- Keymaps
+m.map('n', '[j', ':VimwikiDiaryPrevDay<CR>')
+m.map('n', ']j', ':VimwikiDiaryNextDay<CR>')
