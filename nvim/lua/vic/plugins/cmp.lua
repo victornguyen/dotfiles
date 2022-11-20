@@ -78,7 +78,15 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'buffer' },
+    {
+      name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          -- Include text from other buffers in cmp suggestions
+          return vim.api.nvim_list_bufs()
+        end,
+      },
+    },
     { name = 'luasnip' },
   }),
 
