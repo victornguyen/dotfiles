@@ -1,14 +1,22 @@
 local cmp_ok, cmp = pcall(require, 'cmp')
-if (not cmp_ok) then return end
+if not cmp_ok then
+  return
+end
 
 local luasnip_ok, luasnip = pcall(require, 'luasnip')
-if (not luasnip_ok) then return end
+if not luasnip_ok then
+  return
+end
 
 local lspkind_ok, lspkind = pcall(require, 'lspkind')
-if (not lspkind_ok) then return end
+if not lspkind_ok then
+  return
+end
 
 local cmp_autopairs_ok, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
-if (not cmp_autopairs_ok) then return end
+if not cmp_autopairs_ok then
+  return
+end
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -31,7 +39,6 @@ cmp.setup({
 
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true
     }),
 
     -- Open/close autocomplete
@@ -55,7 +62,7 @@ cmp.setup({
       else
         fallback()
       end
-    end, { 'i', 's', }),
+    end, { 'i', 's' }),
 
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -65,8 +72,7 @@ cmp.setup({
       else
         fallback()
       end
-    end, { 'i', 's', }),
-
+    end, { 'i', 's' }),
   }),
 
   sources = cmp.config.sources({
@@ -97,24 +103,21 @@ cmp.setup({
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    { name = 'path' },
   }, {
     {
       name = 'cmdline',
       option = {
-        ignore_cmds = { 'Man', '!' }
-      }
-    }
-  })
+        ignore_cmds = { 'Man', '!' },
+      },
+    },
+  }),
 })
 
 -- Insert `(` after selecting a function or method item
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
-vim.cmd [[
+vim.cmd([[
   set completeopt=menuone,noinsert,noselect
   highlight! default link CmpItemKind CmpItemMenuDefault
-]]
+]])
