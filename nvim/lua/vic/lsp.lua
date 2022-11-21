@@ -1,5 +1,10 @@
-local status, lspconfig = pcall(require, 'lspconfig')
-if not status then
+local lsp_ok, lspconfig = pcall(require, 'lspconfig')
+if not lsp_ok then
+  return
+end
+
+local format_ok, lspformat = pcall(require, 'lsp-format')
+if not format_ok then
   return
 end
 
@@ -12,22 +17,9 @@ m.map('n', ']d', vim.diagnostic.goto_next, opts)
 m.map('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
-  -- Format on save opt-in depending lsp client
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      group = vim.api.nvim_create_augroup('Format', { clear = true }),
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format({
-          bufnr = bufnr,
-          filter = function(c)
-            -- Only allow certain lsp clients to format
-            return c.name == 'astro'
-          end,
-        })
-      end,
-    })
-  end
+  -- Format on save
+  lspformat.on_attach(client)
+
   -- Keymaps
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { silent = true, buffer = bufnr }

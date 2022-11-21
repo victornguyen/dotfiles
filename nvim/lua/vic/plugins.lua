@@ -43,7 +43,13 @@ return packer.startup(function(use)
   -- LSP
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
-  use('neovim/nvim-lspconfig')
+  use({
+    'lukas-reineke/lsp-format.nvim',
+    config = function()
+      require('lsp-format').setup({})
+    end,
+  })
+  use('neovim/nvim-lspconfig', { requires = 'lukas-reineke/lsp-format.nvim' })
 
   -- Show LSP progress
   use({
@@ -56,7 +62,7 @@ return packer.startup(function(use)
   -- Formatters
   use({
     'jose-elias-alvarez/null-ls.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    requires = { 'nvim-lua/plenary.nvim', 'lukas-reineke/lsp-format.nvim' },
     config = function()
       require('vic.plugins.null-ls')
     end,
