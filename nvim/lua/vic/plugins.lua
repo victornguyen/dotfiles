@@ -4,7 +4,7 @@ local ensure_packer = function()
   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
+    vim.cmd([[packadd packer.nvim]])
     return true
   end
   return false
@@ -13,55 +13,71 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- Reload nvim and packer whenever plugins.lua is saved
-vim.cmd [[
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
-]]
+]])
 
 -- Use a protected call so we don't error out on first use
 local status, packer = pcall(require, 'packer')
-if not status then return end
+if not status then
+  return
+end
 
 -- Have packer use a popup window
-packer.init {
+packer.init({
   display = {
     open_fn = function()
-      return require('packer.util').float { border = 'rounded' }
+      return require('packer.util').float({ border = 'rounded' })
     end,
   },
-}
+})
 
 -- Install your plugins here
 return packer.startup(function(use)
   -- Yo dawg...
-  use 'wbthomason/packer.nvim'
+  use('wbthomason/packer.nvim')
 
   -- LSP
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use 'neovim/nvim-lspconfig'
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
+  use('neovim/nvim-lspconfig')
 
   -- Show LSP progress
-  use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end }
+  use({
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end,
+  })
 
   -- Formatters
   use({
     'jose-elias-alvarez/null-ls.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('vic.plugins.null-ls') end
+    config = function()
+      require('vic.plugins.null-ls')
+    end,
   })
 
   -- Snippets
   use({
     'L3MON4D3/LuaSnip',
     requires = { 'rafamadriz/friendly-snippets' },
-    config = function() require('vic.plugins.luasnip') end
+    config = function()
+      require('vic.plugins.luasnip')
+    end,
   })
 
   -- Autopairs
-  use { 'windwp/nvim-autopairs', config = function() require('vic.plugins.nvim-autopairs') end }
+  use({
+    'windwp/nvim-autopairs',
+    config = function()
+      require('vic.plugins.nvim-autopairs')
+    end,
+  })
 
   -- Autocomplete
   use({
@@ -77,108 +93,142 @@ return packer.startup(function(use)
       'onsails/lspkind-nvim',
       'windwp/nvim-autopairs',
     },
-    config = function() require('vic.plugins.cmp') end
+    config = function()
+      require('vic.plugins.cmp')
+    end,
   })
 
   -- Telescope
-  use {
+  use({
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('vic.plugins.telescope') end
-  }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    config = function()
+      require('vic.plugins.telescope')
+    end,
+  })
+  use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
   -- nvim-tree
-  use {
+  use({
     'nvim-tree/nvim-tree.lua',
     requires = {
-      'nvim-tree/nvim-web-devicons'
+      'nvim-tree/nvim-web-devicons',
     },
-    config = function() require('vic.plugins.nvim-tree') end,
-  }
+    config = function()
+      require('vic.plugins.nvim-tree')
+    end,
+  })
 
   -- lualine
-  use {
+  use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function() require('vic.plugins.lualine') end,
-  }
+    config = function()
+      require('vic.plugins.lualine')
+    end,
+  })
+
+  -- Bufferline
+  use({
+    'akinsho/bufferline.nvim',
+    tag = 'v3.*',
+    requires = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('vic.plugins.bufferline')
+    end,
+  })
 
   -- Treesitter
-  use {
+  use({
     'nvim-treesitter/nvim-treesitter',
     requires = {
       'p00f/nvim-ts-rainbow',
-      'nvim-treesitter/playground'
+      'nvim-treesitter/playground',
     },
     run = ':TSUpdate',
-    config = function() require('vic.plugins.treesitter') end,
-  }
+    config = function()
+      require('vic.plugins.treesitter')
+    end,
+  })
 
   -- Syntax
-  use 'fladson/vim-kitty'
+  use('fladson/vim-kitty')
 
   -- Git
-  use {
+  use({
     'tpope/vim-fugitive',
     requires = {
       'tpope/vim-rhubarb', -- Github support
-      'tommcdo/vim-fubitive' -- Bitbucket support
+      'tommcdo/vim-fubitive', -- Bitbucket support
     },
-    config = function() require('vic.plugins.fugitive') end
-  }
-  use {
+    config = function()
+      require('vic.plugins.fugitive')
+    end,
+  })
+  use({
     'lewis6991/gitsigns.nvim',
-    config = function() require('vic.plugins.gitsigns') end
-  }
+    config = function()
+      require('vic.plugins.gitsigns')
+    end,
+  })
 
   -- Tim Pope
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-unimpaired'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-eunuch'
+  use('tpope/vim-commentary')
+  use('tpope/vim-unimpaired')
+  use('tpope/vim-surround')
+  use('tpope/vim-repeat')
+  use('tpope/vim-eunuch')
 
   -- Chris Toomey
-  use 'christoomey/vim-sort-motion'
-  use 'christoomey/vim-system-copy'
-  use {
+  use('christoomey/vim-sort-motion')
+  use('christoomey/vim-system-copy')
+  use({
     'christoomey/vim-tmux-navigator',
-    config = function() require('vic.plugins.vim-tmux-navigator') end
-  }
+    config = function()
+      require('vic.plugins.vim-tmux-navigator')
+    end,
+  })
 
   -- More text objects
-  use 'wellle/targets.vim'
+  use('wellle/targets.vim')
 
   -- Display register content with " or @ in normal, ctrl+r in insert
-  use 'junegunn/vim-peekaboo'
+  use('junegunn/vim-peekaboo')
 
   -- Alignment
-  use 'junegunn/vim-easy-align'
+  use('junegunn/vim-easy-align')
 
   -- Better f
-  use { 'rhysd/clever-f.vim', config = function() require('vic.plugins.clever-f') end }
+  use({
+    'rhysd/clever-f.vim',
+    config = function()
+      require('vic.plugins.clever-f')
+    end,
+  })
 
   -- Smooth scrolling
-  use 'psliwka/vim-smoothie'
+  use('psliwka/vim-smoothie')
 
   -- Theme
-  use 'folke/tokyonight.nvim'
+  use('folke/tokyonight.nvim')
 
   -- Paint
-  use {
+  use({
     'folke/paint.nvim',
-    config = function() require('vic.plugins.paint') end
-  }
-
+    config = function()
+      require('vic.plugins.paint')
+    end,
+  })
 
   -- VimWiki
-  use {
+  use({
     'vimwiki/vimwiki',
     branch = 'dev',
-    config = function() require('vic.plugins.vimwiki') end
-  }
+    config = function()
+      require('vic.plugins.vimwiki')
+    end,
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
