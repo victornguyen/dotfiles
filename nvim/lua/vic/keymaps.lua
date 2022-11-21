@@ -17,6 +17,7 @@ m.map({ 'n', 'v' }, '<C-l>', 'g_', { desc = 'Go to end of line' })
 m.map('n', 'H', ':bp<CR>', { desc = 'Go to start of line' })
 m.map('n', 'L', ':bn<CR>', { desc = 'Go to end of line' })
 m.map('n', '<leader>d', ':bd<CR>', { desc = 'Delete buffer' })
+m.map('n', '<leader>D', ':%bd|e#|bd#<CR>', { desc = 'Delete all buffers except current one' })
 
 -- Search
 m.map('n', 'n', 'nzzzv', { desc = 'Find next and center screen' })
