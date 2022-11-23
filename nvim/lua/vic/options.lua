@@ -20,6 +20,9 @@ set.grepprg = 'rg --vimgrep --no-heading --smart-case'
 -- Persistent undos
 set.undofile = true
 
+-- Disable swap files (they're annoying and I'm an over-saver anyway)
+set.swapfile = false
+
 -- Open new splits to the right (vert) and bottom (hor)
 set.splitright = true
 set.splitbelow = true
