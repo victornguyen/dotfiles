@@ -21,6 +21,9 @@
 [rebase]
   autosquash = true
 
+[commit]
+  verbose = true
+
 [alias]
   # Adding
   a = add
