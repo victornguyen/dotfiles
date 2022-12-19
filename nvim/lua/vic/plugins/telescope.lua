@@ -25,16 +25,18 @@ m.map('n', '<leader>/', builtin.search_history)
 -- TODO: configure individual pickers to better suite their purpose to and help me distinguish them
 -- TODO: add better symbols for git_status picker
 
-telescope.setup {
+telescope.setup({
   defaults = {
     mappings = {
       i = {
         ['<c-j>'] = actions.move_selection_next,
         ['<c-k>'] = actions.move_selection_previous,
-      }
+        ['<c-s>'] = actions.cycle_previewers_next,
+        ['<c-a>'] = actions.cycle_previewers_prev,
+      },
     },
-  }
-}
+  },
+})
 
 -- ' exact match (not fuzzy)
 -- | OR operator
