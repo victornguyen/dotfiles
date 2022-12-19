@@ -15,3 +15,8 @@ export GOBIN=$GOPATH/bin
 
 # Add homebrew binaries
 export PATH="/usr/local/sbin:$PATH:${HOME}/.dotfiles/bin:$GOBIN"
+
+# Source machine-specific local file if available
+if [ -f ~/.zshenv.local ]; then
+    source ~/.zshenv.local
+fi
