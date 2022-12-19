@@ -55,7 +55,7 @@ brew 'tmux'
 brew 'git'
 # TODO: learn how to tweak colours so they're less ugly
 brew 'git-delta'
-brew 'tig'
+brew 'lazygit'
 
 # Node
 brew 'yarn', args: ["ignore-dependencies"]
