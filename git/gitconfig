@@ -5,7 +5,7 @@
   email = vic.nguyen@gmail.com
 
 [core]
-  editor = /usr/local/bin/nvim
+  editor = nvim
   excludesfile = ~/.gitignore
 
 [credential]
