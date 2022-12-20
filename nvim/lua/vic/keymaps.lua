@@ -33,8 +33,8 @@ m.map('n', 'gP', '"+p', { desc = 'Paste from system clipboard' })
 m.map('n', 'J', 'mzJ`z', { desc = 'Join line and center screen' })
 
 -- Splits
-m.map('n', '<C-w>v', ':vsp', { desc = 'Split vertically' })
-m.map('n', '<C-w>x', ':sp', { desc = 'Split horizontally' })
+m.map('n', '<C-w>v', ':vsp<CR>', { desc = 'Split vertically' })
+m.map('n', '<C-w>x', ':sp<CR>', { desc = 'Split horizontally' })
 
 -- Copy buffer path/name
 m.map('n', '<Leader>cf', ':let @+=expand("%")<CR>', { desc = "Copy buffer's relative file path" })
