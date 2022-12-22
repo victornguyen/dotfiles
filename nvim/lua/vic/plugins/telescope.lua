@@ -33,6 +33,7 @@ telescope.setup({
         ['<c-k>'] = actions.move_selection_previous,
         ['<c-s>'] = actions.cycle_previewers_next,
         ['<c-a>'] = actions.cycle_previewers_prev,
+        ['<c-space>'] = actions.to_fuzzy_refine,
       },
     },
   },
