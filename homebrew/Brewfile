@@ -90,11 +90,13 @@ brew 'switchaudio-osx'
 # CLI for Mac App Store
 brew 'mas'
 
+brew 'koekeishiya/formulae/skhd'
+brew 'koekeishiya/formulae/yabai'
+
 # Apps
 cask '1password'
 cask 'aerial'
 cask 'alfred'
-cask 'amethyst'
 cask 'charles'
 cask 'dash'
 cask 'discord'
