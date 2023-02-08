@@ -90,7 +90,7 @@ brew 'switchaudio-osx'
 # CLI for Mac App Store
 brew 'mas'
 
-brew 'koekeishiya/formulae/skhd'
+brew 'koekeishiya/formulae/skhd', args: ["HEAD"]
 brew 'koekeishiya/formulae/yabai'
 
 # Apps
