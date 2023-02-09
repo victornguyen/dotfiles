@@ -28,6 +28,23 @@ ctrl + alt - j : yabai -m window --resize bottom:0:-50
 ctrl + alt - k : yabai -m window --resize top:0:50
 ctrl + alt - l : yabai -m window --resize right:-50:0
 
+# Move window to spaces
+ctrl + cmd - 1 : yabai -m window --space 1
+ctrl + cmd - 2 : yabai -m window --space 2
+ctrl + cmd - 3 : yabai -m window --space 3
+ctrl + cmd - 4 : yabai -m window --space 4
+ctrl + cmd - 5 : yabai -m window --space 5
+ctrl + cmd - 6 : yabai -m window --space 6
+ctrl + cmd - 7 : yabai -m window --space 7
+
+# Move window to display focused before the current one
+ctrl + cmd - w: yabai -m window --display recent
+
+# Layouts
+shift + alt - b : yabai -m config layout bsp
+shift + alt - o : yabai -m config layout float
+shift + alt - s : yabai -m config layout stack
+
 # Balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
