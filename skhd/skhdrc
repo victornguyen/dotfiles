@@ -4,6 +4,8 @@ ctrl + shift - c : open /Applications/Google\ Chrome.app
 ctrl + shift - f : open /Applications/Firefox.app
 ctrl + shift - r : open /Applications/Spotify.app
 ctrl + shift - q : open /Applications/Slack.app
+ctrl + shift - o : open /Applications/Microsoft\ Outlook.app
+ctrl + shift - t : open /Applications/Microsoft\ Teams.app
 
 # Shift focus
 shift + alt - h : yabai -m window --focus west
