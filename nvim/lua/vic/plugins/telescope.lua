@@ -34,6 +34,8 @@ telescope.setup({
         ['<c-s>'] = actions.cycle_previewers_next,
         ['<c-a>'] = actions.cycle_previewers_prev,
         ['<c-space>'] = actions.to_fuzzy_refine,
+        ['<c-O>'] = actions.send_to_qflist,
+        ['<c-o>'] = actions.send_selected_to_qflist,
       },
     },
   },
