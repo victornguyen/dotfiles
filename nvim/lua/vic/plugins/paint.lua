@@ -1,7 +1,9 @@
 local status, paint = pcall(require, 'paint')
-if (not status) then return end
+if not status then
+  return
+end
 
-paint.setup {
+paint.setup({
   highlights = {
     -- Todo tag
     -- anything:
@@ -31,7 +33,7 @@ paint.setup {
     -- @vic
     {
       filter = { filetype = 'vimwiki' },
-      pattern = '%s(%@[%w]+)%s',
+      pattern = '%s(%@[%w_]+)',
       hl = '@punctuation.special.markdown',
     },
 
@@ -53,4 +55,4 @@ paint.setup {
     --   hl = 'Comment',
     -- },
   },
-}
+})
