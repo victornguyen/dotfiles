@@ -59,6 +59,20 @@ return packer.startup(function(use)
     end,
   })
 
+  -- Which Key
+  use({
+    'folke/which-key.nvim',
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 500
+      require('which-key').setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+  })
+
   -- Formatters
   use({
     'jose-elias-alvarez/null-ls.nvim',
@@ -198,9 +212,6 @@ return packer.startup(function(use)
 
   -- More text objects
   use('wellle/targets.vim')
-
-  -- Display register content with " or @ in normal, ctrl+r in insert
-  use('junegunn/vim-peekaboo')
 
   -- Alignment
   use('junegunn/vim-easy-align')
