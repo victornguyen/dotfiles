@@ -10,8 +10,13 @@ m.map('n', '<leader>rg', builtin.live_grep)
 m.map('n', '<leader>rf', builtin.grep_string)
 
 -- TODO: not working atm -> https://github.com/nvim-telescope/telescope.nvim/issues/2192
-m.map('n', '<leader>fl', builtin.current_buffer_fuzzy_find)
-m.map('n', '<leader>fa', ":lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>")
+m.map('n', '<leader>fl', builtin.current_buffer_fuzzy_find, { desc = 'Search current buffer' })
+m.map(
+  'n',
+  '<leader>fa',
+  ":lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>",
+  { desc = 'Search all buffers' }
+)
 
 m.map('n', '<leader>fs', builtin.git_status)
 m.map('n', '<leader>fc', builtin.git_bcommits)
