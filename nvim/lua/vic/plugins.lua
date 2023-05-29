@@ -238,6 +238,16 @@ return packer.startup(function(use)
     end,
   })
 
+  -- Shade
+  use({
+    'sunjon/shade.nvim',
+    config = function()
+      require('shade').setup({
+        overlay_opacity = 50,
+      })
+    end,
+  })
+
   -- VimWiki
   use({
     'vimwiki/vimwiki',
