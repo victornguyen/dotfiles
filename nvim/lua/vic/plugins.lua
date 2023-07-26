@@ -229,23 +229,18 @@ return packer.startup(function(use)
   use('psliwka/vim-smoothie')
 
   -- Theme
-  use('folke/tokyonight.nvim')
+  use({
+    'folke/tokyonight.nvim',
+    config = function()
+      require('vic.plugins.tokyonight')
+    end,
+  })
 
   -- Paint
   use({
     'folke/paint.nvim',
     config = function()
       require('vic.plugins.paint')
-    end,
-  })
-
-  -- Shade
-  use({
-    'sunjon/shade.nvim',
-    config = function()
-      require('shade').setup({
-        overlay_opacity = 50,
-      })
     end,
   })
 
