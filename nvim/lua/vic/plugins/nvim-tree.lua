@@ -78,11 +78,6 @@ nvim_tree.setup({
   on_attach = on_attach,
   view = {
     adaptive_size = false,
-    mappings = {
-      list = {
-        { key = 's', action = '' }, -- unbind it pls
-      },
-    },
   },
   actions = {
     open_file = {
