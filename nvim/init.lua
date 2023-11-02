@@ -19,6 +19,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('vic.plugins', {
+  lockfile = '~/.dotfiles/nvim/lazy-lock.json',
   change_detection = {
     notify = false
   }
