@@ -1,7 +1,10 @@
 # Handy aliases
 
 # Vim
-alias vi="v"
+alias vi="v" # runs v() in vim.zsh
+
+# Opens nvim to file selected from fd | fzf
+alias vs="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
 # Moving around
 alias ..="cd .."
