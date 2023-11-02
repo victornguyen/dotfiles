@@ -1,14 +1,14 @@
-local status, tokyonight = pcall(require, 'tokyonight')
-if not status then
-  return
-end
+return {
+  'folke/tokyonight.nvim',
+  config = function()
+    require('tokyonight').setup({
+      style = 'night',
+      dim_inactive = true,
+      on_colors = function(colors)
+        colors.bg_dark = '#252632'
+      end,
+    })
 
-tokyonight.setup({
-  style = 'night',
-  dim_inactive = true,
-  on_colors = function(colors)
-    colors.bg_dark = '#252632'
+    vim.cmd([[colorscheme tokyonight]])
   end,
-})
-
-vim.cmd([[colorscheme tokyonight]])
+}

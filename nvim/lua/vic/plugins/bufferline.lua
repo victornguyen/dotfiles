@@ -1,19 +1,23 @@
-local status, bufferline = pcall(require, 'bufferline')
-if not status then
-  return
-end
-
-bufferline.setup({
-  options = {
-    separator_style = 'slant',
-    buffer_close_icon = '',
-    offsets = {
-      {
-        filetype = 'NvimTree',
-        text = 'File Explorer',
-        highlight = 'Comment',
-        separator = true,
+return {
+  'akinsho/bufferline.nvim',
+  dependencies = 'nvim-tree/nvim-web-devicons',
+  config = function()
+    require('bufferline').setup({
+      options = {
+        indicator = {
+          style = 'none',
+        },
+        separator_style = 'thin',
+        buffer_close_icon = '',
+        offsets = {
+          {
+            filetype = 'NvimTree',
+            text = 'File Explorer',
+            highlight = 'Comment',
+            separator = false,
+          },
+        },
       },
-    },
-  },
-})
+    })
+  end,
+}
