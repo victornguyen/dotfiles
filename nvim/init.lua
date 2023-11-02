@@ -3,6 +3,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+require('vic.config')
 require('vic.options')
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
@@ -27,4 +28,3 @@ require('lazy').setup('vic.plugins', {
 
 require('vic.lsp')
 require('vic.keymaps')
-require('vic.themes')
