@@ -18,7 +18,12 @@ return {
     local m = require('vic.utils')
 
     m.map('n', '<leader>ff', builtin.find_files, { desc = 'Lists files in cwd' })
-    m.map('n', '<leader>p', builtin.buffers, { desc = 'Lists open buffers' })
+    m.map(
+      'n',
+      '<leader>p',
+      ":lua require('telescope.builtin').buffers({ entry_maker = require('vic.plugins.telescope.my_make_entry').gen_from_buffer_like_leaderf() })<CR>",
+      { desc = 'Lists open buffers' }
+    )
 
     m.map('n', '<leader>rg', builtin.live_grep, { desc = 'Search for string in cwd' })
     m.map('n', '<leader>rf', builtin.grep_string, { desc = 'Searches for string under cursor' })
