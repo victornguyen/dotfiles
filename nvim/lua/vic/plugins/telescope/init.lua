@@ -21,7 +21,7 @@ return {
     m.map(
       'n',
       '<leader>p',
-      ":lua require('telescope.builtin').buffers({ entry_maker = require('vic.plugins.telescope.my_make_entry').gen_from_buffer_like_leaderf() })<CR>",
+      ':lua require("telescope.builtin").buffers({ entry_maker = require("vic.plugins.telescope.my_make_entry").gen_from_buffer_like_leaderf() })<CR>',
       { desc = 'Lists open buffers' }
     )
 
@@ -32,12 +32,12 @@ return {
     m.map(
       'n',
       '<leader>fa',
-      ":lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>",
+      ":lua require('telescope.builtin').live_grep({ grep_open_files = true })<CR>",
       { desc = 'Search in all buffers' }
     )
 
     m.map('n', '<leader>fs', builtin.git_status, { desc = 'Lists current changes' })
-    m.map('n', '<leader>fc', builtin.git_bcommits, { desc = 'Lists current buffer\'s commits' })
+    m.map('n', '<leader>fc', builtin.git_bcommits, { desc = "Lists current buffer's commits" })
 
     m.map('n', '<leader>fh', builtin.help_tags, { desc = 'Lists available help tags' })
     m.map('n', '<leader>fk', builtin.keymaps, { desc = 'Lists normal mode keymaps' })
@@ -59,7 +59,7 @@ return {
           },
           n = {
             ['<c-c>'] = actions.close,
-          }
+          },
         },
       },
       pickers = {
@@ -79,8 +79,8 @@ return {
             height = 0.7,
             preview_height = 0.55,
           },
-        }
-      }
+        },
+      },
     })
 
     telescope.load_extension('fzf')

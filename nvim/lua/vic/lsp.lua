@@ -3,11 +3,6 @@ if not lsp_ok then
   return
 end
 
-local format_ok, lspformat = pcall(require, 'lsp-format')
-if not format_ok then
-  return
-end
-
 local m = require('vic.utils')
 
 local opts = { silent = true }
@@ -19,10 +14,6 @@ m.map('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- TODO: try lsp-format order option? https://github.com/harrisoncramer/nvim/blob/47d9197d526ca76de355ab83935b79f8a5321237/lua/lsp/init.lua#L15-L20
 
 local on_attach = function(client, bufnr)
-  -- Format on save
-  -- TODO: need this and null-ls?
-  lspformat.on_attach(client, bufnr)
-
   -- Keymaps
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { silent = true, buffer = bufnr }
