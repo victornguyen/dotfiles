@@ -22,7 +22,7 @@ return {
       'n',
       '<leader>p',
       ':lua require("telescope.builtin").buffers({ entry_maker = require("vic.plugins.telescope.my_make_entry").gen_from_buffer_like_leaderf() })<CR>',
-      { desc = 'Lists open buffers' }
+      { desc = 'Lists open buffers', silent = true }
     )
 
     m.map('n', '<leader>rg', builtin.live_grep, { desc = 'Search for string in cwd' })
@@ -33,7 +33,7 @@ return {
       'n',
       '<leader>fa',
       ":lua require('telescope.builtin').live_grep({ grep_open_files = true })<CR>",
-      { desc = 'Search in all buffers' }
+      { desc = 'Search in all buffers', silent = true }
     )
 
     m.map('n', '<leader>fs', builtin.git_status, { desc = 'Lists current changes' })
