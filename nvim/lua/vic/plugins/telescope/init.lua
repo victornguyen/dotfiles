@@ -73,6 +73,10 @@ return {
           path_display = { smart = true },
           previewer = false,
         },
+        find_files = {
+          file_ignore_patterns = { '^.git' },
+          hidden = true,
+        },
         git_status = {
           layout_strategy = 'vertical',
           layout_config = {
