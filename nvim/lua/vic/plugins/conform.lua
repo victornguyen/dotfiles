@@ -37,6 +37,7 @@ return {
       lua = { 'stylua' },
       -- Use a sub-list to run only the first available formatter
       javascript = { { 'prettierd', 'prettier' } },
+      json = { 'fixjson' },
     },
 
     -- Set up format-on-save
