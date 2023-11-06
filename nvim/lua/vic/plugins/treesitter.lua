@@ -1,7 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
-    'p00f/nvim-ts-rainbow',
     'nvim-treesitter/playground',
   },
   build = ':TSUpdate',
@@ -14,16 +13,12 @@ return {
       ignore_install = {},
       modules = {},
       highlight = {
-        enable = true,                             -- false will disable the whole extension
-        disable = { '' },
+        enable = true,
         additional_vim_regex_highlighting = false, -- turn this back on if indenting is weird
       },
       indent = {
         enable = true,
         disable = { '' },
-      },
-      rainbow = {
-        enable = true,
       },
     })
   end,
