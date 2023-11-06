@@ -52,12 +52,12 @@ return {
           lookahead = true, -- automatically jump forward to textobj, similar to targets.vim
           keymaps = {
             -- You can use the capture groups defined in textobjects.scm
-            ['af'] = { query = '@function.outer', desc = 'Select outer part of a function' },
-            ['if'] = { query = '@function.inner', desc = 'Select inner part of a function' },
-            ['ac'] = { query = '@class.outer', desc = 'Select outer part of a class region' },
-            ['ic'] = { query = '@class.inner', desc = 'Select inner part of a class region' },
-            ['aa'] = { query = '@parameter.outer', desc = 'Select outer part of a parameter' },
-            ['ia'] = { query = '@parameter.inner', desc = 'Select inner part of a parameter' },
+            ['af'] = { query = '@function.outer', desc = 'Outer part of a function' },
+            ['if'] = { query = '@function.inner', desc = 'Inner part of a function' },
+            ['ac'] = { query = '@class.outer', desc = 'Outer part of a class region' },
+            ['ic'] = { query = '@class.inner', desc = 'Inner part of a class region' },
+            ['aa'] = { query = '@parameter.outer', desc = 'Outer part of a parameter' },
+            ['ia'] = { query = '@parameter.inner', desc = 'Inner part of a parameter' },
           },
         },
         move = {
@@ -65,15 +65,12 @@ return {
           set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
             [']f'] = { query = '@function.outer', desc = 'Move to the start of the next function' },
-            [']a'] = { query = '@parameter.outer', desc = 'Move to the start of the next parameter' },
           },
           goto_next_end = {
             [']F'] = { query = '@function.outer', desc = 'Move to the end of the next function' },
-            [']A'] = { query = '@parameter.outer', desc = 'Move to the end of the next parameter' },
           },
           goto_previous_start = {
             ['[f'] = { query = '@function.outer', desc = 'Move to the start of the prev function' },
-            ['[a'] = { query = '@parameter.outer', desc = 'Move to the start of the prev parameter' },
           },
           goto_previous_end = {
             ['[F'] = { query = '@function.outer', desc = 'Move to the start of the prev function' },

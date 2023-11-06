@@ -19,6 +19,7 @@ return {
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
           statusline = {
+            'aerial',
             'checkhealth',
             'mason',
             'NvimTree',
@@ -67,7 +68,14 @@ return {
           { 'location', separator = { right = '' }, left_padding = 2 },
         },
       },
-      tabline = {},
+      tabline = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { { 'aerial', color = { fg = '#494D64', bg = '#1E1E2E' } } },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
       extensions = {},
     })
   end,

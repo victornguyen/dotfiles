@@ -44,6 +44,9 @@ return {
     m.map('n', '<leader>;', builtin.command_history, { desc = 'Lists recently executed commands' })
     m.map('n', '<leader>/', builtin.search_history, { desc = 'Lists recent search terms' })
 
+    m.map('n', '<leader>as', telescope.extensions.aerial.aerial, { desc = 'Lists aerial document symbols' })
+    m.map('n', '<leader>s', builtin.lsp_document_symbols, { desc = 'Lists LSP document symbols' })
+
     telescope.setup({
       defaults = {
         mappings = {
@@ -86,8 +89,20 @@ return {
           },
         },
       },
+      extensions = {
+        aerial = {
+          filter_kind = false,
+          -- Display symbols as <root>.<parent>.<symbol>
+          show_nesting = {
+            ['_'] = false, -- not for everything
+            json = true, -- except for json
+            yaml = true, -- and yaml
+          },
+        },
+      },
     })
 
     telescope.load_extension('fzf')
+    telescope.load_extension('aerial')
   end,
 }
