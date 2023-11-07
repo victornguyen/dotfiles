@@ -77,7 +77,15 @@ return {
             },
             goto_previous_end = {
               ['[F'] = { query = '@function.outer', desc = 'Move to the start of the prev function' },
-              ['[A'] = { query = '@parameter.outer', desc = 'Move to the end of the prev parameter' },
+            },
+          },
+          swap = {
+            enable = true,
+            swap_next = {
+              ['[w'] = { query = '@parameter.inner', desc = 'Swap with next parameter' },
+            },
+            swap_previous = {
+              ['[w'] = { query = '@parameter.inner', desc = 'Swap with prev parameter' },
             },
           },
         },
