@@ -53,12 +53,14 @@ return {
             lookahead = true, -- automatically jump forward to textobj, similar to targets.vim
             keymaps = {
               -- You can use the capture groups defined in textobjects.scm
-              ['af'] = { query = '@function.outer', desc = 'Outer part of a function' },
-              ['if'] = { query = '@function.inner', desc = 'Inner part of a function' },
-              ['ac'] = { query = '@class.outer', desc = 'Outer part of a class region' },
-              ['ic'] = { query = '@class.inner', desc = 'Inner part of a class region' },
-              ['aa'] = { query = '@parameter.outer', desc = 'Outer part of a parameter' },
-              ['ia'] = { query = '@parameter.inner', desc = 'Inner part of a parameter' },
+              ['af'] = { query = '@function.outer', desc = 'a function' },
+              ['if'] = { query = '@function.inner', desc = 'inner function' },
+              ['ac'] = { query = '@class.outer', desc = 'a class' },
+              ['ic'] = { query = '@class.inner', desc = 'inner class' },
+              ['aa'] = { query = '@parameter.outer', desc = 'a parameter' },
+              ['ia'] = { query = '@parameter.inner', desc = 'inner parameter' },
+              ['aC'] = { query = '@conditional.outer', desc = 'a conditional' },
+              ['iC'] = { query = '@conditional.inner', desc = 'inner conditional' },
             },
           },
           move = {
