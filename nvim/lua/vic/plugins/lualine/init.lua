@@ -71,7 +71,7 @@ return {
       tabline = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { { 'aerial', color = { fg = '#494D64', bg = '#1E1E2E' } } },
+        lualine_c = { { 'aerial', color = { fg = '#494D64' } } },
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
