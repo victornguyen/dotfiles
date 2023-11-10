@@ -30,3 +30,6 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Re-run previous command with sudo
 alias please='sudo $(fc -ln -1)'
+
+# Lazygit
+alias lz='lazygit'
