@@ -25,7 +25,8 @@ fi
 
 # Change shell to zsh
 e_header "Changing default shell to zsh..."
-chsh -s /usr/local/bin/zsh
+new_shell="$HOMEBREW_PREFIX/bin/zsh"
+chsh -s "$new_shell"
 
 # Install zsh plugins
 # TODO: replace with zinit plugin installation
