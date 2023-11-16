@@ -43,6 +43,7 @@ return {
           {
             'filename',
             separator = { right = '' },
+            path = 4,
             color = {
               bg = '#292C3C',
               -- gui = 'bold',
