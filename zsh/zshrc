@@ -40,5 +40,10 @@ for zsh_source in $HOME/.dotfiles/zsh/configs/*.zsh; do
   source $zsh_source
 done
 
+# Source machine-specific local file if available
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
 ### Enable direnv
 eval "$(direnv hook zsh)"
