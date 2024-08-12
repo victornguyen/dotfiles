@@ -8,8 +8,8 @@ return {
     filter_kind = false, -- see :help SymbolKind
   },
   keys = {
-    { '<leader>at', '<cmd>AerialToggle!<cr>', desc = { 'Toggle aerial window' } },
-    { '<leader>an', '<cmd>AerialNavToggle<cr>', desc = { 'Toggle aerial nav window' } },
+    { '<leader>at', '<cmd>AerialToggle!<cr>', desc = 'Toggle aerial window' },
+    { '<leader>an', '<cmd>AerialNavToggle<cr>', desc = 'Toggle aerial nav window' },
   },
   config = function(_, opts)
     local m = require('vic.utils')
