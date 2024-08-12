@@ -35,13 +35,15 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- Use a sub-list to run only the first available formatter
-      javascript = { { 'prettierd', 'prettier' } },
-      typescript = { { 'prettierd', 'prettier' } },
-      javascriptreact = { { 'prettierd', 'prettier' } },
-      typescriptreact = { { 'prettierd', 'prettier' } },
+      javascript = { 'prettierd', 'prettier' },
+      typescript = { 'prettierd', 'prettier' },
+      javascriptreact = { 'prettierd', 'prettier' },
+      typescriptreact = { 'prettierd', 'prettier' },
       json = { 'fixjson' },
     },
+
+    -- Only run the first available formatted
+    stop_after_first = true,
 
     -- Set up format-on-save
     format_on_save = function(bufnr)
