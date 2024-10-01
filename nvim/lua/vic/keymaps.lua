@@ -37,9 +37,9 @@ m.map('n', '<C-w>v', ':vsp<CR>', { desc = 'Split vertically' })
 m.map('n', '<C-w>x', ':sp<CR>', { desc = 'Split horizontally' })
 
 -- Copy buffer path/name
-m.map('n', '<Leader>cf', ':let @+=expand("%")<CR>', { desc = "Copy buffer's relative file path" })
-m.map('n', '<Leader>cF', ':let @+=expand("%:p")<CR>', { desc = "Copy buffer's absolute file path" })
-m.map('n', '<Leader>ct', ':let @+=expand("%:t")<CR>', { desc = "Copy buffer's filename" })
+vim.api.nvim_create_user_command('CopyRelativePath', 'let @+=expand("%")', { nargs = 0 })
+vim.api.nvim_create_user_command('CopyAbsolutePath', 'let @+=expand("%:p")', { nargs = 0 })
+vim.api.nvim_create_user_command('CopyFilename', 'let @+=expand("%:t")', { nargs = 0 })
 
 -- Disable Ex mode because I don't know what it is yet
 m.map('n', 'Q', '<Nop>')
