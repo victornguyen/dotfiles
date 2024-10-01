@@ -51,3 +51,7 @@ m.map({ 'n', 'v' }, 'ga', '<Plug>(EasyAlign)')
 -- TODO: find a way to do this here
 -- nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 -- nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+-- Save without autowrite (formatting on save)
+vim.api.nvim_create_user_command('SaveNoAutowrite', 'noa w', {})
+m.map('n', '<Leader>W', ':SaveNoAutowrite<CR>', { desc = 'Save with no autocommands' })
