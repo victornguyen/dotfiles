@@ -11,9 +11,7 @@ m.map('n', '[d', vim.diagnostic.goto_prev, opts)
 m.map('n', ']d', vim.diagnostic.goto_next, opts)
 m.map('n', '<space>q', vim.diagnostic.setloclist, opts)
 
--- TODO: try lsp-format order option? https://github.com/harrisoncramer/nvim/blob/47d9197d526ca76de355ab83935b79f8a5321237/lua/lsp/init.lua#L15-L20
-
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   -- Keymaps
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { silent = true, buffer = bufnr }
@@ -36,7 +34,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',
-    'tsserver',
+    'ts_ls',
     'jsonls',
     'astro',
     'tailwindcss',
@@ -70,8 +68,28 @@ lspconfig.lua_ls.setup({
   },
 })
 
--- TypeScript
-lspconfig.tsserver.setup({
+local function filter(arr, fn)
+  if type(arr) ~= 'table' then
+    return arr
+  end
+
+  local filtered = {}
+  for k, v in pairs(arr) do
+    if fn(v, k, arr) then
+      table.insert(filtered, v)
+    end
+  end
+
+  return filtered
+end
+
+local function filterReactDTS(value)
+  -- TODO: check this thread again if there's a better solution
+  -- https://github.com/typescript-language-server/typescript-language-server/issues/216
+  return string.match(value.targetUri, 'react/index.d.ts') == nil
+end
+
+lspconfig.ts_ls.setup({
   on_attach = on_attach,
   filetypes = {
     'javascript',
@@ -82,6 +100,16 @@ lspconfig.tsserver.setup({
     'typescript.tsx',
   },
   cmd = { 'typescript-language-server', '--stdio' },
+  handlers = {
+    ['textDocument/definition'] = function(err, result, method, ...)
+      if vim.tbl_islist(result) and #result > 1 then
+        local filtered_result = filter(result, filterReactDTS)
+        return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
+      end
+
+      vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+    end,
+  },
 })
 
 -- JSON
