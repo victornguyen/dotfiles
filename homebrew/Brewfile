@@ -92,7 +92,6 @@ brew 'switchaudio-osx'
 brew 'mas'
 
 brew 'koekeishiya/formulae/skhd', args: ["HEAD"]
-brew 'koekeishiya/formulae/yabai'
 
 # Apps
 cask '1password'

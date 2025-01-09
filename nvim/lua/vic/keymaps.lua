@@ -9,10 +9,6 @@ m.map('n', ';', ':')
 -- Make yank behave like everything else
 m.map('n', 'Y', 'y$')
 
--- Cursor navigation
-m.map({ 'n', 'v' }, '<C-h>', '^', { desc = 'Go to start of line' })
-m.map({ 'n', 'v' }, '<C-l>', 'g_', { desc = 'Go to end of line' })
-
 -- Buffers
 m.map('n', 'H', ':bp<CR>', { desc = 'Go to start of line' })
 m.map('n', 'L', ':bn<CR>', { desc = 'Go to end of line' })
