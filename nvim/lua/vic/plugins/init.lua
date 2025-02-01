@@ -14,6 +14,7 @@ return {
   'christoomey/vim-system-copy',
 
   -- More text objects
+  -- TODO: does this overlap with nvim-treesitter-textobjects? :checkhealth which-key
   'wellle/targets.vim',
 
   -- Alignment
