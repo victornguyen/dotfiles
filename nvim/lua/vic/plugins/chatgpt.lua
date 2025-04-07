@@ -9,6 +9,9 @@ return {
     'nvim-telescope/telescope.nvim',
   },
   event = 'VeryLazy',
+  keys = {
+    { '<leader>ai', '<cmd>ChatGPT<cr>', desc = 'Open ChatGPT' },
+  },
   config = function()
     require('chatgpt').setup({
       api_key_cmd = 'gpg --decrypt ' .. home .. '/secret.txt.gpg',
