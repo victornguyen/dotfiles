@@ -9,7 +9,7 @@ return {
     local Rule = require('nvim-autopairs.rule')
 
     autopairs.setup({
-      disable_filetype = { 'TelescopePrompt' },
+      disable_filetype = { 'TelescopePrompt', 'markdown' },
     })
 
     local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
