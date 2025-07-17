@@ -6,6 +6,10 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'ravitemer/codecompanion-history.nvim',
   },
+  keys = {
+    { '<leader>cc', ':CodeCompanionChat<CR>', mode = { 'n', 'v' }, desc = 'Open CodeCompanion Chat' },
+    { '<leader>cp', ':CodeCompanionActions<CR>', mode = { 'n', 'v' }, desc = 'Open CodeCompanion Actions' },
+  },
   config = function(_, opts)
     require('codecompanion').setup({
       adapters = {
