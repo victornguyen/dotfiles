@@ -37,7 +37,6 @@ set.keywordprg = ':help'
 
 -- Misc
 set.cursorline = true
-set.lazyredraw = true
 set.scrolloff = 3
 set.showmode = false -- it should hide --MODE-- in command bar?
 set.signcolumn = 'yes'
