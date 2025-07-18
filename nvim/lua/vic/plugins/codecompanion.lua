@@ -11,8 +11,30 @@ return {
     { '<leader>cp', ':CodeCompanionActions<CR>', mode = { 'n', 'v' }, desc = 'Open CodeCompanion Actions' },
   },
   config = function(_, opts)
-    require('codecompanion').setup({
-      adapters = {
+    local use_copilot = os.getenv('USE_COPILOT') == 'true'
+
+    local setup_config = {
+      strategies = {
+        chat = {
+          adapter = use_copilot and 'copilot' or 'anthropic',
+        },
+        inline = {
+          adapter = use_copilot and 'copilot' or 'anthropic',
+        },
+      },
+      extensions = {
+        history = {
+          enabled = true,
+          opts = {
+            keymap = 'gH',
+          },
+        },
+      },
+    }
+
+    -- Only configure Anthropic adapter when not using Copilot
+    if not use_copilot then
+      setup_config.adapters = {
         anthropic = function()
           return require('codecompanion.adapters').extend('anthropic', {
             env = {
@@ -25,23 +47,9 @@ return {
             },
           })
         end,
-      },
-      strategies = {
-        chat = {
-          adapter = 'anthropic',
-        },
-        inline = {
-          adapter = 'anthropic',
-        },
-      },
-      extensions = {
-        history = {
-          enabled = true,
-          opts = {
-            keymap = 'gH',
-          },
-        },
-      },
-    })
+      }
+    end
+
+    require('codecompanion').setup(setup_config)
   end,
 }
