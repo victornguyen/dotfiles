@@ -5,3 +5,4 @@ node_modules
 .envrc
 .luarc.json
 nvim/lua/vic/local.lua
+.claude
