@@ -15,17 +15,16 @@ end
 local wiki_path = get_wiki_path()
 
 return {
-  'epwalsh/obsidian.nvim',
-  version = 'v3.9.0', -- recommended, use latest release instead of latest commit
+  'obsidian-nvim/obsidian.nvim',
+  branch = 'main',
   lazy = true,
-  -- ft = 'markdown',
-  -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+  ft = 'markdown',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
   event = {
     'BufReadPre ' .. wiki_path .. '/*.md',
     'BufNewFile ' .. wiki_path .. '/*.md',
-  },
-  dependencies = {
-    'nvim-lua/plenary.nvim',
   },
   opts = {
     workspaces = {
@@ -33,6 +32,15 @@ return {
         name = 'personal',
         path = wiki_path,
       },
+    },
+    legacy_commands = false,
+    daily_notes = {
+      folder = 'dailies',
+      date_format = '%Y-%m-%d',
+      -- Optional, if you want to change the date format of the default alias of daily notes.
+      -- alias_format = '%B %-d, %Y',
+      -- Optional, default tags to add to each new daily note created.
+      default_tags = { 'daily-notes' },
     },
   },
 }
