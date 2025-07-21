@@ -34,6 +34,9 @@ return {
       },
     },
     legacy_commands = false,
+    ui = {
+      enable = false,
+    },
     daily_notes = {
       folder = 'dailies',
       date_format = '%Y-%m-%d',
