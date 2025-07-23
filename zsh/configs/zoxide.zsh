@@ -5,6 +5,10 @@
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
+# Fix zi command conflict with zinit
+unalias zi 2>/dev/null  # Remove zinit alias
+alias zin=zinit         # Create new alias for zinit
+
 # Enhanced directory jumping with fzf integration
 # Jump if args provided, otherwise use fzf to filter zoxide results
 j() {
@@ -12,8 +16,14 @@ j() {
     z "$*"
   else
     local dir
-    dir="$(zoxide query --list | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+    dir="$(zoxide query --list | fzf --no-sort +m)" && cd "${dir}" || return 1
   fi
+}
+
+# Browse and jump to subdirectories with fzf
+k() {
+  local dir
+  dir="$(find . -mindepth 1 -type d -not -path '*/.*' | fzf --no-sort +m)" && cd "${dir}" || return 1
 }
 
 # Enhanced file opening with fzf integration
