@@ -33,11 +33,11 @@ return {
     --   toggle_telescope(harpoon:list())
     -- end, { desc = 'Open harpoon window' })
 
-    vim.keymap.set('n', '<leader>o', function()
+    vim.keymap.set('n', '<leader>hh', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set('n', '<leader>m', function()
+    vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():add()
     end)
 
@@ -77,6 +77,10 @@ return {
 
         vim.keymap.set('n', '<C-t>', function()
           harpoon.ui:select_menu_item({ tabedit = true })
+        end, { buffer = cx.bufnr })
+
+        vim.keymap.set('n', '<C-c>', function()
+          harpoon.ui:close_menu()
         end, { buffer = cx.bufnr })
       end,
     })

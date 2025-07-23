@@ -46,4 +46,31 @@ return {
       default_tags = { 'daily-notes' },
     },
   },
+  keys = {
+    -- Essential daily workflow
+    { '<leader>ot', '<cmd>Obsidian today<cr>', desc = 'Obsidian: Open today', ft = 'markdown' },
+    { '<leader>oo', '<cmd>Obsidian quick_switch<cr>', desc = 'Obsidian: Quick switch', ft = 'markdown' },
+    { '<leader>os', '<cmd>Obsidian search<cr>', desc = 'Obsidian: Search notes', ft = 'markdown' },
+    { '<leader>on', '<cmd>Obsidian new<cr>', desc = 'Obsidian: New note', ft = 'markdown' },
+
+    -- Navigation and links
+    { '<leader>ob', '<cmd>Obsidian backlinks<cr>', desc = 'Obsidian: Show backlinks', ft = 'markdown' },
+    { '<leader>ol', '<cmd>Obsidian links<cr>', desc = 'Obsidian: Show links', ft = 'markdown' },
+
+    -- Additional useful commands
+    { '<leader>og', '<cmd>Obsidian tags<cr>', desc = 'Obsidian: Browse tags', ft = 'markdown' },
+    { '<leader>oy', '<cmd>Obsidian yesterday<cr>', desc = 'Obsidian: Open yesterday', ft = 'markdown' },
+    { '<leader>om', '<cmd>Obsidian tomorrow<cr>', desc = 'Obsidian: Open tomorrow', ft = 'markdown' },
+    { '<leader>od', '<cmd>Obsidian dailies<cr>', desc = 'Obsidian: Browse dailies', ft = 'markdown' },
+    { '<leader>oc', '<cmd>Obsidian toc<cr>', desc = 'Obsidian: Table of contents', ft = 'markdown' },
+    {
+      '<leader>oe',
+      '<cmd>Obsidian extract_note<cr>',
+      desc = 'Obsidian: Extract to new note',
+      mode = 'v',
+      ft = 'markdown',
+    },
+    { '<leader>or', '<cmd>Obsidian rename<cr>', desc = 'Obsidian: Rename note', ft = 'markdown' },
+    { '<leader>oO', '<cmd>Obsidian open<cr>', desc = 'Obsidian: Open in app', ft = 'markdown' },
+  },
 }
