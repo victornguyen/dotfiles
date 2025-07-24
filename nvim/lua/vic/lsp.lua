@@ -7,8 +7,12 @@ local m = require('vic.utils')
 
 local opts = { silent = true }
 m.map('n', '<space>e', vim.diagnostic.open_float, opts)
-m.map('n', '[d', vim.diagnostic.goto_prev, opts)
-m.map('n', ']d', vim.diagnostic.goto_next, opts)
+m.map('n', '[d', function()
+  vim.diagnostic.jump({ count = -1 })
+end, opts)
+m.map('n', ']d', function()
+  vim.diagnostic.jump({ count = 1 })
+end, opts)
 m.map('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(_, bufnr)
@@ -22,9 +26,6 @@ local on_attach = function(_, bufnr)
   m.map('n', 'gi', vim.lsp.buf.implementation, bufopts)
   m.map('n', 'K', vim.lsp.buf.hover, bufopts)
   m.map('n', '<Space>rn', vim.lsp.buf.rename, bufopts)
-
-  -- TODO: try the functions from:
-  -- https://github.com/neovim/nvim-lspconfig#suggested-configuration
   m.map('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 end
 
@@ -39,12 +40,15 @@ require('mason-lspconfig').setup({
     'astro',
     'tailwindcss',
   },
-  automatic_installation = true,
+  automatic_enable = {
+    exclude = {
+      'ts_ls',
+    },
+  },
 })
 
 -- Lua
-lspconfig.lua_ls.setup({
-  on_attach = on_attach,
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       runtime = {
@@ -84,7 +88,6 @@ local function filter(arr, fn)
 end
 
 local function filterReactDTS(value)
-  -- TODO: check this thread again if there's a better solution
   -- https://github.com/typescript-language-server/typescript-language-server/issues/216
   return string.match(value.targetUri, 'react/index.d.ts') == nil
 end
@@ -110,14 +113,4 @@ lspconfig.ts_ls.setup({
       vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
     end,
   },
-})
-
--- JSON
-lspconfig.jsonls.setup({
-  on_attach = on_attach,
-})
-
--- Astro
-lspconfig.astro.setup({
-  on_attach = on_attach,
 })
