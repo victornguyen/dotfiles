@@ -45,7 +45,7 @@ return {
   keys = {
     -- Essential daily workflow
     { '<leader>ot', '<cmd>Obsidian today<cr>', desc = 'Obsidian: Open today' },
-    { '<leader>oo', '<cmd>Obsidian quick_switch<cr>', desc = 'Obsidian: Quick switch' },
+    { '<leader>op', '<cmd>Obsidian quick_switch<cr>', desc = 'Obsidian: Quick switch' },
     { '<leader>os', '<cmd>Obsidian search<cr>', desc = 'Obsidian: Search notes' },
     { '<leader>on', '<cmd>Obsidian new<cr>', desc = 'Obsidian: New note' },
 
