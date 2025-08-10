@@ -13,14 +13,10 @@
 #   $ brew upgrade
 #
 # Update already-installed casks:
-#   $ brew cu
+#   $ brew upgrade --cask
 
 tap 'homebrew/bundle'
-tap 'homebrew/core'
-tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'buo/cask-upgrade'
 
 brew 'coreutils'
 
@@ -30,7 +26,6 @@ brew 'bat'
 brew 'cheat'
 brew 'direnv'
 brew 'eza'
-brew 'zoxide'
 brew 'fd'
 brew 'fpp'
 brew 'fx'
@@ -44,10 +39,12 @@ brew 'ranger'
 brew 'ripgrep'
 brew 'tldr'
 brew 'trash'
+brew 'zoxide'
 
 # Vim
 brew 'neovim'
-brew 'vim', args: ["HEAD"]
+brew 'tree-sitter'
+brew 'vim'
 
 # Tmux
 brew 'reattach-to-user-namespace'
@@ -55,12 +52,9 @@ brew 'tmux'
 
 # Git
 brew 'git'
-# TODO: learn how to tweak colours so they're less ugly
 brew 'git-delta'
+brew 'git-lfs'
 brew 'lazygit'
-
-# Node
-brew 'yarn', args: ["ignore-dependencies"]
 
 # Go
 brew 'go'
@@ -70,9 +64,7 @@ brew 'lua'
 brew 'luarocks'
 
 # Docker
-# TODO: script initial setup
 brew 'docker'
-brew 'docker-machine'
 
 # Ruby
 brew 'chruby'
@@ -85,43 +77,35 @@ brew 'python'
 # MySQL
 brew 'mysql'
 
-# OSX
-brew 'switchaudio-osx'
-
 # CLI for Mac App Store
 brew 'mas'
 
+# skhd for 
+# TODO: consider migrating to https://github.com/jackielii/skhd.zig
 brew 'koekeishiya/formulae/skhd', args: ["HEAD"]
 
 # Apps
 cask '1password'
 cask '1password-cli'
 cask 'aerial'
+cask 'aerospace'
 cask 'alfred'
 cask 'charles'
-cask 'dash'
 cask 'discord'
 cask 'dropbox'
-cask 'evernote'
 cask 'firefox'
-cask 'flux'
 cask 'google-chrome'
-cask 'google-chrome-canary'
-cask 'hazel'
 cask 'hammerspoon'
+cask 'insomnia'
 cask 'istat-menus'
-cask 'karabiner-elements'
 cask 'keepingyouawake'
 cask 'kitty'
-cask 'licecap'
 cask 'marked'
 cask 'mos'
 cask 'notion'
+cask 'obsidian'
 cask 'postman'
-cask 'quicklook-json'
-cask 'rectangle'
 cask 'rocket'
-cask 'sketch'
 cask 'slack'
 cask 'spotify'
 cask 'visual-studio-code'
@@ -136,11 +120,8 @@ cask 'font-jetbrains-mono-nerd-font'
 # Mac App Store Apps
 mas 'DaisyDisk', id: 411643860
 mas 'Day One', id: 1055511498
-mas 'GIF Keyboard', id: 1043270657
 mas 'Gifski', id: 1351639930
-mas 'Icon Slate', id: 439697913
 mas 'Messenger', id: 1480068668
 mas 'Sip', id: 507257563
-mas 'Twitter', id: 1482454543
 mas 'WhatsApp', id: 1147396723
 mas 'Xcode', id: 497799835
