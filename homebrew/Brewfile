@@ -3,7 +3,6 @@
 # https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
 #
 # To install from this file:
-#   $ brew tap homebrew/bundle
 #   $ brew bundle
 #
 # Make sure using latest Homebrew:
@@ -15,8 +14,6 @@
 # Update already-installed casks:
 #   $ brew upgrade --cask
 
-tap 'homebrew/bundle'
-tap 'homebrew/cask-fonts'
 
 brew 'coreutils'
 
