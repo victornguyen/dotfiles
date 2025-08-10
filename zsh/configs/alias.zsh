@@ -14,11 +14,10 @@ alias ....="cd ../../.."
 # Directory lists
 # Use eza if available
 if [[ -x "$(command -v eza)" ]]; then
-  alias l="eza -la"             # long list
-  alias lg="eza -la --git"      # include git status
+  alias l="eza -la --git"       # long list
   alias lt="eza -la -s=mod"     # most recent last
   alias ltr="eza -lar -s=mod"   # most recent first
-  alias tree="eza -a -T -L=2"  # tree view
+  alias tree="eza -a -T -L=2"   # tree view
 else
   alias l="ls -lahF"            # long list
   alias lt="ls -lahFtr"         # most recent last
