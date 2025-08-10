@@ -5,6 +5,9 @@
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
+# Replace cd with z for muscle memory
+alias cd=z
+
 # Fix zi command conflict with zinit
 unalias zi 2>/dev/null  # Remove zinit alias
 alias zin=zinit         # Create new alias for zinit
