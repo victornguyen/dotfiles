@@ -80,8 +80,9 @@ brew 'mysql'
 # CLI for Mac App Store
 brew 'mas'
 
-# skhd for 
+# skhd for key bindings
 # TODO: consider migrating to https://github.com/jackielii/skhd.zig
+tap 'koekeishiya/formulae'
 brew 'koekeishiya/formulae/skhd', args: ["HEAD"]
 
 # Apps
@@ -100,7 +101,7 @@ cask 'insomnia'
 cask 'istat-menus'
 cask 'keepingyouawake'
 cask 'kitty'
-cask 'marked'
+cask 'marked-app'
 cask 'mos'
 cask 'notion'
 cask 'obsidian'
