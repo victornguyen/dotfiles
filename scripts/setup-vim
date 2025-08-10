@@ -5,24 +5,27 @@ source "${HOME}/.dotfiles/scripts/lib/utils"
 e_header "Creating scratch directories..."
 mkdir -p ${HOME}/.local/share/nvim/{swap,backup,undo,view}
 
-e_header "Installing vim-plug..."
-if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+e_header "Installing Python providers..."
+if command -v python3 >/dev/null 2>&1; then
+  python3 -m pip install --user --upgrade pynvim
+else
+  e_warning "Python3 not found, skipping pynvim installation"
 fi
 
-e_header "Installing Python prodivers..."
-sudo pip2 install --upgrade pynvim
-sudo pip3 install --upgrade pynvim
-
 e_header "Installing Node provider..."
-npm i -g neovim
+if command -v npm >/dev/null 2>&1; then
+  npm i -g neovim
+else
+  e_warning "npm not found, skipping neovim node provider installation"
+fi
 
 # TODO: ensure ruby is properly installed by this point
 e_header "Installing Ruby provider..."
-gem install neovim
-
-e_header "Installing Neovim plugins..."
-nvim +PackerSync +qall
+if command -v gem >/dev/null 2>&1; then
+  gem install neovim
+else
+  e_warning "gem not found, skipping neovim ruby provider installation"
+fi
 
 e_success "Neovim setup complete!"

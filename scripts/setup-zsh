@@ -10,14 +10,24 @@ if [[ $(command -v brew) == "" ]] ; then
   exit 1
 fi
 
+# Detect Homebrew prefix if not already set
+if [[ -z "$HOMEBREW_PREFIX" ]]; then
+  if [[ $(uname -m) == "arm64" ]]; then
+    HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    HOMEBREW_PREFIX="/usr/local"
+  fi
+fi
+
 # Install latest zsh
 e_header "Installing latest zsh..."
 brew install zsh
 
 # Add homebrew zsh to whitelist
 e_header "Adding homebrew zsh to /etc/shells whitelist..."
-if [[ $(grep /usr/local/bin/zsh /etc/shells) == "" ]]; then
-  echo /usr/local/bin/zsh | sudo tee -a /etc/shells
+zsh_path="$HOMEBREW_PREFIX/bin/zsh"
+if [[ $(grep "$zsh_path" /etc/shells) == "" ]]; then
+  echo "$zsh_path" | sudo tee -a /etc/shells
   e_step "Added!"
 else
   e_step "An entry already exists!"

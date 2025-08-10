@@ -18,7 +18,17 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Loop through scripts in macos/ and run
 e_header "Applying sensible MacOS settings..."
-for file in $HOME/.dotfiles/scripts/macos/*; do
-  e_step "Applying $file"
-  bash $file
-done
+macos_dir="$HOME/.dotfiles/scripts/macos"
+if [[ -d "$macos_dir" && -n "$(ls -A "$macos_dir" 2>/dev/null)" ]]; then
+  for file in "$macos_dir"/*; do
+    if [[ -f "$file" ]]; then
+      e_step "Applying $file"
+      bash "$file"
+    fi
+  done
+else
+  e_warning "No macOS configuration scripts found in $macos_dir"
+fi
+
+# Restart System Preferences to ensure all changes take effect
+sudo pkill -f "System Preferences" 2>/dev/null || true
