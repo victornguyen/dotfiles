@@ -25,15 +25,16 @@ else
   # Install global node packages
   e_header "Installing global node packages..."
   packages=(
-    alfred-emoj
     asciicast2gif
+    claude
+    concurrently
     emoj
     eslint
     eslint-plugin-react
-    grunt
-    gulp
     http-server
+    nodemon
     prettier
+    typescript
   )
   npm i -g "${packages[@]}"
 
