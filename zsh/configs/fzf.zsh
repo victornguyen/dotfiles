@@ -1,7 +1,13 @@
 # fzf config
 
-# Source fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Source fzf key bindings and completion
+if [[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]]; then
+  source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+fi
+
+if [[ -f /opt/homebrew/opt/fzf/shell/completion.zsh ]]; then
+  source /opt/homebrew/opt/fzf/shell/completion.zsh
+fi
 
 # Set ripgrep as the default source for fzf
 # --files: print each file to be searched
