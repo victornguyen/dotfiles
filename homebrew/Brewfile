@@ -119,6 +119,7 @@ cask 'font-jetbrains-mono-nerd-font'
 # Mac App Store Apps
 mas 'DaisyDisk', id: 411643860
 mas 'Day One', id: 1055511498
+mas 'Flow', id: 1423210932
 mas 'Gifski', id: 1351639930
 mas 'Messenger', id: 1480068668
 mas 'Xcode', id: 497799835
