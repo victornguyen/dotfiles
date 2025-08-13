@@ -35,11 +35,11 @@ return {
 
     vim.keymap.set('n', '<leader>ho', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = 'Harpoon: Toggle quick menu' })
 
     vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():add()
-    end)
+    end, { desc = 'Harpoon: Add file to list' })
 
     -- TODO: figure out binds for jumping to marked files
     -- vim.keymap.set('n', '<C-a>', function()
