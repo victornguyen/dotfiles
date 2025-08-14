@@ -64,6 +64,7 @@ brew 'luarocks'
 
 # Docker
 brew 'docker'
+brew 'docker-compose'
 
 # Ruby
 brew 'chruby'
@@ -87,7 +88,6 @@ brew 'koekeishiya/formulae/skhd', args: ["HEAD"]
 cask '1password'
 cask '1password-cli'
 cask 'aerial'
-cask 'nikitabobko/tap/aerospace'
 cask 'alfred'
 cask 'charles'
 cask 'discord'
@@ -99,8 +99,10 @@ cask 'insomnia'
 cask 'istat-menus'
 cask 'keepingyouawake'
 cask 'kitty'
+cask 'maccy'
 cask 'marked-app'
 cask 'mos'
+cask 'nikitabobko/tap/aerospace'
 cask 'notion'
 cask 'obsidian'
 cask 'postman'
