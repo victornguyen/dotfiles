@@ -5,8 +5,10 @@
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
-# Replace cd with z for muscle memory
-alias cd=z
+# Replace cd with z for muscle memory (only in interactive shells)
+if [[ $- == *i* ]]; then
+  alias cd=z
+fi
 
 # Fix zi command conflict with zinit
 unalias zi 2>/dev/null  # Remove zinit alias
