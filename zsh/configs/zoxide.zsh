@@ -28,7 +28,7 @@ j() {
 # Browse and jump to subdirectories with fzf
 k() {
   local dir
-  dir="$(find . -mindepth 1 -type d -not -path '*/.*' | fzf --no-sort +m)" && cd "${dir}" || return 1
+  dir="$(find . -maxdepth 1 -mindepth 1 -type d -not -path '*/.*' | fzf --no-sort +m)" && cd "${dir}" || return 1
 }
 
 # Enhanced file opening with fzf integration
