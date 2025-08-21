@@ -42,9 +42,7 @@ return {
 
     -- Read the file content
     local content, err = read_file(local_file_path)
-    if not content then
-      print('Error reading file: ' .. err)
-    else
+    if content then
       -- Parse the URLs from the file content
       local github_enterprise_urls = parse_urls(content)
       -- Set the URLs as a Vim variable
