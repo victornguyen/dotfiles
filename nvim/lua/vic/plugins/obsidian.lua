@@ -33,6 +33,31 @@ return {
     ui = {
       enable = false,
     },
+    note_id_func = function(title)
+      -- Handle nil/empty title
+      if not title or title == '' then
+        return os.date('%Y%m%d%H%M%S')
+      end
+
+      -- Sanitize title: remove illegal filesystem chars, normalize multiple spaces
+      local safe_title = title:gsub('[/\\:*?"<>|]', ''):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
+
+      -- Handle empty result after sanitization
+      if safe_title == '' then
+        return os.date('%Y%m%d%H%M%S')
+      end
+
+      -- Check for duplicates and append suffix if needed
+      local final_id = safe_title
+      local counter = 1
+
+      while vim.fn.filereadable(wiki_path .. '/' .. final_id .. '.md') == 1 do
+        counter = counter + 1
+        final_id = safe_title .. ' ' .. counter
+      end
+
+      return final_id
+    end,
     daily_notes = {
       folder = 'dailies',
       date_format = '%Y-%m-%d',
