@@ -6,3 +6,4 @@ node_modules
 .luarc.json
 nvim/lua/vic/local.lua
 .claude
+.opencode
