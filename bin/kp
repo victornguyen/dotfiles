@@ -6,11 +6,21 @@
 # https://github.com/SidOfc/dotfiles/blob/d07fa3862ed065c2a5a7f1160ae98416bfe2e1ee/zsh/kp
 # <tab> to select one or multiple entries
 # <enter> to kill selected processes and go back to the process list.
+# <ctrl+p> to show parent processes of the selected process
 
-# TODO: DRY this out once you properly learn shell scripting
-
-local kp_header=$(ps -eo pcpu,pid,user,args -r | sed 1q)
-local pid=$(ps -eo pcpu,pid,user,args -r | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --reverse --header='$kp_header'" | awk '{print $2}')
+local kp_header=$(ps -eo pcpu,pid,ppid,user,args -r | sed 1q)
+local initial_processes=$(ps -eo pcpu,pid,ppid,user,args -r | sed 1d)
+local pid=$(
+  echo "$initial_processes" | fzf \
+    "$@" \
+    -m \
+    --reverse \
+    --header="$kp_header" \
+    --prompt="Processes > " \
+    --bind "ctrl-p:change-prompt('Parent > ')+reload(ps -p \$(echo {} | awk '{print \$3}') -o pcpu,pid,ppid,user,args | sed 1d)" \
+    --bind "ctrl-r:change-prompt('Processes > ')+reload(echo \"$initial_processes\")" |
+    awk '{print $2}'
+)
 
 if [ "x$pid" != "x" ]
 then
