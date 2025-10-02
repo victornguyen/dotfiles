@@ -19,7 +19,7 @@ m.map('n', '<leader>D', ':%bd|e#|bd#<CR>', { desc = 'Delete all buffers except c
 m.map('n', 'n', 'nzzzv', { desc = 'Find next and center screen' })
 m.map('n', 'N', 'Nzzzv', { desc = 'Find prev and center screen' })
 m.map('v', '//', 'y/<C-r>"<CR>', { desc = 'Search for visually highlighted text' })
-m.map('n', '<Leader><Space>', ':noh<CR>', { desc = 'Disable search highlighting until next search' })
+m.map('n', '<Leader><Space>', ':NoiceDismiss<CR>:noh<CR>', { desc = 'Dismiss Noice and disable search highlighting' })
 
 -- Clipboard
 m.map('n', 'gp', '`[v`]', { desc = 'Select pasted text' })
