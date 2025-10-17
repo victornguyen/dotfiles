@@ -69,14 +69,6 @@ return {
           { 'location', separator = { right = '' }, left_padding = 2 },
         },
       },
-      tabline = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { { 'aerial', color = { fg = '#494D64' } } },
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
       extensions = {},
     })
   end,
