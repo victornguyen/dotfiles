@@ -22,7 +22,6 @@ m.map('v', '//', 'y/<C-r>"<CR>', { desc = 'Search for visually highlighted text'
 m.map('n', '<Leader><Space>', ':NoiceDismiss<CR>:noh<CR>', { desc = 'Dismiss Noice and disable search highlighting' })
 
 -- Clipboard
-m.map('n', 'gp', '`[v`]', { desc = 'Select pasted text' })
 m.map('n', 'gP', '"+p', { desc = 'Paste from system clipboard' })
 
 -- Join line and center screen

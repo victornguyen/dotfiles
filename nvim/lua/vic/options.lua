@@ -41,6 +41,7 @@ set.scrolloff = 3
 set.showmode = false -- it should hide --MODE-- in command bar?
 set.signcolumn = 'yes'
 set.termguicolors = true
+set.updatetime = 250 -- Faster completion and diagnostics
 
 -- NOTE: The block below fixes cursor blinking when nvim is inside tmux.
 -- However the block cursor does not invert the character it's on -- can't see.
