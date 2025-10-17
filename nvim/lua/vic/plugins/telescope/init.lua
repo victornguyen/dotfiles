@@ -78,6 +78,7 @@ return {
           previewer = false,
         },
         find_files = {
+          layout_strategy = 'vertical',
           file_ignore_patterns = { '^.git' },
           hidden = true,
         },
@@ -87,6 +88,12 @@ return {
             height = 0.7,
             preview_height = 0.55,
           },
+        },
+        live_grep = {
+          layout_strategy = 'vertical',
+        },
+        grep_string = {
+          layout_strategy = 'vertical',
         },
       },
       extensions = {
