@@ -89,6 +89,7 @@ return {
     { '<leader>ca', '<cmd>Lspsaga code_action<cr>', desc = 'Code Action' },
     { 'K', '<cmd>Lspsaga hover_doc<cr>', desc = 'Hover Doc' },
     { 'gd', '<cmd>Lspsaga goto_definition<cr>', desc = 'Goto Definition' },
+    { 'gy', '<cmd>Lspsaga goto_type_definition<cr>', desc = 'Goto Type Definition' },
     { 'gp', '<cmd>Lspsaga peek_definition<cr>', desc = 'Peek Definition' },
     { 'gr', '<cmd>Lspsaga finder<cr>', desc = 'Find References' },
     { '<leader>ao', '<cmd>Lspsaga outline<cr>', desc = 'Symbols Outline' },
