@@ -7,3 +7,6 @@ autoload -U compinit -D
 ## case-insensitive (all), partial-word and then substring completion
 zstyle ':completion:*' menu select matcher-list 'm:{a-zA-Z}={A-Za-z}' \
     'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# OpenClaw Completion
+source "/Users/vic/.openclaw/completions/openclaw.zsh"
