@@ -22,6 +22,29 @@
         ],
         "matcher": ""
       }
+    ],
+    "PreToolUse": [
+      {
+        "_tag": "ccstatusline-managed",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bunx -y ccstatusline@latest --hook"
+          }
+        ],
+        "matcher": "Skill"
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "_tag": "ccstatusline-managed",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bunx -y ccstatusline@latest --hook"
+          }
+        ]
+      }
     ]
   },
   "permissions": {
@@ -60,6 +83,10 @@
     ],
     "deny": []
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0
+  }
 }
-

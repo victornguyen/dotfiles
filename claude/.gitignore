@@ -25,3 +25,7 @@ todos/
 plugins/marketplaces/
 plugins/repos/
 plugins/known_marketplaces.json
+
+# Backup/merge artifacts
+settings.json.bak
+settings.json.orig
