@@ -1,0 +1,26 @@
+# Runtime state
+history.jsonl
+.update.lock
+mcp-needs-auth-cache.json
+
+# Session & debug data
+debug/
+session-env/
+shell-snapshots/
+file-history/
+backups/
+plans/
+tasks/
+cache/
+
+# Telemetry & analytics
+telemetry/
+statsig/
+
+# Per-project state
+projects/
+todos/
+
+# Plugin repos & marketplaces (auto-managed)
+plugins/marketplaces/
+plugins/repos/
