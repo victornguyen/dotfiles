@@ -15,7 +15,7 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export HOMEBREW="/opt/homebrew"
 
-export PATH="/usr/local/sbin:${HOMEBREW}/bin:${HOMEBREW}/sbin:$PATH:${HOME}/.dotfiles/bin:$GOBIN"
+export PATH="/usr/local/sbin:${HOMEBREW}/bin:${HOMEBREW}/sbin:$PATH:${HOME}/.dotfiles/bin:$GOBIN:${HOME}/.local/bin"
 
 # Source machine-specific local file if available
 if [ -f ~/.zshenv.local ]; then
