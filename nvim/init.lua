@@ -6,6 +6,9 @@ vim.g.maplocalleader = ' '
 require('vic.config')
 require('vic.options')
 
+-- Disable Neovim 0.11 built-in LSP configs we don't need (we use conform for formatting)
+vim.lsp.config('stylua', { cmd = false })
+
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({

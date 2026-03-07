@@ -66,7 +66,9 @@ return {
       -- Optional, default tags to add to each new daily note created.
       default_tags = { 'daily-notes' },
     },
-    preferred_link_style = 'markdown',
+    link = {
+      style = 'markdown',
+    },
     checkbox = {
       order = { ' ', 'x', '~', '!', '>' },
     },
