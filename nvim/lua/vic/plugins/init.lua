@@ -19,6 +19,4 @@ return {
   -- Alignment
   'junegunn/vim-easy-align',
 
-  -- Smooth scrolling
-  'psliwka/vim-smoothie',
 }
