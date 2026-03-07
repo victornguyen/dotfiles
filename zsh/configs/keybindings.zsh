@@ -8,6 +8,8 @@ bindkey "^b" backward-char
 bindkey "^k" kill-line
 bindkey "^d" delete-char
 bindkey "^y" accept-and-hold
+bindkey "^p" up-line-or-history
+bindkey "^n" down-line-or-history
 bindkey "^w" backward-kill-word
 bindkey "^u" backward-kill-line
 
