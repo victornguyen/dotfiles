@@ -3,7 +3,6 @@ return {
   'fladson/vim-kitty',
 
   -- Tim Pope
-  'tpope/vim-commentary',
   'tpope/vim-unimpaired',
   'tpope/vim-surround',
   'tpope/vim-repeat',
