@@ -22,9 +22,6 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 ### Install zsh plugins
-zinit ice pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
-
 zinit wait lucid light-mode for \
   lukechilds/zsh-nvm \
   mafredri/zsh-async \
@@ -47,6 +44,9 @@ fi
 
 ### Enable direnv
 eval "$(direnv hook zsh)"
+
+### Starship prompt
+eval "$(starship init zsh)"
 
 # bun completions
 [ -s "/Users/vic/.bun/_bun" ] && source "/Users/vic/.bun/_bun"
