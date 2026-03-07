@@ -11,7 +11,7 @@ ${dotfiles_scripts}/setup-zsh
 
 printf "\n"
 e_success "Initial setup complete!"
-e_warning "Please restart your shell and run scripts/setup-node"
+e_warning "Please restart your shell and run scripts/setup-mise"
 
 # Should restart shell at this point then run:
-# scripts/setup-node
+# scripts/setup-mise

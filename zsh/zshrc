@@ -23,7 +23,6 @@ zinit light-mode for \
 
 ### Install zsh plugins
 zinit wait lucid light-mode for \
-  lukechilds/zsh-nvm \
   mafredri/zsh-async \
   atinit"zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \

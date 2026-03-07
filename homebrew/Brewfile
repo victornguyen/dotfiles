@@ -69,9 +69,10 @@ brew 'docker'
 brew 'docker-compose'
 
 # Ruby
-brew 'chruby'
-brew 'ruby-install'
 brew 'ruby'
+
+# Runtime version manager (replaces nvm + chruby)
+brew 'mise'
 
 # Python
 brew 'python'

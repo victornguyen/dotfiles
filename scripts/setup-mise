@@ -1,0 +1,25 @@
+#!/bin/bash
+
+source "${HOME}/.dotfiles/scripts/lib/utils"
+
+e_header "Setting up mise and runtimes..."
+
+# Install Node LTS as global default
+e_header "Installing Node LTS..."
+mise use --global node@lts
+
+# Install latest stable Ruby
+e_header "Installing Ruby..."
+mise use --global ruby@latest
+
+# Install standalone CLI tools (Node-version-independent)
+e_header "Installing standalone CLI tools via mise..."
+mise use --global prettier@latest
+
+# Install global npm packages
+e_header "Installing global node packages..."
+npm i -g npm
+packages=(concurrently eslint http-server nodemon typescript)
+npm i -g "${packages[@]}"
+
+e_success "mise setup complete!"
