@@ -21,6 +21,7 @@ statsig/
 projects/
 todos/
 
-# Plugin repos & marketplaces (auto-managed)
+# Plugin auto-managed state
 plugins/marketplaces/
 plugins/repos/
+plugins/known_marketplaces.json
