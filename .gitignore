@@ -4,3 +4,4 @@
 *.db
 .perles/
 claude/plugins/
+claude/image-cache/
