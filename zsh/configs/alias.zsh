@@ -35,3 +35,6 @@ alias lz='lazygit'
 
 # Make kitty cursor blink work in nvim while in tmux
 alias nvim="TERM=xterm-kitty nvim"
+
+# Claude Code
+alias yolo='claude --dangerously-skip-permissions'
