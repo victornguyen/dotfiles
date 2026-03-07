@@ -1,7 +1,8 @@
 -- LSP plugins
 return {
   {
-    'folke/neodev.nvim',
+    'folke/lazydev.nvim',
+    ft = 'lua',
     opts = {},
   },
   'williamboman/mason.nvim',
