@@ -1,0 +1,20 @@
+## atuin config
+## Full reference: https://docs.atuin.sh/configuration/config/
+
+[settings]
+## Search mode: fuzzy full-text search (default is "fuzzy")
+search_mode = "fuzzy"
+
+## Don't sync (local-only by default, can enable later)
+auto_sync = false
+
+## Filter modes for search
+filter_mode = "global"
+filter_mode_shell_up_arrow = "session"
+
+## Style
+style = "compact"
+inline_height = 20
+
+## Don't update check
+update_check = false

@@ -40,6 +40,7 @@ brew 'starship'
 brew 'tldr'
 brew 'trash'
 brew 'zoxide'
+brew 'atuin'
 
 # Vim
 brew 'neovim'
