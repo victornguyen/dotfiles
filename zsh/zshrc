@@ -30,7 +30,9 @@ zinit wait lucid light-mode for \
   atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-accept" \
     zsh-users/zsh-autosuggestions \
   blockf atpull"zinit creinstall -q ." \
-    zsh-users/zsh-completions
+    zsh-users/zsh-completions \
+  atload'[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"' \
+    zdharma-continuum/null
 
 ### Source all zsh config files
 for zsh_source in $HOME/.dotfiles/zsh/configs/*.zsh; do
@@ -47,9 +49,6 @@ eval "$(direnv hook zsh)"
 
 ### Starship prompt
 eval "$(starship init zsh)"
-
-# bun completions
-[ -s "/Users/vic/.bun/_bun" ] && source "/Users/vic/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
