@@ -1,1 +1,4 @@
 --smart-case
+--hidden
+--max-filesize=1M
+--glob=!.git
