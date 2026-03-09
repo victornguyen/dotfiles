@@ -1,39 +1,57 @@
 {
+  "env": {
+    "ENABLE_LSP_TOOL": "1"
+  },
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)",
-      "Bash(go:*)",
+      "Read",
+      "Glob",
+      "Grep",
       "Write(*)",
-      "Bash(ls:*)",
-      "Bash(git:*)",
-      "Update(*:*)",
-      "Bash(mv:*)",
-      "Bash(echo:*)",
-      "Bash(sed:*)",
-      "Bash(source:*)",
-      "Bash(head:*)",
-      "Bash(tail:*)",
-      "Bash(npm:*)",
-      "Bash(npx:*)",
-      "Bash(pkill:*)",
-      "Bash(touch:*)",
-      "Bash(grep:*)",
-      "Bash(deadcode:*)",
-      "Bash(sqlite3:*)",
-      "Bash(curl:*)",
-      "Bash(rg:*)",
-      "Bash(chmod:*)",
-      "Bash(lsof:*)",
-      "Bash(make:*)",
-      "Bash(PORT=:*)",
-      "Bash(find:*)",
-      "Bash(docker:*)",
-      "Bash(poetry:*)",
-      "Bash(python:*)",
-      "Bash(python3:*)",
-      "Update(*)"
+      "Update(*)",
+      "WebFetch",
+      "WebSearch",
+      "Bash(bd*)",
+      "Bash(git diff*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(ls*)",
+      "Bash(mkdir*)",
+      "Bash(mv*)",
+      "Bash(touch*)",
+      "Bash(chmod*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(find*)",
+      "Bash(grep*)",
+      "Bash(rg*)",
+      "Bash(echo*)",
+      "Bash(sed*)",
+      "Bash(source*)",
+      "Bash(curl*)",
+      "Bash(make*)",
+      "Bash(go*)",
+      "Bash(npm*)",
+      "Bash(npx*)",
+      "Bash(pnpm lint*)",
+      "Bash(pnpm type-check*)",
+      "Bash(pnpm test*)",
+      "Bash(python*)",
+      "Bash(python3*)",
+      "Bash(poetry*)",
+      "Bash(docker*)",
+      "Bash(sqlite3*)",
+      "Bash(deadcode*)",
+      "Bash(lsof*)",
+      "Bash(pkill*)",
+      "Bash(PORT=*)"
     ],
-    "deny": []
+    "deny": [
+      "Read(**/.env*)",
+      "Bash(git commit*)",
+      "Bash(git push*)"
+    ]
   },
   "hooks": {
     "PreCompact": [
@@ -42,7 +60,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bd prime --stealth"
+            "command": "bd prime"
           }
         ]
       }
@@ -53,7 +71,29 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bd prime --stealth"
+            "command": "bd prime"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/notify.sh 'Agent finished' Tink"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/notify.sh 'Needs attention' Pop"
           }
         ]
       }
@@ -93,9 +133,13 @@
       }
     }
   },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
-  }
+  "autoUpdates": "enabled",
+  "effortLevel": "high"
 }
