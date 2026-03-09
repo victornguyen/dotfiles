@@ -9,4 +9,4 @@ zstyle ':completion:*' menu select matcher-list 'm:{a-zA-Z}={A-Za-z}' \
     'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # OpenClaw Completion
-source "/Users/vic/.openclaw/completions/openclaw.zsh"
+[[ -f "/Users/vic/.openclaw/completions/openclaw.zsh" ]] && source "/Users/vic/.openclaw/completions/openclaw.zsh"
