@@ -9,3 +9,6 @@ nvim/lua/vic/local.lua
 .opencode
 .beads
 .bv/
+
+# Lefthook local overrides
+lefthook-local.yml
