@@ -17,7 +17,7 @@ link() {
 e_header "Symlinking files..."
 
 # Create dest dirs in case they don't exist
-mkdir -p ${HOME}/.config/{atuin,nvim,kitty,skhd,aerospace,lazygit,ghostty}
+mkdir -p ${HOME}/.config/{atuin,nvim,kitty,skhd,aerospace,lazygit,ghostty,mise}
 
 link "zsh/zshrc" ".zshrc"
 link "zsh/zshenv" ".zshenv"
@@ -37,6 +37,7 @@ link "lazygit/config.yml" ".config/lazygit/config.yml"
 link "starship/starship.toml" ".config/starship.toml"
 link "atuin/config.toml" ".config/atuin/config.toml"
 link "ghostty/config" ".config/ghostty/config"
+link "mise/config.toml" ".config/mise/config.toml"
 link "claude/CLAUDE.md" ".claude/CLAUDE.md"
 link "claude/settings.json" ".claude/settings.json"
 
