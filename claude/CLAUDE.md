@@ -52,6 +52,9 @@ Don't mark anything done until I've verified it.
 
 ### Never use `bd edit` — it opens an interactive editor. Use `bd update` with flags instead.
 
+## Communication
+Never post messages on the user's behalf (PR comments, Slack messages, GitHub replies, etc.) unless explicitly asked to post. Always draft and confirm first.
+
 ## Git operations
 Read-only git commands (status, log, diff, show) are fine.
 Never add, commit, push, or any command that modifies history unless explicitly asked to.
