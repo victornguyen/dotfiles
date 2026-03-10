@@ -76,28 +76,6 @@
         ]
       }
     ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/notify.sh 'Agent finished' Tink"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/notify.sh 'Needs attention' Pop"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "Skill",
