@@ -23,6 +23,7 @@
 
 [commit]
   verbose = true
+	gpgsign = true
 
 [alias]
   # Adding
@@ -125,6 +126,10 @@
   ignore-case = "smart-case"
   main-view-date = "relative"
 
-# Include work gitconfig for repos in ~/work
-[includeIf "gitdir:~/work/"]
-  path = ~/.gitconfig-work
+[include]
+  path = ~/.gitconfig-local
+
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
