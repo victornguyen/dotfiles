@@ -125,8 +125,19 @@ return {
       mode = 'cursor', -- cursor, topline
       max_lines = 3, -- How many lines the window should span. Values <= 0 mean no limit.
       trim_scope = 'outer',
+      -- Disable context for Fugitive blame buffers to avoid line offsets.
+      on_attach = function(bufnr)
+        local ft = vim.bo[bufnr].filetype
+        if ft == 'fugitiveblame' or ft == 'fugitive' then
+          return false
+        end
+        return true
+      end,
     },
-    config = function()
+    config = function(_, opts)
+      -- Apply plugin setup with our options
+      require('treesitter-context').setup(opts)
+
       -- Bind jump to context
       local m = require('vic.utils')
       m.map(
