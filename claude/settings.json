@@ -48,9 +48,7 @@
       "Bash(PORT=*)"
     ],
     "deny": [
-      "Read(**/.env*)",
-      "Bash(git commit*)",
-      "Bash(git push*)"
+      "Read(**/.env*)"
     ]
   },
   "hooks": {
