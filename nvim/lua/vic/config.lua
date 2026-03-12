@@ -1,6 +1,10 @@
 vim.g.config = {
   theme = {
-    name = 'catppuccin',
+    name = 'kanagawa',
+    kanagawa = {
+      -- wave, dragon, lotus
+      variant = 'dragon',
+    },
     catppuccin = {
       -- latte, frappe, macchiato, mocha
       variant = 'mocha',

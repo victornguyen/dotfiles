@@ -38,8 +38,8 @@ bind-git-helper() {
 bind-git-helper f b
 unset -f bind-git-helper
 
-# catppuuccin/fzf
+# kanagawa-dragon/fzf
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+--color=bg+:#282727,bg:#181616,spinner:#c8c093,hl:#c4746e \
+--color=fg:#c5c9c5,header:#c4746e,info:#8992a7,pointer:#c8c093 \
+--color=marker:#87a987,fg+:#c5c9c5,prompt:#658594,hl+:#c4746e"

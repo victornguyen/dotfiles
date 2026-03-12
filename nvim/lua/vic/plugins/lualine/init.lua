@@ -1,6 +1,8 @@
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  -- Load after colorscheme so lualine picks up the correct theme colors
+  event = 'VeryLazy',
   config = function()
     local lualine_ok, lualine = pcall(require, 'lualine')
     if not lualine_ok then
@@ -14,7 +16,7 @@ return {
     lualine.setup({
       options = {
         icons_enabled = true,
-        theme = 'catppuccin',
+        theme = 'kanagawa',
         component_separators = '',
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -44,10 +46,6 @@ return {
             'filename',
             separator = { right = '' },
             path = 4,
-            color = {
-              bg = '#292C3C',
-              -- gui = 'bold',
-            },
           },
         },
         lualine_c = {

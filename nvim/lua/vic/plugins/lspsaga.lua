@@ -4,9 +4,7 @@ return {
   event = 'LspAttach',
   config = function()
     require('lspsaga').setup({
-      ui = {
-        kind = require('catppuccin.groups.integrations.lsp_saga').custom_kind(),
-      },
+      ui = {},
       diagnostic = {
         -- Show diagnostics in normal mode
         on_insert = false,
