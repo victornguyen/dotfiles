@@ -3,3 +3,6 @@ window-padding-x = 6
 window-padding-y = 6
 
 theme = Kanagawa Dragon
+# Override: cmux v0.62 bundles Ghostty v1.3.0 whose Kanagawa Dragon theme
+# ships a different background than the canonical #181616 from kanagawa.nvim.
+background = #181616
