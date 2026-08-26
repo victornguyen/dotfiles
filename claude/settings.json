@@ -111,6 +111,11 @@
     "command": "bunx -y ccstatusline@latest",
     "padding": 0
   },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
   "extraKnownMarketplaces": {
     "superpowers-marketplace": {
       "source": {
@@ -119,13 +124,11 @@
       }
     }
   },
-  "enabledPlugins": {
-    "typescript-lsp@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
-  },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
+  "autoCompactEnabled": false,
   "autoUpdates": "enabled",
-  "effortLevel": "high"
+  "model": "opus"
 }
