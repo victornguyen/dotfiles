@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# shellcheck source=scripts/lib/utils
 source "${HOME}/.dotfiles/scripts/lib/utils"
 
 # Create/replace symlink
@@ -17,7 +18,7 @@ link() {
 e_header "Symlinking files..."
 
 # Create dest dirs in case they don't exist
-mkdir -p ${HOME}/.config/{atuin,nvim,kitty,skhd,aerospace,lazygit,ghostty,mise}
+mkdir -p "${HOME}"/.config/{atuin,nvim,kitty,skhd,aerospace,lazygit,ghostty,mise}
 
 link "zsh/zshrc" ".zshrc"
 link "zsh/zshenv" ".zshenv"
