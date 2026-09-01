@@ -26,28 +26,28 @@ brew 'cheat'
 brew 'direnv'
 brew 'eza'
 brew 'fd'
-brew 'fpp'
 brew 'fx'
 brew 'fzf'
 brew 'gifsicle'
 brew 'gpg'
 brew 'htop'
+brew 'ical-buddy'
 brew 'imagemagick'
 brew 'ncdu'
-brew 'ranger'
 brew 'ripgrep'
 brew 'shellcheck'
 brew 'starship'
 brew 'stylua'
 brew 'tldr'
 brew 'trash'
+brew 'uv'
+brew 'vips'
 brew 'zoxide'
 brew 'atuin'
 
 # Vim
 brew 'neovim'
 brew 'tree-sitter'
-brew 'vim'
 
 # Terminal multiplexers
 brew 'reattach-to-user-namespace'
@@ -56,6 +56,7 @@ brew 'herdr'
 
 # Git
 brew 'git'
+brew 'gh'
 brew 'git-delta'
 brew 'git-lfs'
 brew 'lazygit'
@@ -69,20 +70,15 @@ brew 'lua'
 brew 'luarocks'
 
 # Docker
+# CLI only - no engine declared. A fresh machine needs Docker Desktop,
+# OrbStack or colima installed by hand before `docker` will work.
 brew 'docker'
-brew 'docker-compose'
-
-# Ruby
-brew 'ruby'
 
 # Runtime version manager (replaces nvm + chruby)
 brew 'mise'
 
 # Python
 brew 'python'
-
-# MySQL
-brew 'mysql'
 
 # CLI for Mac App Store
 brew 'mas'
@@ -95,27 +91,25 @@ brew 'koekeishiya/formulae/skhd', args: ["HEAD"]
 cask '1password'
 cask '1password-cli'
 cask 'aerial'
-cask 'alfred'
 cask 'charles'
 cask 'discord'
 cask 'dropbox'
 cask 'firefox'
 cask 'google-chrome'
 cask 'insomnia'
+cask 'istat-menus'
 cask 'keepingyouawake'
 cask 'kitty'
-cask 'maccy'
 cask 'marked-app'
 cask 'mos'
 cask 'nikitabobko/tap/aerospace'
 cask 'notion'
 cask 'obsidian'
-cask 'postman'
+cask 'raycast'
 cask 'rocket'
 cask 'scroll-reverser'
 cask 'slack'
 cask 'spotify'
-cask 'stats'
 cask 'visual-studio-code'
 cask 'vlc'
 
@@ -130,5 +124,7 @@ mas 'DaisyDisk', id: 411643860
 mas 'Day One', id: 1055511498
 mas 'Flow', id: 1423210932
 mas 'Gifski', id: 1351639930
-mas 'Messenger', id: 1480068668
+mas 'Sip', id: 507257563
+mas 'Spokenly', id: 6740315592
+mas 'WhatsApp', id: 310633997
 mas 'Xcode', id: 497799835
