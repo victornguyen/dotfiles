@@ -3,3 +3,13 @@ node = "lts"
 pnpm = "latest"
 prettier = "latest"
 ruby = "latest"
+
+# Global CLI tools, previously installed by hand via `npm i -g` in
+# scripts/setup-mise. Declared here so a fresh machine gets them from
+# `mise install` alone.
+"npm:typescript" = "5"          # pinned: a silent major bump breaks projects
+"npm:eslint" = "10"             # pinned: same
+"npm:concurrently" = "latest"
+"npm:http-server" = "latest"
+"npm:nodemon" = "latest"
+"npm:pm2" = "latest"
