@@ -1,8 +1,8 @@
 
-# Dolt database files (added by bd init)
-.dolt/
-*.db
 .perles/
 claude/plugins/
 claude/image-cache/
 .worktrees/
+
+# Local working doc for the Brewfile reproducibility work
+PLAN.md

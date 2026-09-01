@@ -7,7 +7,6 @@ node_modules
 nvim/lua/vic/local.lua
 .claude
 .opencode
-.beads
 .bv/
 .perles/
 .worktrees/
