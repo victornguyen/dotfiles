@@ -1,6 +1,7 @@
 #!/bin/bash
 
 dotfiles="${HOME}/.dotfiles"
+# shellcheck source=scripts/lib/utils
 source "${dotfiles}/scripts/lib/utils"
 
 brew_pls() {
@@ -29,15 +30,6 @@ if [[ $(command -v brew) == "" ]] ; then
 
   e_header "Installing brews..."
   brew_pls "Brewfile"
-
-  ask "Install home (non-work) applications?"
-  if is_confirmed; then
-    e_header "Installing home applications..."
-    brew_pls "Brewfile.home"
-  else
-    printf "\n"
-    e_step "Skipping home applications"
-  fi
 
 # Update Homebrew
 else
