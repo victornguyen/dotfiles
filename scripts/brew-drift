@@ -1,0 +1,126 @@
+#!/bin/bash
+#
+# Report drift between homebrew/Brewfile and what is actually installed.
+#
+# Drift is reported in both directions:
+#   - declared in the Brewfile but not installed
+#   - installed but neither declared nor listed in homebrew/.brewignore
+#
+# Exits non-zero when there is drift, so it can gate a push or CI.
+#
+# Note: this deliberately does NOT use `brew bundle check`, which counts
+# outdated packages as unsatisfied. Reproducibility is about presence,
+# not version currency.
+
+set -uo pipefail
+
+dotfiles="${HOME}/.dotfiles"
+# shellcheck source=scripts/lib/utils
+source "${dotfiles}/scripts/lib/utils"
+
+brewfile="${dotfiles}/homebrew/Brewfile"
+ignorefile="${dotfiles}/homebrew/.brewignore"
+
+if [[ ! -f "${brewfile}" ]]; then
+  e_error "No Brewfile at ${brewfile}"
+  exit 2
+fi
+
+work="$(mktemp -d)"
+trap 'rm -rf "${work}"' EXIT
+
+# --- what the Brewfile declares (tap prefixes stripped) --------------------
+grep -oE "^brew '[^']+'" "${brewfile}" | sed "s/brew '//;s/'//" | sed 's|.*/||' \
+  | sort -u > "${work}/declared_formulae"
+grep -oE "^cask '[^']+'" "${brewfile}" | sed "s/cask '//;s/'//" | sed 's|.*/||' \
+  | sort -u > "${work}/declared_casks"
+grep -oE "^mas '[^']+', id: [0-9]+" "${brewfile}" | grep -oE '[0-9]+$' \
+  | sort -u > "${work}/declared_mas"
+
+# --- what is deliberately undeclared --------------------------------------
+if [[ -f "${ignorefile}" ]]; then
+  sed 's/#.*//' "${ignorefile}" | awk 'NF {print $1}' | sort -u > "${work}/ignored"
+else
+  : > "${work}/ignored"
+fi
+
+# --- what is installed -----------------------------------------------------
+# All installed formulae, for the "declared but missing" direction: a
+# declared formula may legitimately also be some other package's dependency.
+brew list --formula | sed 's|.*/||' | sort -u > "${work}/installed_formulae"
+# Leaves only, for the "installed but undeclared" direction: dependencies
+# are pulled in automatically and need no declaration of their own.
+brew leaves         | sed 's|.*/||' | sort -u > "${work}/leaf_formulae"
+brew list --cask | sed 's|.*/||' | sort -u > "${work}/installed_casks"
+if command -v mas > /dev/null 2>&1; then
+  mas list | awk '{print $1}' | sort -u > "${work}/installed_mas"
+else
+  : > "${work}/installed_mas"
+fi
+
+drift=0
+
+# Resolve a declared formula name through its alias (gpg -> gnupg,
+# python -> python@3.14) before calling it missing.
+resolves_to_installed() {
+  local name="$1" full
+  full="$(brew info --formula --json=v2 "${name}" 2>/dev/null \
+    | python3 -c 'import json,sys
+try:
+    f = (json.load(sys.stdin).get("formulae") or [])
+    print(f[0]["full_name"] if f else "")
+except Exception:
+    print("")' 2>/dev/null)"
+  [[ -n "${full}" ]] && brew list --formula --versions "${full}" > /dev/null 2>&1
+}
+
+report_missing() {
+  local label="$1" declared="$2" installed="$3" resolve="$4" missing=()
+  local item
+  while IFS= read -r item; do
+    [[ -z "${item}" ]] && continue
+    if [[ "${resolve}" == "resolve" ]] && resolves_to_installed "${item}"; then
+      continue
+    fi
+    missing+=("${item}")
+  done < <(comm -23 "${declared}" "${installed}")
+
+  if (( ${#missing[@]} > 0 )); then
+    drift=1
+    e_warning "${label} declared but not installed (${#missing[@]}):"
+    printf '    %s\n' "${missing[@]}"
+  fi
+}
+
+report_undeclared() {
+  local label="$1" installed="$2" declared="$3" extra=()
+  local item
+  while IFS= read -r item; do
+    [[ -n "${item}" ]] && extra+=("${item}")
+  done < <(comm -23 "${installed}" <(sort -u "${declared}" "${work}/ignored"))
+
+  if (( ${#extra[@]} > 0 )); then
+    drift=1
+    e_warning "${label} installed but neither declared nor ignored (${#extra[@]}):"
+    printf '    %s\n' "${extra[@]}"
+  fi
+}
+
+e_header "Checking Brewfile drift..."
+
+report_missing "Formulae" "${work}/declared_formulae" "${work}/installed_formulae" resolve
+report_missing "Casks"    "${work}/declared_casks"    "${work}/installed_casks"    no
+report_missing "MAS apps" "${work}/declared_mas"      "${work}/installed_mas"      no
+
+report_undeclared "Formulae" "${work}/leaf_formulae"      "${work}/declared_formulae"
+report_undeclared "Casks"    "${work}/installed_casks"    "${work}/declared_casks"
+report_undeclared "MAS apps" "${work}/installed_mas"      "${work}/declared_mas"
+
+if (( drift == 0 )); then
+  e_success "No drift. Brewfile matches the machine."
+else
+  printf "\n"
+  e_error "Drift found. Declare it in homebrew/Brewfile or list it in homebrew/.brewignore."
+fi
+
+exit "${drift}"

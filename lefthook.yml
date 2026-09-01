@@ -11,3 +11,9 @@ pre-commit:
     stylua-check:
       glob: "*.lua"
       run: stylua --check {staged_files}
+
+pre-push:
+  commands:
+    brew-drift:
+      # Shells out to brew, so it is too slow for pre-commit.
+      run: ./scripts/brew-drift
