@@ -27,6 +27,9 @@ step on a new machine:
 
 ### Keeping the Brewfile honest
 `scripts/brew-drift` compares `homebrew/Brewfile` against what is actually
-installed, in both directions, and runs automatically on `git push`.
-Anything installed but deliberately undeclared belongs in
-`homebrew/.brewignore`.
+installed, in both directions, and runs automatically on `git push`. There
+is no exceptions list: if it reports drift, either declare the package or
+remove it from the machine.
+
+Mac App Store apps are not checked — neither brew nor `mas` can uninstall
+them, so undeclared ones would be drift with no way to resolve it.
