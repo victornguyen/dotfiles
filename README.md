@@ -25,6 +25,29 @@ step on a new machine:
 - **Docker engine** — the Brewfile declares the `docker` CLI only. Install
   Docker Desktop, OrbStack or colima separately.
 
+### Machine-specific git settings
+`~/.gitconfig-local` is the override point — a work email, a work signing key,
+anything this machine needs to differ on. It is not tracked, and git ignores it
+silently when absent. The `[include]` that pulls it in sits at the very end of
+`git/gitconfig` on purpose: git resolves last-wins, so anything below the
+include could not be overridden.
+
+```gitconfig
+# ~/.gitconfig-local on a work machine
+[user]
+  email = you@work.example
+  signingkey = ssh-ed25519 AAAA...
+```
+
+Commits are signed with the SSH key held in 1Password ("SSH - Personal"),
+which requires *Settings → Developer → Use the SSH agent* to be enabled.
+`ssh/config` points `IdentityAgent` at the agent socket; its `Include` sits at
+the **top** of that file because ssh is first-match-wins, the opposite of git.
+
+`git/allowed_signers` holds the public keys trusted to sign, so signatures can
+actually be verified. Public keys are not secret — the file is tracked
+deliberately.
+
 ### Keeping the Brewfile honest
 `scripts/brew-drift` compares `homebrew/Brewfile` against what is actually
 installed, in both directions, and runs automatically on `git push`. There
