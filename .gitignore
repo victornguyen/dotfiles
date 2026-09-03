@@ -5,4 +5,4 @@ claude/image-cache/
 .worktrees/
 
 # Local working doc for the Brewfile reproducibility work
-PLAN.md
+PLAN*.md
