@@ -138,10 +138,14 @@
   ignore-case = "smart-case"
   main-view-date = "relative"
 
-[include]
-  path = ~/.gitconfig-local
-
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+# Machine-specific overrides: work email, work signing key, anything else
+# this machine needs to differ on. Git resolves last-wins, so this include
+# MUST stay at the very end of the file - anything below it cannot be
+# overridden. Missing file is fine; git ignores it silently.
+[include]
+  path = ~/.gitconfig-local
