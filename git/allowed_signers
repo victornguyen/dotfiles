@@ -1,0 +1,9 @@
+# Public keys trusted to sign commits, used by gpg.ssh.allowedSignersFile.
+# Public keys are not secret, so this file is safe to track.
+#
+# Format: <identity> namespaces="git" <key type> <key>
+#
+# A work identity gets its own line. If the work key should not live in a
+# personal repo, point gpg.ssh.allowedSignersFile somewhere else from
+# ~/.gitconfig-local instead.
+vic.nguyen@gmail.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIavPZwxJsiLBXMwz1Yjw6mfLOuE2Sl/pLvX4Ek+SPvf
