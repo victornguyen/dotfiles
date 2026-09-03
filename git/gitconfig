@@ -3,6 +3,9 @@
 [user]
   name = Victor Nguyen
   email = vic.nguyen@gmail.com
+  # Public half of the "SSH - Personal" key in 1Password. Public keys are
+  # not secret. A work machine overrides this from ~/.gitconfig-local.
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIavPZwxJsiLBXMwz1Yjw6mfLOuE2Sl/pLvX4Ek+SPvf
 
 [core]
   editor = nvim

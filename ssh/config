@@ -1,0 +1,12 @@
+# Machine-specific hosts and overrides.
+#
+# SSH is FIRST-match-wins - the opposite of git - so this Include must stay
+# at the TOP of the file. Anything matched above wins over what follows.
+# Missing file is fine; ssh ignores it.
+Include ~/.ssh/config.local
+
+# Route all key operations through 1Password's SSH agent. The private key
+# never touches disk; each use is approved biometrically.
+# Requires 1Password -> Settings -> Developer -> Use the SSH agent.
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
