@@ -14,15 +14,44 @@
 [credential]
   helper = osxkeychain
 
+[init]
+  # Apple's Command Line Tools gitconfig sets this to main, but that is
+  # not this repo's doing - switch to Homebrew git and it reverts.
+  defaultBranch = main
+
 [pull]
   ff = only
 
 [push]
   default = simple
   autoSetupRemote = true
+  followTags = true
+
+[fetch]
+  prune = true
+  pruneTags = true
 
 [rebase]
   autosquash = true
+  # Keeps stacked branches pointing at the right commits through a rebase.
+  updateRefs = true
+
+[rerere]
+  # Remembers how a conflict was resolved and replays it next time.
+  enabled = true
+
+[merge]
+  # Conflict markers include the common ancestor, not just both sides.
+  conflictstyle = zdiff3
+
+[diff]
+  algorithm = histogram
+
+[branch]
+  sort = -committerdate
+
+[column]
+  ui = auto
 
 [commit]
   verbose = true
