@@ -21,6 +21,11 @@ fi
 "${dotfiles_scripts}/setup-macos"
 "${dotfiles_scripts}/setup-mise"
 
+# Git hooks live in .git/hooks, which is not cloned. Without this the
+# pre-commit linters and the pre-push brew-drift check are silently absent.
+e_header "Installing git hooks..."
+lefthook install
+
 printf "\n"
 e_success "Setup complete!"
 e_warning "Restart your shell to pick up mise activation"
