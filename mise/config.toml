@@ -1,4 +1,11 @@
 [tools]
+# Owned by mise rather than the Brewfile on purpose. mise shims sit ahead of
+# Homebrew on PATH (see zsh/zshenv) and a shim does NOT fall through - it
+# errors with "No version is set for shim". So a brew-installed bun would be
+# shadowed and broken the moment any project pinned bun in its own config.
+# Keeping the global default here means a project pin resolves inside that
+# project and falls back to this everywhere else.
+bun = "latest"
 node = "lts"
 pnpm = "latest"
 prettier = "latest"

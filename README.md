@@ -21,7 +21,14 @@ A few tools are installed by neither Homebrew nor mise and need a manual
 step on a new machine:
 
 - **Claude Code** — lives in `~/.local/bin/claude`
-- **`@tobilu/qmd`** — a bun global: `bun add -g @tobilu/qmd`
+- **`@tobilu/qmd`** — a bun global: `bun add -g @tobilu/qmd`. Bun itself comes
+  from mise, so only the package is manual.
+
+  Note that `bun add -g` links global binaries into `~/.bun/bin`, which
+  `zsh/zshrc` puts at the *front* of PATH — ahead of the mise shims. That is
+  needed for qmd, but it means a `bun` or `bunx` left in that directory by
+  bun's own curl installer will shadow the mise-managed one. Delete those two
+  and keep the directory.
 - **Docker engine** — the Brewfile declares the `docker` CLI only. Install
   Docker Desktop, OrbStack or colima separately.
 
