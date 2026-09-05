@@ -25,3 +25,9 @@ ruby = "latest"
 "npm:http-server" = "latest"
 "npm:nodemon" = "latest"
 "npm:pm2" = "latest"
+
+# Formatters that conform.nvim invokes by name. Without these, JS/TS falls
+# back to the slower `prettier` above and JSON format-on-save silently
+# does nothing.
+"npm:@fsouza/prettierd" = "latest"   # provides `prettierd`
+"npm:fixjson" = "latest"
