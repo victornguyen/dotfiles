@@ -1,24 +1,11 @@
 [tools]
-# Owned by mise rather than the Brewfile on purpose. mise shims sit ahead of
-# Homebrew on PATH (see zsh/zshenv) and a shim does NOT fall through - it
-# errors with "No version is set for shim". So a brew-installed bun would be
-# shadowed and broken the moment any project pinned bun in its own config.
-# Keeping the global default here means a project pin resolves inside that
-# project and falls back to this everywhere else.
 bun = "latest"
 node = "lts"
-# npm backend, not the default aqua one. pnpm v12 renamed its GitHub release
-# assets (pnpm-macos-arm64 -> pnpm-darwin-arm64.tar.gz) and the aqua registry
-# still looks for the old names, so `aqua:pnpm/pnpm` fails outright with
-# "no asset found". npm also tracks the stable dist-tag rather than whatever
-# is newest on GitHub.
 "npm:pnpm" = "latest"
 prettier = "latest"
 ruby = "latest"
 
-# Global CLI tools, previously installed by hand via `npm i -g` in
-# scripts/setup-mise. Declared here so a fresh machine gets them from
-# `mise install` alone.
+# Global CLI tools
 "npm:typescript" = "5"          # pinned: a silent major bump breaks projects
 "npm:eslint" = "10"             # pinned: same
 "npm:concurrently" = "latest"
@@ -26,8 +13,6 @@ ruby = "latest"
 "npm:nodemon" = "latest"
 "npm:pm2" = "latest"
 
-# Formatters that conform.nvim invokes by name. Without these, JS/TS falls
-# back to the slower `prettier` above and JSON format-on-save silently
-# does nothing.
+# Formatters that conform.nvim invokes
 "npm:@fsouza/prettierd" = "latest"   # provides `prettierd`
 "npm:fixjson" = "latest"
