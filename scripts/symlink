@@ -18,8 +18,9 @@ link() {
 e_header "Symlinking files..."
 
 # Create dest dirs in case they don't exist
-mkdir -p "${HOME}"/.config/{atuin,nvim,kitty,skhd,aerospace,lazygit,ghostty,mise,herdr}
-mkdir -p "${HOME}/.ssh" "${HOME}/.config/git"
+mkdir -p "${HOME}"/.config/{aerospace,atuin,ghostty,git,herdr,kitty,lazygit,mise,nvim,skhd}
+mkdir -p "${HOME}/.ssh"
+mkdir -p "${HOME}/.claude"
 
 link "zsh/zshrc" ".zshrc"
 link "zsh/zshenv" ".zshenv"
