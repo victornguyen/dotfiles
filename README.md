@@ -11,7 +11,8 @@ cd ~/.dotfiles
 ./scripts/install
 ```
 
-`install` runs several other scripts in `scripts/`, which can also be run independently.
+`install` runs the other scripts in `scripts/` in order, each of which can
+also be run independently. Restart your shell when it finishes.
 
 ### What's in them?
 Things I've stolen across the Internet that primarily setup my shell (zsh), editor (vim) and multiplexer (tmux). Will expand on this later!

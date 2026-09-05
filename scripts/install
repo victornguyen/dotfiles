@@ -1,17 +1,26 @@
 #!/bin/bash
 
 dotfiles_scripts="${HOME}/.dotfiles/scripts"
+# shellcheck source=scripts/lib/utils
 source "${dotfiles_scripts}/lib/utils"
 
-${dotfiles_scripts}/homebrew
-${dotfiles_scripts}/setup-macos
-${dotfiles_scripts}/symlink
-${dotfiles_scripts}/setup-vim
-${dotfiles_scripts}/setup-zsh
+"${dotfiles_scripts}/homebrew"
+
+# Put Homebrew on PATH for the rest of this run. scripts/homebrew only does
+# this inside its own process, so without it mise and everything else brew
+# just installed are invisible to the scripts below.
+if [[ $(uname -m) == "arm64" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+# symlink must precede setup-mise: mise reads ~/.config/mise/config.toml,
+# which is one of the links it creates.
+"${dotfiles_scripts}/symlink"
+"${dotfiles_scripts}/setup-macos"
+"${dotfiles_scripts}/setup-mise"
 
 printf "\n"
-e_success "Initial setup complete!"
-e_warning "Please restart your shell and run scripts/setup-mise"
-
-# Should restart shell at this point then run:
-# scripts/setup-mise
+e_success "Setup complete!"
+e_warning "Restart your shell to pick up mise activation"
