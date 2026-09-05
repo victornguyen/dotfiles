@@ -28,18 +28,21 @@ if [[ $(command -v brew) == "" ]] ; then
 
   brew analytics off
 
-  e_header "Installing brews..."
-  brew_pls "Brewfile"
-
 # Update Homebrew
 else
   e_header "Updating Homebrew..."
   brew update
-
-  e_header "Checking for outdated brews..."
-  brew outdated
-  e_warning "Run \`brew upgrade\` to upgrade everything"
-  e_warning "Run \`brew upgrade <package_name>\` to upgrade specific packages"
 fi
+
+# Install what the Brewfile declares. This runs on both paths on purpose: a
+# machine that already had Homebrew still needs the packages, and `brew bundle`
+# is a no-op for anything already installed.
+e_header "Installing brews..."
+brew_pls "Brewfile"
+
+e_header "Checking for outdated brews..."
+brew outdated
+e_warning "Run \`brew upgrade\` to upgrade everything"
+e_warning "Run \`brew upgrade <package_name>\` to upgrade specific packages"
 
 e_success "Homebrew setup complete!"
