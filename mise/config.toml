@@ -7,7 +7,12 @@
 # project and falls back to this everywhere else.
 bun = "latest"
 node = "lts"
-pnpm = "latest"
+# npm backend, not the default aqua one. pnpm v12 renamed its GitHub release
+# assets (pnpm-macos-arm64 -> pnpm-darwin-arm64.tar.gz) and the aqua registry
+# still looks for the old names, so `aqua:pnpm/pnpm` fails outright with
+# "no asset found". npm also tracks the stable dist-tag rather than whatever
+# is newest on GitHub.
+"npm:pnpm" = "latest"
 prettier = "latest"
 ruby = "latest"
 
