@@ -1,9 +1,38 @@
-font-family = FiraCode Nerd Font
-font-size = 15
-window-padding-x = 6
-window-padding-y = 6
+# Ghostty, configured to mirror kitty/kitty.conf for comparison
 
+# Fonts
+font-family = Hack Nerd Font Mono
+# font-thicken = true
+font-size = 15
+adjust-cell-height = 2
+adjust-cell-width = -1
+
+# Cursor
+cursor-style = block
+cursor-style-blink = true
+
+# Mouse
+copy-on-select = true
+
+# Window layout
+window-padding-x = 8
+window-padding-y = 8
+macos-titlebar-style = hidden
+confirm-close-surface = true
+
+# Colour scheme
+background-opacity = 0.97
 theme = Kanagawa Dragon
-# Override: cmux v0.62 bundles Ghostty v1.3.0 whose Kanagawa Dragon theme
-# ships a different background than the canonical #181616 from kanagawa.nvim.
-background = #181616
+
+# macOS
+macos-option-as-alt = true
+macos-non-native-fullscreen = true
+
+# Font sizes (kitty_mod is ctrl+shift)
+keybind = ctrl+shift+equal=increase_font_size:2
+keybind = ctrl+shift+minus=decrease_font_size:2
+keybind = ctrl+shift+backspace=reset_font_size
+
+# No Ghostty equivalent, deliberately not ported:
+#   cursor_trail / cursor_trail_decay / cursor_trail_start_threshold
+#   kitten hints - the six url/hash/path mappings
