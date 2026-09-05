@@ -54,3 +54,13 @@ set.updatetime = 250 -- Faster completion and diagnostics
 --     \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
 --     \,sm:block-blinkwait175-blinkoff150-blinkon175
 -- ]]
+
+-- Remote plugin providers
+-- None of these are used: no plugin here talks to a remote host, and
+-- copilot.vim drives its own language server off the node binary directly.
+-- Disabling them skips the interpreter probing at startup and keeps
+-- :checkhealth vim.provider clean.
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
