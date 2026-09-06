@@ -5,7 +5,9 @@ dotfiles="${HOME}/.dotfiles"
 source "${dotfiles}/scripts/lib/utils"
 
 brew_pls() {
-  brew bundle --file="${dotfiles}/homebrew/$1"
+  # --no-upgrade: install what is missing, leave installed versions alone.
+  # Same stance as scripts/brew-drift - presence, not version currency.
+  brew bundle --no-upgrade --file="${dotfiles}/homebrew/$1"
 }
 
 # Install Xcode Command Line Tools...
