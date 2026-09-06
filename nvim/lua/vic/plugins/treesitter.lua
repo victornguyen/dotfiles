@@ -1,9 +1,13 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    -- Both pinned to master. Upstream's default branch is now the `main`
+    -- rewrite, which drops the nvim-treesitter.configs API this file uses.
+    branch = 'master',
     dependencies = {
       {
         'nvim-treesitter/nvim-treesitter-textobjects',
+        branch = 'master',
         config = function()
           -- When in diff mode, we want to use the default
           -- vim text objects c & C instead of the treesitter ones.
