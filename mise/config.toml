@@ -1,18 +1,19 @@
 [tools]
 bun = "latest"
-node = "lts"
+node = "26"
 "npm:pnpm" = "latest"
 prettier = "latest"
 ruby = "latest"
 
-# Global CLI tools
-"npm:typescript" = "5"          # pinned: a silent major bump breaks projects
-"npm:eslint" = "10"             # pinned: same
+"npm:typescript" = "5"
+"npm:eslint" = "10"
 "npm:concurrently" = "latest"
 "npm:http-server" = "latest"
 "npm:nodemon" = "latest"
 "npm:pm2" = "latest"
 
-# Formatters that conform.nvim invokes
-"npm:@fsouza/prettierd" = "latest"   # provides `prettierd`
+"npm:@fsouza/prettierd" = "latest"
 "npm:fixjson" = "latest"
+
+"npm:clawhub" = "latest"
+"npm:openclaw" = "latest"
