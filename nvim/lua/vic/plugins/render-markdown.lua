@@ -1,6 +1,6 @@
 return {
   'MeanderingProgrammer/render-markdown.nvim',
-  ft = { 'markdown', 'codecompanion' },
+  ft = { 'markdown' },
   opts = {
     checkbox = {
       -- Checkboxes are a special instance of a 'list_item' that start with a 'shortcut_link'.
