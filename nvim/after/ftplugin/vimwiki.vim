@@ -1,3 +1,0 @@
-hi link VimwikiLink markdownLinkText
-hi link VimwikiHeaderChar markdownH1Delimiter
-hi link VimwikiCode DiagnosticVirtualTextHint
