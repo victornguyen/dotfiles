@@ -3,7 +3,7 @@
 An evolving collection of little bits that make a computer feel like home. I spend too much time tweaking these.
 
 ### Installation
-These are made for OSX.
+These are made for macOS.
 
 Clone over HTTPS. `ssh/config` points `IdentityAgent` at 1Password's agent
 socket, which does not exist on a machine that has not been set up yet.
@@ -17,10 +17,18 @@ cd ~/.dotfiles
 `install` runs the other scripts in `scripts/` in order, each of which can
 also be run independently. Restart your shell when it finishes.
 
-**Before your first commit**, open 1Password — the Brewfile installs it, but
-it cannot sign you in — and turn on *Settings → Developer → Use the SSH agent*.
-`git/gitconfig` sets `commit.gpgsign` and signs through `op-ssh-sign`, so every
-commit fails until that is done.
+### After `scripts/install`
+- **Sign into the App Store** — ideally *before* the install run, since the
+  eight `mas` entries need it.
+- **1Password** — sign in and turn on *Settings → Developer → Use the SSH
+  agent* before your first commit.
+- **`gh auth login`** — the remote is HTTPS with no stored credential on a new
+  machine, and GitHub does not take passwords.
+- **Add the signing key to GitHub as a *Signing Key*** — a separate entry from
+  an Authentication Key, even for the same key.
+- **`skhd --start-service`** — writes the launch agent that keeps skhd running.
+- **Grant Accessibility / Input Monitoring** to aerospace, skhd, Raycast, Mos,
+  Scroll Reverser, iStat Menus and KeepingYouAwake.
 
 ### What's in them?
 Things I've stolen across the Internet that primarily setup my shell (zsh), editor (vim) and multiplexer (tmux). Will expand on this later!
@@ -70,8 +78,6 @@ works, but points somewhere wrong until they are recreated:
 
 - `nvim/lua/vic/local.lua` — `wiki_path` for obsidian.nvim. Without it the
   vault falls back to `~/wiki` with no warning.
-- `~/.vimwiki_local.lua` — same idea for vimwiki, which otherwise defaults to
-  `$HOME/Dropbox/vimwiki/{me,work}`.
 - `~/.zshrc.local` and `~/.zshenv.local` — sourced at the end of each if present.
 
 ### Keeping the Brewfile honest
