@@ -18,7 +18,8 @@ fi
 # symlink must precede setup-mise: mise reads ~/.config/mise/config.toml,
 # which is one of the links it creates.
 "${dotfiles_scripts}/symlink"
-"${dotfiles_scripts}/setup-macos"
+# Legacy macOS defaults are paused pending review on the new laptop.
+# Keep scripts/setup-macos and scripts/macos/ for reference; do not run automatically.
 "${dotfiles_scripts}/setup-mise"
 
 # Git hooks live in .git/hooks, which is not cloned. Without this the

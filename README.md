@@ -14,8 +14,16 @@ cd ~/.dotfiles
 ./scripts/install
 ```
 
-`install` runs the other scripts in `scripts/` in order, each of which can
-also be run independently. Restart your shell when it finishes.
+`install` sets up Homebrew packages, symlinks, mise tools and Git hooks.
+Each setup script can also be run independently. Restart your shell when it
+finishes.
+
+Automatic macOS defaults are disabled for now. `scripts/setup-macos` and the
+six files in `scripts/macos/` are retained for review, but are not run by
+`install`. They contain legacy settings, including attempts to suppress app
+warnings and disk-image verification; review them before running manually.
+This does not undo defaults applied on an existing machine. On the new laptop,
+set the password requirement to immediately in System Settings → Lock Screen.
 
 ### After `scripts/install`
 - **Sign into the App Store** — ideally *before* the install run, since the
