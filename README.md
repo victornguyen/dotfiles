@@ -34,8 +34,7 @@ set the password requirement to immediately in System Settings → Lock Screen.
   machine, and GitHub does not take passwords.
 - **Add the signing key to GitHub as a *Signing Key*** — a separate entry from
   an Authentication Key, even for the same key.
-- **Grant Accessibility / Input Monitoring** to aerospace, Raycast, Mos,
-  Scroll Reverser, iStat Menus and KeepingYouAwake.
+- **Grant Accessibility / Input Monitoring** to aerospace, Raycast, Mos, and KeepingYouAwake.
 
 ### What's in them?
 Things I've stolen across the Internet that primarily setup my shell (zsh), editor (vim) and multiplexer (tmux). Will expand on this later!
