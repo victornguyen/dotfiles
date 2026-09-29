@@ -18,7 +18,7 @@ link() {
 e_header "Symlinking files..."
 
 # Create dest dirs in case they don't exist
-mkdir -p "${HOME}"/.config/{aerospace,atuin,ghostty,git,herdr,kitty,lazygit,mise,nvim,skhd}
+mkdir -p "${HOME}"/.config/{aerospace,atuin,ghostty,git,herdr,kitty,lazygit,mise,nvim}
 mkdir -p "${HOME}/.ssh"
 mkdir -p "${HOME}/.claude"
 
@@ -28,7 +28,6 @@ link "tmux/tmux.conf" ".tmux.conf"
 link "nvim/init.lua" ".config/nvim/init.lua"
 link "nvim/lua" ".config/nvim/lua"
 link "nvim/after" ".config/nvim/after"
-link "skhd/skhdrc" ".config/skhd/skhdrc"
 link "aerospace/aerospace.toml" ".config/aerospace/aerospace.toml"
 link "git/gitconfig" ".gitconfig"
 link "git/gitignore" ".gitignore"

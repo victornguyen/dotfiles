@@ -14,7 +14,6 @@
 # Update already-installed casks:
 #   $ brew upgrade --cask
 
-tap 'koekeishiya/formulae'
 tap 'nikitabobko/tap'
 
 brew 'coreutils'
@@ -82,10 +81,6 @@ brew 'python'
 
 # CLI for Mac App Store
 brew 'mas'
-
-# skhd for key bindings
-# TODO: consider migrating to https://github.com/jackielii/skhd.zig
-brew 'koekeishiya/formulae/skhd', args: ["HEAD"]
 
 # Apps
 cask '1password'

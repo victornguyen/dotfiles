@@ -34,8 +34,7 @@ set the password requirement to immediately in System Settings → Lock Screen.
   machine, and GitHub does not take passwords.
 - **Add the signing key to GitHub as a *Signing Key*** — a separate entry from
   an Authentication Key, even for the same key.
-- **`skhd --start-service`** — writes the launch agent that keeps skhd running.
-- **Grant Accessibility / Input Monitoring** to aerospace, skhd, Raycast, Mos,
+- **Grant Accessibility / Input Monitoring** to aerospace, Raycast, Mos,
   Scroll Reverser, iStat Menus and KeepingYouAwake.
 
 ### What's in them?
